@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>向涛</title>
+    <description>Welcome to my personal website~</description>
+    <link>www.xiangtao.net.cn/</link>
+    <atom:link href="www.xiangtao.net.cn/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 09 May 2021 14:17:29 +0800</pubDate>
+    <lastBuildDate>Sun, 09 May 2021 14:17:29 +0800</lastBuildDate>
+    <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>我的第一篇博客</title>
+        <description>&lt;p&gt;这是我的 &lt;a href=&quot;https://github.com/xiang-tao&quot;&gt;Github&lt;/a&gt;，欢迎你的Star.&lt;/p&gt;
+
+&lt;h1 id=&quot;h1-标题&quot;&gt;h1 标题&lt;/h1&gt;
+&lt;h2 id=&quot;h2-标题&quot;&gt;h2 标题&lt;/h2&gt;
+&lt;h3 id=&quot;h3-标题&quot;&gt;h3 标题&lt;/h3&gt;
+&lt;h4 id=&quot;h4-标题&quot;&gt;h4 标题&lt;/h4&gt;
+&lt;h5 id=&quot;h5-标题&quot;&gt;h5 标题&lt;/h5&gt;
+&lt;h6 id=&quot;h6-标题&quot;&gt;h6 标题&lt;/h6&gt;
+
+&lt;h2 id=&quot;水平线&quot;&gt;水平线&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;hr /&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;文本样式&quot;&gt;文本样式&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;This is bold text&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;This is bold text&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;This is italic text&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;This is italic text&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;del&gt;Strikethrough&lt;/del&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;列表&quot;&gt;列表&lt;/h2&gt;
+
+&lt;p&gt;无序&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Create a list by starting a line with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;+&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-&lt;/code&gt;, or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Sub-lists are made by indenting 2 spaces:
+    &lt;ul&gt;
+      &lt;li&gt;Marker character change forces new list start:
+        &lt;ul&gt;
+          &lt;li&gt;Ac tristique libero volutpat at&lt;/li&gt;
+          &lt;li&gt;Facilisis in pretium nisl aliquet&lt;/li&gt;
+          &lt;li&gt;Nulla volutpat aliquam velit&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Very easy!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;有序&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Lorem ipsum dolor sit amet&lt;/li&gt;
+  &lt;li&gt;Consectetur adipiscing elit&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Integer molestie lorem at massa&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;You can use sequential numbers…&lt;/li&gt;
+  &lt;li&gt;…or keep all the numbers as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1.&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Start numbering with offset:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;foo&lt;/li&gt;
+  &lt;li&gt;bar&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;代码&quot;&gt;代码&lt;/h2&gt;
+
+&lt;p&gt;Inline &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;code&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Indented code&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// Some comments
+line 1 of code
+line 2 of code
+line 3 of code
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Block code “fences”&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Sample text here...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Syntax highlighting&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+</description>
+        <pubDate>Sun, 09 May 2021 00:00:00 +0800</pubDate>
+        <link>www.xiangtao.net.cn/2021/05/myfirst/</link>
+        <guid isPermaLink="true">www.xiangtao.net.cn/2021/05/myfirst/</guid>
+        
+        <category>jekyll</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>博客模板功能介绍</title>
+        <description>&lt;p&gt;在此之前我有写过一篇&lt;a href=&quot;http://leopardpan.cn/2016/10/jekyll_tutorials1/&quot;&gt;如何使用我博客模板的文章&lt;/a&gt; 请先看这篇基础集成，这篇文章主要讲的是如何使用和修改我的博客主题，文章内容含以下几点：&lt;/p&gt;
+
+&lt;h2 id=&quot;博客特性&quot;&gt;博客特性&lt;/h2&gt;
+
+&lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;适配电脑、手机、平板等各屏幕&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;响应式设计&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;个性化头像&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;每篇文章自动添加打赏功能&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;支持Disqus、livere评论系统&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;支持站点总数访问统计，每篇文章访问统计&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;支持文章自动生成目录&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;支持标签分类&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;支持代码高亮&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;支持文章H1、H2、H3、H4标题样式多样化&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;支持多种三方社交icon展示，能从博客直接跳转到自己的三方社交主页&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;支持三方社交分享(facebook、twitter)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;博客主要模块介绍&quot;&gt;博客主要模块介绍&lt;/h2&gt;
+
+&lt;h3 id=&quot;_configyml&quot;&gt;_config.yml&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; 是博客的配置文件，整个站点的信息都在这修改，想要把我的模板改成你自己的也需要修改&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;重要字段说明&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;enableToc: 是否开启文章自动生成目录，设置为false文章不会自动生成目录&lt;/li&gt;
+  &lt;li&gt;comment/livere: livere评论系统，支持微信、qq、微博、豆瓣、twitter等登录后可以直接评论&lt;/li&gt;
+  &lt;li&gt;comment/disqus: disqus评论系统，支持facebook、twitter等登录后可以直接评论&lt;/li&gt;
+  &lt;li&gt;social/weibo、github、zhihu、jianshu等: 个人站底部展示的微博等三方社交按钮，点击后直接跳转到个人微博或其他社交主页&lt;/li&gt;
+  &lt;li&gt;baidu/id: 百度统计，用来统计你个人站点的用户访问情况&lt;/li&gt;
+  &lt;li&gt;ga/id: google统计，用来统计你个人站点的用户访问情况&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;_config.yml 文件除以上字段还有一些可以自行修改，例如title之类的字段&lt;/p&gt;
+
+&lt;h3 id=&quot;_posts&quot;&gt;_posts&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; 目录是用来存放文章的目录，写新文章，直接放在这个目录即可&lt;/p&gt;
+
+&lt;p&gt;使用博客模板时，请把博客自带的文章给去掉，如果想使用博客自带的文章请 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;注明出处&lt;/code&gt;。&lt;/p&gt;
+
+&lt;h3 id=&quot;自定义页面&quot;&gt;自定义页面&lt;/h3&gt;
+
+&lt;p&gt;about.md、support.md 等为自定义页面，如果你想添加自动以页面可以直接复制about.md 文件修改文件名和里面的内容即可。&lt;/p&gt;
+
+&lt;p&gt;如果需要在导航显示你新增的页面，直接在&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; 文件的nav字段中添加你新页面配置即可&lt;/p&gt;
+
+&lt;h3 id=&quot;修改说明&quot;&gt;修改说明&lt;/h3&gt;
+
+&lt;p&gt;如果要修改博客模板信息建议只修改&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; 文件内容和 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; 里面的文章信息。因为博客模板一直在更新迭代，改动多了以免你后期更新博客模板的时候不方便。&lt;/p&gt;
+
+&lt;p&gt;如果你想改动模板的样式又想继续更新迭代博客模板，你可以提交在github上提交&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pull request&lt;/code&gt; 或者直接给我发邮件建议改成什么样，如果你的提议确实可以，我会采纳的，并且非常感谢你的建议。&lt;/p&gt;
+
+&lt;p&gt;博客迭代信息请看&lt;a href=&quot;https://leopardpan.cn/2020/07/ReleaseNode/&quot;&gt;ReleaseNode&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;遇到解决不了的问题可以找 &lt;a href=&quot;https://leopardpan.cn/support/&quot;&gt;技术支持&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 11 Jul 2020 00:00:00 +0800</pubDate>
+        <link>www.xiangtao.net.cn/2020/07/blog_info/</link>
+        <guid isPermaLink="true">www.xiangtao.net.cn/2020/07/blog_info/</guid>
+        
+        <category>jekyll</category>
+        
+        
+      </item>
+    
+  </channel>
+</rss>
