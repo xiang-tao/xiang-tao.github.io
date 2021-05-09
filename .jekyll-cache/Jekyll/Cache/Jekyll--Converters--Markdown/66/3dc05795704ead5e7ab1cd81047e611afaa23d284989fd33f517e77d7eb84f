@@ -1,0 +1,35 @@
+I"�<p>一个正在读研究生的小伙子，学习的是数学专业，并不是计算机，因此我们交流的问题是数学那再好不过了，但是要交流计算机，比如该网站是怎么建立的，或者什么是Github,jekyll，对于我来将可能并不关心这个，但是我热衷于编程，比如我们可以交流c++ 或者python.</p>
+
+<h2> 创建这个网站的原因 </h2>
+
+<p>之所以创建了这个网站，只是一个偶然，我本来是在Github上学习代码如何管理，无意间发现了Github能够创建一个个人网站，但是该网站是关于Github的域名，然而该域名是可以替换的，比如像我就替换成了我的<a href="www.xiangtao.net.io">个人网站</a>，当然你可点击访问．但是替换域名的前提是你需要去某些网站先申请一个域名，比如阿里云，但这将是一个付费的过程．</p>
+
+<h3> 我的联系方式 </h3>
+
+<p>你可以关注我的<a href="https://github.com/xiang-tao">Github</a>.</p>
+
+<p>我的<a href="www.xiangtao.net.io">个人网站</a>.</p>
+
+<section class="post-comments">
+
+
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTcxNs82Mjgz">
+      <script type="text/javascript">
+         (function(d, s) {
+             var j, e = d.getElementsByTagName(s)[0];
+
+             if (typeof LivereTower === 'function') { return; }
+             j = d.createElement(s);
+             j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+             j.async = true;
+             e.parentNode.insertBefore(j, e);
+         })(document, 'script');
+      </script>
+      <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+      </div>
+
+
+
+</section>
+
+:ET
