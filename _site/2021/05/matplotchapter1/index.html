@@ -6,17 +6,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <title>关于我</title>
-  <meta name="description" content="Welcome to my personal website~">
+  <title>Python-Matplotlib-Chapter1</title>
+  <meta name="description" content="1.1Figure1.1">
   <meta name="author" content="leopardpan">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="关于我">
-  <meta name="twitter:description" content="Welcome to my personal website~">
+  <meta name="twitter:title" content="Python-Matplotlib-Chapter1">
+  <meta name="twitter:description" content="1.1Figure1.1">
   
   <meta property="og:type" content="article">
-  <meta property="og:title" content="关于我">
-  <meta property="og:description" content="Welcome to my personal website~">
+  <meta property="og:title" content="Python-Matplotlib-Chapter1">
+  <meta property="og:description" content="1.1Figure1.1">
   
   <link rel="icon" type="image/png" href="/images/favicon.png" />
   <link href="/images/favicon.png" rel="shortcut icon" type="image/png">
@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="/css/main.css">
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-  <link rel="canonical" href="www.xiangtao.net.cn/about/">
+  <link rel="canonical" href="www.xiangtao.net.cn/2021/05/matplotchapter1/">
   <link rel="alternate" type="application/rss+xml" title="向涛" href="www.xiangtao.net.cn/feed.xml">
   
   <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
@@ -173,27 +173,168 @@
 
     <div class="content-wrapper">
         <div class="content-wrapper__inner">
-            <article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
+            <head>
+  <link rel="stylesheet" href="/css/post.css">
+</head>
+
+<article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
+    <h1 class="post-title">Python-Matplotlib-Chapter1</h1>
     <div class="post-meta">
-      <time datetime="" itemprop="datePublished" class="post-meta__date date"></time>
-      <span class="post-meta__tags tags"></span>
+      <img src="/images/calendar.png" width="20px"/> 
+      <time datetime="2021-05-15 00:00:00 +0800" itemprop="datePublished" class="post-meta__date date">2021-05-15</time>  
+
+      <span id="busuanzi_container_page_pv"> | 阅读：<span id="busuanzi_value_page_pv"></span>次</span>
+    </p>
     </div>
-    <h1 class="post-title">关于我</h1>
   </header>
 
+  
+    <h2 class="post-title">目录</h2>
+    <ul>
+  <li><a href="#11">1.1</a>
+    <ul>
+      <li><a href="#figure11">Figure1.1</a></li>
+    </ul>
+  </li>
+</ul>
+
+  
+
   <section class="post">
-    <p>一个正在读研究生的小伙子，学习的是数学专业，并不是计算机，因此我们交流的问题是数学那再好不过了，但是要交流计算机，比如该网站是怎么建立的，或者什么是Github,jekyll，这个并不是我关心的问题，但是我热衷于编程，比如我们可以交流c++ 或者python.</p>
+    <h1 id="11">1.1</h1>
+<h2 id="figure11">Figure1.1</h2>
+<p><img src="https://raw.githubusercontent.com/xiang-tao/image-hosting/master/picture/chapter_1_1.2rderkjbfps0.png" alt="chapter_1_1" /></p>
 
-<h2> 创建这个网站的原因 </h2>
+<details>
+  <summary>View Code</summary>
+  <pre><code> 
+import matplotlib.pyplot as plt
+import numpy as np
+from matplotlib import cm as cm
 
-<p>之所以创建了这个网站，只是一个偶然，我本来是在Github上学习代码如何管理，无意间发现了Github能够创建一个个人网站，但是该网站是关于Github的域名，然而该域名是可以替换的，比如像我就替换成了我的<a href="www.xiangtao.net.io">个人网站</a>，当然你可点击访问．但是替换域名的前提是你需要去某些网站先申请一个域名，比如阿里云，但这将是一个付费的过程．</p>
+# define data
+x = np.linspace(0.5, 3.5, 100)
+y = np.sin(x)
+y1 = np.random.randn(100)
 
-<h3> 我的联系方式 </h3>
+# scatter figure
+plt.scatter(x, y1, c='0.25', label='scatter figure')
 
-<p>你可以关注我的<a href="https://github.com/xiang-tao">Github</a>.</p>
+# plot figure
+plt.plot(x, y, ls='--', lw=2, label='plot figure')
 
-<p>我的<a href="www.xiangtao.net.io">个人网站</a>.</p>
+# some clean up
+# 去掉上边框和有边框
+for spine in plt.gca().spines.keys():
+    if spine == 'top' or spine == 'right':
+        plt.gca().spines[spine].set_color('none')
+
+# x轴的刻度在下边框
+plt.gca().xaxis.set_ticks_position('bottom')
+
+# y轴的刻度在左边框
+plt.gca().yaxis.set_ticks_position('left')
+
+# 设置x轴、y轴范围
+plt.xlim(0.0, 4.0)
+plt.ylim(-3.0, 3.0)
+
+# 设置x轴、y轴标签
+plt.xlabel('x_axis')
+plt.ylabel('y_axis')
+
+# 绘制x、y轴网格
+plt.grid(True, ls=':', color='r')
+
+# 绘制水平参考线
+plt.axhline(y=0.0, c='r', ls='--', lw=2)
+
+# 绘制垂直参考区域
+plt.axvspan(xmin=1.0, xmax=2.0, facecolor='y', alpha=0.5)
+
+# 绘制注解
+plt.annotate('maximum', xy=(np.pi / 2, 1.0), xytext=((np.pi / 2) + 0.15, 1.5),
+             weight='bold', color='r', arrowprops=dict(arrowstyle='-&gt;',
+                                                       connectionstyle='arc3', color='r'))
+
+# 绘制注解
+plt.annotate('spines', xy=(0.75, -3), xytext=(0.35, -2.25),
+             weight='bold', color='r', arrowprops=dict(arrowstyle='-&gt;',
+                                                       connectionstyle='arc3', color='r'))
+
+# 绘制注解
+plt.annotate('', xy=(0, -2.78), xytext=(0.4, -2.32),
+             weight='bold', color='r', arrowprops=dict(arrowstyle='-&gt;',
+                                                       connectionstyle='arc3', color='r'))
+
+# 绘制注解
+plt.annotate('', xy=(3.5, -2.98), xytext=(3.6, -2.7),
+             weight='bold', color='r', arrowprops=dict(arrowstyle='-&gt;',
+                                                       connectionstyle='arc3', color='r'))
+
+# 绘制文本
+plt.text(3.6, -2.70, "'|' is tickline", weight='bold', color='b')
+plt.text(3.6, -2.95, "3.5 is tickline", weight='bold', color='b')
+
+plt.title("structure of matplotlib")
+
+plt.legend(loc='upper right')
+
+plt.show() 
+  </code></pre>
+</details>
+
+
+  </section>
+
+</article>
+
+<section>
+
+           
+            </div>
+            <script type="text/javascript">
+            function dashangToggle(){
+              $(".hide_box-play").fadeToggle();
+              $(".shang_box-play").fadeToggle();
+            }
+            </script>
+
+            <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';"></div>
+
+            <style type="text/css">
+              .content-play{width:80%;margin-top: 20px;margin-bottom: 10px;height:40px;}
+              .hide_box-play{z-index:999;filter:alpha(opacity=50);background:#666;opacity: 0.5;-moz-opacity: 0.5;left:0;top:0;height:99%;width:100%;position:fixed;display:none;}
+              .shang_box-play{width:540px;height:540px;padding:10px;background-color:#fff;border-radius:10px;position:fixed;z-index:1000;left:50%;top:50%;margin-left:-280px;margin-top:-280px;border:1px dotted #dedede;display:none;}
+              .shang_box-play img{border:none;border-width:0;}
+              .dashang{display:block;width:100px;margin:5px auto;height:25px;line-height:25px;padding:10px;background-color:#E74851;color:#fff;text-align:center;text-decoration:none;border-radius:10px;font-weight:bold;font-size:16px;transition: all 0.3s;}
+              .dashang:hover{opacity:0.8;padding:15px;font-size:18px;}
+              .shang_close-play{float:right;display:inline-block;
+                margin-right: 10px;margin-top: 20px;
+              }
+              .shang_logo{display:block;text-align:center;margin:20px auto;}
+              .shang_tit-play{width: 100%;height: 75px;text-align: center;line-height: 66px;color: #a3a3a3;font-size: 16px;background: url('/images/payimg/cy-reward-title-bg.jpg');font-family: 'Microsoft YaHei';margin-top: 7px;margin-right:2px;}
+              .shang_tit-play p{color:#a3a3a3;text-align:center;font-size:16px;}
+              .shang_payimg{width:140px;padding:10px;padding-left: 80px; /*border:6px solid #EA5F00;**/margin:0 auto;border-radius:3px;height:140px;display:inline-block;}
+              .shang_payimg img{display:inline-block;margin-right:10px;float:left;text-align:center;width:140px;height:140px; }
+              .pay_explain{text-align:center;margin:10px auto;font-size:12px;color:#545454;}
+              .shang_payselect{text-align:center;margin:0 auto;margin-top:40px;cursor:pointer;height:60px;width:500px;margin-left:110px;}
+              .shang_payselect .pay_item{display:inline-block;margin-right:140px;float:left;}
+              .shang_info-play{clear:both;}
+              .shang_info-play p,.shang_info-play a{color:#C3C3C3;text-align:center;font-size:12px;text-decoration:none;line-height:2em;}
+            </style>
+
+       <ul class="pager">
+        
+        <li class="previous">
+            <a href="/2021/05/myfirst/" data-toggle="tooltip" data-placement="top" title="我的第一篇博客">上一篇：  <span>我的第一篇博客</span>
+            </a>
+        </li>
+        
+        
+    </ul>
+</section>
 
 <section class="post-comments">
 
@@ -217,9 +358,6 @@
 
 </section>
 
-
-  </section>
-</article>
 
             <section class="footer">
     <footer>

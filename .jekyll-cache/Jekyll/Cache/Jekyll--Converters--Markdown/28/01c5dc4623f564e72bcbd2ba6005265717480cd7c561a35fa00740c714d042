@@ -1,17 +1,11 @@
----
-layout: post
-title: Python-Matplotlib-Chapter1
-tags: Python 
----
-
-# 1.1
-## Figure1.1
-![chapter_1_1](https://raw.githubusercontent.com/xiang-tao/image-hosting/master/picture/chapter_1_1.2rderkjbfps0.png)
+I"�	<h1 id="11">1.1</h1>
+<h2 id="figure11">Figure1.1</h2>
+<p><img src="https://raw.githubusercontent.com/xiang-tao/image-hosting/master/picture/chapter_1_1.2rderkjbfps0.png" alt="chapter_1_1" /></p>
 
 <details>
   <summary>View Code</summary>
   <pre><code> 
-import matplotlib.pyplot as plt
+ import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib import cm as cm
 
@@ -57,22 +51,22 @@ plt.axvspan(xmin=1.0, xmax=2.0, facecolor='y', alpha=0.5)
 
 # 绘制注解
 plt.annotate('maximum', xy=(np.pi / 2, 1.0), xytext=((np.pi / 2) + 0.15, 1.5),
-             weight='bold', color='r', arrowprops=dict(arrowstyle='->',
+             weight='bold', color='r', arrowprops=dict(arrowstyle='-&gt;',
                                                        connectionstyle='arc3', color='r'))
 
 # 绘制注解
 plt.annotate('spines', xy=(0.75, -3), xytext=(0.35, -2.25),
-             weight='bold', color='r', arrowprops=dict(arrowstyle='->',
+             weight='bold', color='r', arrowprops=dict(arrowstyle='-&gt;',
                                                        connectionstyle='arc3', color='r'))
 
 # 绘制注解
 plt.annotate('', xy=(0, -2.78), xytext=(0.4, -2.32),
-             weight='bold', color='r', arrowprops=dict(arrowstyle='->',
+             weight='bold', color='r', arrowprops=dict(arrowstyle='-&gt;',
                                                        connectionstyle='arc3', color='r'))
 
 # 绘制注解
 plt.annotate('', xy=(3.5, -2.98), xytext=(3.6, -2.7),
-             weight='bold', color='r', arrowprops=dict(arrowstyle='->',
+             weight='bold', color='r', arrowprops=dict(arrowstyle='-&gt;',
                                                        connectionstyle='arc3', color='r'))
 
 # 绘制文本
@@ -87,5 +81,4 @@ plt.show()
   </code></pre>
 </details>
 
- 
-
+:ET
