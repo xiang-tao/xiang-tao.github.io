@@ -6,7 +6,8 @@ tags: Python
 
 # 1.1
 ## Figure1.1
-![chapter_1_1](https://raw.githubusercontent.com/xiang-tao/image-hosting/master/picture/chapter_1_1.2rderkjbfps0.png)
+
+![chapter_1_1](https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/picture/chapter_1_1.2rderkjbfps0.png)
 
 <details>
   <summary>View Code</summary>

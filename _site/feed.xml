@@ -5,15 +5,16 @@
     <description>Welcome to my personal website~</description>
     <link>www.xiangtao.net.cn/</link>
     <atom:link href="www.xiangtao.net.cn/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 15 May 2021 21:37:09 +0800</pubDate>
-    <lastBuildDate>Sat, 15 May 2021 21:37:09 +0800</lastBuildDate>
+    <pubDate>Sun, 16 May 2021 09:21:12 +0800</pubDate>
+    <lastBuildDate>Sun, 16 May 2021 09:21:12 +0800</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
     
       <item>
         <title>Python-Matplotlib-Chapter1</title>
         <description>&lt;h1 id=&quot;11&quot;&gt;1.1&lt;/h1&gt;
 &lt;h2 id=&quot;figure11&quot;&gt;Figure1.1&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/xiang-tao/image-hosting/master/picture/chapter_1_1.2rderkjbfps0.png&quot; alt=&quot;chapter_1_1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/picture/chapter_1_1.2rderkjbfps0.png&quot; alt=&quot;chapter_1_1&quot; /&gt;&lt;/p&gt;
 
 &lt;details&gt;
   &lt;summary&gt;View Code&lt;/summary&gt;

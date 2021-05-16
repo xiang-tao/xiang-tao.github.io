@@ -1,9 +1,12 @@
-I"+
-<h1 id="11">1.1</h1>
+I"�	<h1 id="11">1.1</h1>
 <h2 id="figure11">Figure1.1</h2>
-<p><img src="https://raw.githubusercontent.com/xiang-tao/image-hosting/master/picture/chapter_1_1.2rderkjbfps0.png" alt="chapter_1_1" /></p>
 
-<pre><code class="language-Python">import matplotlib.pyplot as plt
+<p><img src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/picture/chapter_1_1.2rderkjbfps0.png" alt="chapter_1_1" /></p>
+
+<details>
+  <summary>View Code</summary>
+  <pre><code> 
+import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib import cm as cm
 
@@ -75,15 +78,7 @@ plt.title("structure of matplotlib")
 
 plt.legend(loc='upper right')
 
-plt.show()
-</code></pre>
-
-<details>
-  <summary>展开查看</summary>
-  <pre><code> 
-	 import matplotlib.pyplot as plt
-	 import numpy as np
-	 from matplotlib import cm as cm   
+plt.show() 
   </code></pre>
 </details>
 
