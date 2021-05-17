@@ -5,9 +5,391 @@
     <description>Welcome to my personal website~</description>
     <link>www.xiangtao.net.cn/</link>
     <atom:link href="www.xiangtao.net.cn/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 16 May 2021 09:21:12 +0800</pubDate>
-    <lastBuildDate>Sun, 16 May 2021 09:21:12 +0800</lastBuildDate>
+    <pubDate>Mon, 17 May 2021 10:27:46 +0800</pubDate>
+    <lastBuildDate>Mon, 17 May 2021 10:27:46 +0800</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>ubuntu下基于linux的一些常用终端命令</title>
+        <description>&lt;h1 id=&quot;0-自动补全tab键&quot;&gt;0. 自动补全：Tab键&lt;/h1&gt;
+
+&lt;p&gt;如果有歧义，则再按一下Tab键盘就有多种选择。&lt;/p&gt;
+
+&lt;h1 id=&quot;1-ls命令&quot;&gt;1. ls命令&lt;/h1&gt;
+
+&lt;p&gt;-a:显示文件下所有文件包括隐藏文件，即：ls -a&lt;/p&gt;
+
+&lt;p&gt;-l:以列表的形式展现文件信息，包含了多种信息&lt;/p&gt;
+
+&lt;p&gt;-h:结合-l使用，将文件信息中的文件大小显示为kb,即：ls -lh&lt;/p&gt;
+
+&lt;p&gt;与通配符的连用：*表示任意多个字符，?表示一个字符&lt;/p&gt;
+
+&lt;p&gt;[]用法：ls [abc]cc.txt,显显示abc中任意一个与cc.txt结合的文件名字，即a或b或c，或者用[a-f]或[1-4]等。&lt;/p&gt;
+
+&lt;h1 id=&quot;2cd命令&quot;&gt;2.cd命令&lt;/h1&gt;
+
+&lt;p&gt;切换至主目录：cd 或 cd ~;(~表示用户主目录)&lt;/p&gt;
+
+&lt;p&gt;切换至根目录：cd /&lt;/p&gt;
+
+&lt;p&gt;cd - 表示刚使用过的两个目录之间来回切换。&lt;/p&gt;
+
+&lt;p&gt;cd .. 返回上一级目录，cd . 当前目录&lt;/p&gt;
+
+&lt;h1 id=&quot;3相对路径和绝对路径&quot;&gt;3.相对路径和绝对路径&lt;/h1&gt;
+
+&lt;p&gt;相对路径：是在当前目录下进行，例如: cd ./文件名 或者 cd ../文件名 或 cd ../../文件名&lt;/p&gt;
+
+&lt;p&gt;绝对路径：一般是以 / 或 ~ 开始，表示从根目录开始或者从主目录开始然后一级一级的往下进行，例如：cd /文件名/文件名  cd ~/文件名/文件名  等。&lt;/p&gt;
+
+&lt;h1 id=&quot;4touch命令&quot;&gt;4.touch命令&lt;/h1&gt;
+
+&lt;p&gt;touch 文件名：如果文件存在则修改文件的创建时间，如果文件不存在则创建该文件。&lt;/p&gt;
+
+&lt;p&gt;touch 文件名1 文件名2：可以同时创建多个文档。&lt;/p&gt;
+
+&lt;p&gt;touch 路径名/文件名：在对应的路径名下创建文件名。&lt;/p&gt;
+
+&lt;h1 id=&quot;5mkdir命令&quot;&gt;5.mkdir命令&lt;/h1&gt;
+
+&lt;p&gt;mkdir 文件名：创建一个目录&lt;/p&gt;
+
+&lt;p&gt;mddir 文件名1 文件名2： 创建多个目录。&lt;/p&gt;
+
+&lt;p&gt;mkdir -p 文件名：创建嵌套的多个级目录 例如：mkdir -p a/b/c&lt;/p&gt;
+
+&lt;p&gt;mkdir 路径名/目录名：在对应的目录路径下创建目录&lt;/p&gt;
+
+&lt;h1 id=&quot;6rm命令注意该命令删除文件或者目录时候不可恢复&quot;&gt;6.rm命令（注意该命令删除文件或者目录时候不可恢复&lt;/h1&gt;
+
+&lt;p&gt;rm 文档名：删除文档&lt;/p&gt;
+
+&lt;p&gt;rm 文档名1 文档名2：删除多个文档&lt;/p&gt;
+
+&lt;p&gt;rm -r 目录名：删除目录要加上-r&lt;/p&gt;
+
+&lt;p&gt;rm -rf 目录名：加上 -f 无需提示，直接强行删除目录&lt;/p&gt;
+
+&lt;p&gt;值得注意的是rm命令也可以和通配符结合使用，即* ? []等，见ls命令的描述。&lt;/p&gt;
+
+&lt;h1 id=&quot;7tree命令&quot;&gt;7.tree命令&lt;/h1&gt;
+
+&lt;p&gt;tree:显示当前目录下的目录分支结构&lt;/p&gt;
+
+&lt;p&gt;tree 路径名:显示路径名下的文件目录分支结构&lt;/p&gt;
+
+&lt;p&gt;tree -d:只显示目录，不显示文件&lt;/p&gt;
+
+&lt;h1 id=&quot;8cp命令&quot;&gt;8.cp命令&lt;/h1&gt;
+
+&lt;p&gt;cp 某文件路径/文件名 ./新的文件名：将某个路径下的文件复制到 ./ 下，即当前路径下。&lt;/p&gt;
+
+&lt;p&gt;cp 某文件路径/文件名 .：表示将某路径下的文件复制到当前文件夹下名字不变。&lt;/p&gt;
+
+&lt;p&gt;cp -i 某文件路径/文件名 ./新的文件名: -i 命令将会给出相关提示信息，例如相同文件是否覆盖等。&lt;/p&gt;
+
+&lt;p&gt;cp -r 目录名 目录名：复制目录加上 -r。（会将复制目录文件夹下的所有文件一并复制过去）&lt;/p&gt;
+
+&lt;p&gt;cp -r 目录名/{file1,file2,…} 目录名：可复制一个目录下的多个文档。&lt;/p&gt;
+
+&lt;h1 id=&quot;9mv命令&quot;&gt;9.mv命令&lt;/h1&gt;
+
+&lt;p&gt;mv 源文件 目标文件：移动文件夹或者目录/文件夹或目录重命名（相当于剪切）&lt;/p&gt;
+
+&lt;p&gt;mv命令的重命名：mv 源文件名 新的文件名，注意新文件名如果有相同的文件名与之一致会直接覆盖，不会提示，这样有危险，因此：&lt;/p&gt;
+
+&lt;p&gt;mv -i :加上 -i 就有提示信息了。&lt;/p&gt;
+
+&lt;h1 id=&quot;10cat和more命令&quot;&gt;10.cat和more命令&lt;/h1&gt;
+
+&lt;p&gt;cat 文件名：显示文件内容（一次性完整显示文档内容，当文本内容较少时候用cat，较多的内容文档用more来显示最好）&lt;/p&gt;
+
+&lt;p&gt;cat -b 文件名：加入 -b 后会显示数据的行号(不包括空格所在的行)。&lt;/p&gt;
+
+&lt;p&gt;cat -n 文件名：加入 -n 后会包括空格在内的所有数据行号都会显示。&lt;/p&gt;
+
+&lt;p&gt;more 文件名：显示文件内容（会分部分显示，显示百分比内容即分屏显示，需要按 空格 显示手册下一屏，enter滚动下一行，b回滚一屏，f前滚一屏，q退出）&lt;/p&gt;
+
+&lt;h1 id=&quot;11grep命令&quot;&gt;11.grep命令&lt;/h1&gt;
+
+&lt;p&gt;grep 搜索内容（比如：numpy） 文件夹名：终端就会将文档中有关numpy的行展示出来，并将numpy高亮显示出来。&lt;/p&gt;
+
+&lt;p&gt;grep -n 搜索内容（比如：numpy） 文件名：加入 -n 后会显示所在的行号。&lt;/p&gt;
+
+&lt;p&gt;grep -v 搜索内容（比如：numpy） 文件名：加入 -v 后显示不包含numpy所在的行中的内容。&lt;/p&gt;
+
+&lt;p&gt;grep -vn 搜索内容（比如：numpy） 文件名：与 -v 相比，加入 -vn后呢会显示行号，即显示不包含numpy所在行内容，同时显示行号。&lt;/p&gt;
+
+&lt;p&gt;grep -i 搜索内容（比如：numpy） 文件名：加入 -i 后会忽略大小写，比如搜索的是numpy，那么NUmpY也会显示高亮。&lt;/p&gt;
+
+&lt;p&gt;注意：如果搜索的内容有空格，需要加入引号，将搜索内容引号包裹起来，例如：&lt;/p&gt;
+
+&lt;p&gt;grep -vn “hello numpy” 文件名。&lt;/p&gt;
+
+&lt;p&gt;模式查找：行首查找（即只查找行首的内容）&lt;/p&gt;
+
+&lt;p&gt;grep ^numpy 文件名：加入 ^ 符号即可至搜索行首的numpy并高亮。&lt;/p&gt;
+
+&lt;p&gt;同理行尾查找，在后面加上 $ 符号即可，例如：&lt;/p&gt;
+
+&lt;p&gt;grep numpy$ 文件名：在numpy后面加上 $ 符号。&lt;/p&gt;
+
+&lt;p&gt;注意：行首行尾查找也可与 -i -v -n 等命令结合使用。&lt;/p&gt;
+
+&lt;h1 id=&quot;12echo命令&quot;&gt;12.echo命令&lt;/h1&gt;
+
+&lt;p&gt;echo 任意的内容：例如：echo hello会显示hello,  echo hello world则会显示hello world,该命令的用处主要是与重定向结合使用。&lt;/p&gt;
+
+&lt;h1 id=&quot;13重定向-and&quot;&gt;13.重定向&amp;gt; and »&lt;/h1&gt;
+
+&lt;p&gt;linux允许将命令执行结果重定向到一个文件&lt;/p&gt;
+
+&lt;p&gt;将本应显示在终端上的内容 输出/追加 到指定的文件夹中，其中：&lt;/p&gt;
+
+&lt;p&gt;&amp;gt;:表示输出，会覆盖文件原有的内容&lt;/p&gt;
+
+&lt;p&gt;&amp;gt;&amp;gt;:表示追加，会将内容追加到已有文件的末尾，例如：&lt;/p&gt;
+
+&lt;p&gt;echo hello python &amp;gt; a:会将hello写入到文件a中，（如果没有a这个文件，则会新建一个文件a）&lt;/p&gt;
+
+&lt;p&gt;再比如：ls -lh会以列表形式显示相关信息，这时候用：&lt;/p&gt;
+
+&lt;p&gt;ls -lh &amp;gt; a:就会将ls -lh显示的信息写入到文件a中。但是这个时候会把hello world内容覆盖掉，如果不要覆盖，那就用 » 符号即可：ls -lh » a&lt;/p&gt;
+
+&lt;p&gt;还有很多结合使用命令的内容，例如(此处以文件a 为名)：&lt;/p&gt;
+
+&lt;p&gt;tree » a , ls » a ,等&lt;/p&gt;
+
+&lt;h1 id=&quot;14管道&quot;&gt;14.管道|&lt;/h1&gt;
+
+&lt;p&gt;命令 | 命令：例如：&lt;/p&gt;
+
+&lt;p&gt;ls -lah | more  or ls -lah | grep hello等，左边的命令将输出的信息传递给右边的命令进行操作，具体使用很广泛可以自行百度。&lt;/p&gt;
+
+&lt;h1 id=&quot;5关机重启命令shutdown&quot;&gt;5.关机重启命令shutdown&lt;/h1&gt;
+
+&lt;p&gt;shutdown : 一分钟后关机，可以在一分钟内使用 shutdown -c取消关机&lt;/p&gt;
+
+&lt;p&gt;shutdown -r now:加入 -r 怎是重启，now马上重启&lt;/p&gt;
+
+&lt;p&gt;shutdown 20:30  :  将在晚上八点半关机 或 shutdown -h 20:30&lt;/p&gt;
+
+&lt;p&gt;shutdown +10 : 将在10分钟后关机 或 shutdown -h +10&lt;/p&gt;
+
+&lt;p&gt;shutdown -h now : 立即关机 或 shutdown now&lt;/p&gt;
+
+&lt;h1 id=&quot;16chmod命令&quot;&gt;16.chmod命令&lt;/h1&gt;
+
+&lt;p&gt;chmod +/-rwx 文件名/目录名：其中 + 表示怎家权限，- 表示减少权限，r w x分别表示可读 可写 可执行权限。&lt;/p&gt;
+
+&lt;p&gt;可通过ls -l显示的信息查看相关文件的权限，具体请看b站上视频讲解或者百度。&lt;/p&gt;
+
+&lt;p&gt;可执行权限可通过 ./文件名 执行，例如c++编译后的a.out文件等。同时一般的文件夹都要有可执行的权限，否则利用cd ls等命令无法进入文件或者查看文件信息等。&lt;/p&gt;
+
+&lt;h2 id=&quot;重要的内容&quot;&gt;重要的内容&lt;/h2&gt;
+
+&lt;p&gt;相关权限的值：r  :  4     w : 2   x  :  1，那么7=1+2+4表示可执行可读可写，6=4+2表示可读可写等。&lt;/p&gt;
+
+&lt;p&gt;chmod -R 777 文件名/目录名：加入 -R 是将文件夹下所有递归的文件权限一并修改，而777表示本身用户，组用户，其他用户的权限均为7,即拥有可读可写可执行权限（但是通过鼠标执行时候我自己的电脑把我当作了其他用户）。&lt;/p&gt;
+
+&lt;h1 id=&quot;17压缩解压相关命令rar-tar-zip-targz&quot;&gt;17.压缩解压相关命令rar tar zip tar.gz&lt;/h1&gt;
+
+&lt;h2 id=&quot;打包和解包&quot;&gt;打包和解包&lt;/h2&gt;
+
+&lt;p&gt;打包文件：tar -cvf 打包的文件名.tar 被打包的文件(或者是 路径名/被打包的文件)&lt;/p&gt;
+
+&lt;p&gt;例如：tar -cvf py.tar 1.py 2.py 3.py:即将折三个文件打包在py.tar中。&lt;/p&gt;
+
+&lt;p&gt;注意：此处的打包不等于压缩。&lt;/p&gt;
+
+&lt;p&gt;解包文件：tar -xvf 打包文件名.tar&lt;/p&gt;
+
+&lt;h2 id=&quot;参数说明&quot;&gt;参数说明：&lt;/h2&gt;
+
+&lt;p&gt;c : 生成档案文件，创建打包文件&lt;/p&gt;
+
+&lt;p&gt;x : 解开档案文件&lt;/p&gt;
+
+&lt;p&gt;v : 列出解压或者压缩时候的详细过程&lt;/p&gt;
+
+&lt;p&gt;f : 指定档案文件名称，f后面一定是.tar文件，所以必须放在选项最后。&lt;/p&gt;
+
+&lt;p&gt;注意f必须放在选项最后&lt;/p&gt;
+
+&lt;h2 id=&quot;压缩和解压gzip&quot;&gt;压缩和解压gzip&lt;/h2&gt;
+
+&lt;p&gt;压缩文件： tar -zcvf 打包文件.tar.gz 被压缩的文件（或某路径下的被压缩文件）&lt;/p&gt;
+
+&lt;p&gt;例如：tar -zcvf py.tar.gz *.py&lt;/p&gt;
+
+&lt;p&gt;解压文件：tar -zxvf 打包的文件.tar.gz&lt;/p&gt;
+
+&lt;p&gt;解压到指定的目录：tar -zxvf 打包的文件.tar.gz -C 目标路径&lt;/p&gt;
+
+&lt;p&gt;注意 -C 后面的目标路径必须存在，还有就是此处的是大写C.&lt;/p&gt;
+
+&lt;p&gt;此处多了 -z 是tar命令直接调用了gzip命令&lt;/p&gt;
+
+&lt;h2 id=&quot;linux下的另为一种压缩格式bzip2&quot;&gt;linux下的另为一种压缩格式bzip2:&lt;/h2&gt;
+
+&lt;p&gt;与gzip几乎一样，只是在命令上和后缀名上有一点变化：&lt;/p&gt;
+
+&lt;p&gt;例如压缩文件：tar -jcvf py.tar.bz2 *.py&lt;/p&gt;
+
+&lt;p&gt;解压文件：tar -jxvf 打包的文件.tar.bz2&lt;/p&gt;
+
+&lt;p&gt;除此之外，关于解压.zip与.rar文件的命令是unzip与unrar:&lt;/p&gt;
+
+&lt;h2 id=&quot;关于zip&quot;&gt;关于zip:&lt;/h2&gt;
+
+&lt;p&gt;-o选项，不询问用户，直接覆盖源文件&lt;/p&gt;
+
+&lt;p&gt;-d选项，用户可以指定一个解压到指定目录&lt;/p&gt;
+
+&lt;p&gt;例如：unzip 解压文件名&lt;/p&gt;
+
+&lt;p&gt;unzip -d 解压路径 解压文件名&lt;/p&gt;
+
+&lt;p&gt;unzip -o -d 解压路径 解压文件名&lt;/p&gt;
+
+&lt;p&gt;用命令压缩文件如：zip -r test.zip 01.py 02.py&lt;/p&gt;
+
+&lt;p&gt;再比如： zip -r test1.zip aa将目录aa压缩名为test1.zip&lt;/p&gt;
+
+&lt;p&gt;-r是递归压缩，即内部文件一并压缩&lt;/p&gt;
+
+&lt;h2 id=&quot;关于rar&quot;&gt;关于rar:&lt;/h2&gt;
+
+&lt;p&gt;压缩文件：rar a -r bb.rar *py，将后缀含有py的文件压缩到bb.rar中。&lt;/p&gt;
+
+&lt;p&gt;解压文件：unrar x 文件名&lt;/p&gt;
+
+&lt;p&gt;a:添加到压缩文件&lt;/p&gt;
+
+&lt;p&gt;-r 递归处理&lt;/p&gt;
+
+&lt;p&gt;x 以绝对路径解压文件&lt;/p&gt;
+
+&lt;p&gt;说明：rar一般是windows常用的压缩，zip则是mac常用的压缩，linux常用的是tar.gz,但是遗憾的是该后缀似乎在另外的系统上难以解压，但是zip是三个系统都支持的格式，因此一般用zip.还有就是关于一些压缩文件来自于windows时候是乱码，可以通过一定的编码格式解决，但是解压命令unar是一款很厉害的linux的解压神器，后缀名为rar,zip等windows的压缩文件都能够正确解压，还会自动封装到一个文件夹中，且不会乱码，用法是：unar 压缩文件名&lt;/p&gt;
+
+&lt;h2 id=&quot;linux下最强解压unar命令&quot;&gt;linux下最强解压：unar命令&lt;/h2&gt;
+&lt;p&gt;unar + 文件名&lt;/p&gt;
+
+&lt;p&gt;可以解压来自linux windows mac三个系统下的压缩文件，不会乱码.&lt;/p&gt;
+
+&lt;h1 id=&quot;18apt简介&quot;&gt;18.apt简介&lt;/h1&gt;
+
+&lt;p&gt;安装软件：sudo apt install 软件名&lt;/p&gt;
+
+&lt;p&gt;卸载软件：sudo apt remove 软件名&lt;/p&gt;
+
+&lt;p&gt;更新软件：sudo apt upgrade&lt;/p&gt;
+
+&lt;h1 id=&quot;19which命令&quot;&gt;19.which命令&lt;/h1&gt;
+
+&lt;p&gt;which 软件名　　例如：which python3  可查到python3的安装路径&lt;/p&gt;
+</description>
+        <pubDate>Mon, 17 May 2021 00:00:00 +0800</pubDate>
+        <link>www.xiangtao.net.cn/2021/05/ubuntu2/</link>
+        <guid isPermaLink="true">www.xiangtao.net.cn/2021/05/ubuntu2/</guid>
+        
+        <category>linux</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>ubuntu下一些常用工具的安装</title>
+        <description>&lt;h1 id=&quot;ubuntu中谷歌浏览器的安装&quot;&gt;ubuntu中谷歌浏览器的安装&lt;/h1&gt;
+&lt;h2 id=&quot;第一步下载谷歌浏览器&quot;&gt;第一步：下载谷歌浏览器&lt;/h2&gt;
+&lt;p&gt;直接下载谷歌：&lt;a href=&quot;https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb&quot;&gt;下载链接linux版本&lt;/a&gt;
+        间接下载谷歌：&lt;a href=&quot;https://www.google.cn/chrome/thank-you.html?installdataindex=empty&amp;amp;statcb=0&amp;amp;defaultbrowser=0&quot;&gt;googel&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;第二步在下载谷歌安装包所在的文件中打开终端&quot;&gt;第二步：在下载谷歌安装包所在的文件中打开终端&lt;/h2&gt;
+&lt;h2 id=&quot;第三步依次执行如下命令即可&quot;&gt;第三步依次执行如下命令即可：&lt;/h2&gt;
+&lt;p&gt;sudo apt install libappindicator1 libindicator7          //这是安装谷歌之前需要安装的两个包，libappindicator1 libindicator7&lt;/p&gt;
+
+&lt;p&gt;sudo dpkg -i google-chrome-stable_current_amd64.deb      //使用sudo dpkg -i + deb文件名字安装&lt;/p&gt;
+
+&lt;p&gt;或许所有的deb文件都可以在ubantu中进行这样方式的安装，比如ubuntu下linux版本的qq，下载后缀名为deb的qq安装包然后用dpkg或者gdebi命令进行安装即可&lt;/p&gt;
+
+&lt;p&gt;sudo apt -f install（常用）或者sudo apt-get -f install    //安装过程可能会提示一些错误，比如依赖关系等，因此需要执行此命令，可以解决相关错误&lt;/p&gt;
+
+&lt;p&gt;脚下留心：dpkg安装包和apt安装命令一致，一般来说在ubuntu中dpkg对deb文件进行安装很不错，但是或多或少会出现安装依赖错误及一些难以预测的问题，而gdebi则是dpkg的升级版，可以直接解决相关的依赖问题，而不用再用sudo apt -f install命令进行操作，详细见wps的安装过程用到了gdebi.(安装gdepi：sudo apt install gdebi)&lt;/p&gt;
+
+&lt;h1 id=&quot;ubuntu中搜狗输入法的安装&quot;&gt;ubuntu中搜狗输入法的安装&lt;/h1&gt;
+&lt;h2 id=&quot;第一步下载搜狗输入法&quot;&gt;第一步：下载搜狗输入法&lt;/h2&gt;
+&lt;p&gt;网站：&lt;a href=&quot;https://pinyin.sogou.com/linux/&quot;&gt;下载链接&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;第二步修改语言栏设置为fcitx然后关闭&quot;&gt;第二步：修改语言栏设置为fcitx,然后关闭&lt;/h2&gt;
+&lt;h2 id=&quot;第三步在所在文件中打开终端&quot;&gt;第三步：在所在文件中打开终端&lt;/h2&gt;
+&lt;h2 id=&quot;第四步一次执行如下命令&quot;&gt;第四步：一次执行如下命令&lt;/h2&gt;
+&lt;p&gt;sudo dpkg -i + 搜狗文件名
+sudo apt -f install&lt;/p&gt;
+&lt;h2 id=&quot;第五步重启ubuntu即可&quot;&gt;第五步：重启ubuntu即可&lt;/h2&gt;
+&lt;p&gt;脚下留心：如果发现ubuntu语言栏还没有fcitx，则需要先进行如下操作
+1.打开Ubuntu terminal，输入以下命令，添加下载源到系统软件下载源
+sudo add-apt-repository ppa:fcitx-team/nightly
+2.使用以下命令更新系统列表最新软件信息
+sudo apt-get update
+3.使用以下命令安装fcitx
+sudo apt-get install fcitx
+4.使用以下命令安装fcitx配置管理工具
+sudo apt-get install fcitx-config-gtk
+5.使用以下命令安装fcitx-table-all软件包
+sudo apt-get install fcitx-table-all
+6.重启Ubuntu系统。然后打开System Settings下的Language Support（即打开语言栏设置）&lt;/p&gt;
+
+&lt;h1 id=&quot;ubuntu中wps的安装&quot;&gt;ubuntu中wps的安装&lt;/h1&gt;
+&lt;p&gt;其实可以安装微软的office，但是考虑到安装方法不是很熟悉还有就是在ubuntu下不知道如何免费激活，因此安装wps也是不错的选择&lt;/p&gt;
+&lt;h2 id=&quot;第一步下载wps&quot;&gt;第一步：下载wps&lt;/h2&gt;
+&lt;p&gt;官方网址：&lt;a href=&quot;https://www.wps.cn/product/wpslinux#&quot;&gt;下载链接&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;第二步执行命令-sudo-gdebi-wps文件名&quot;&gt;第二步：执行命令 sudo gdebi wps文件名&lt;/h2&gt;
+&lt;h2 id=&quot;第三步完成安装&quot;&gt;第三步：完成安装&lt;/h2&gt;
+
+&lt;h1 id=&quot;解决ubuntu中优盘不能够读取的问题步骤&quot;&gt;解决ubuntu中优盘不能够读取的问题步骤&lt;/h1&gt;
+&lt;p&gt;首先可以参考网址：&lt;a href=&quot;https://blog.csdn.net/langb2014/article/details/50165425&quot;&gt;参考链接１&lt;/a&gt;与 &lt;a href=&quot;https://blog.csdn.net/u010426270/article/details/52420231&quot;&gt;参考链接２&lt;/a&gt;
+或者你可以采纳以下操作步骤：&lt;/p&gt;
+&lt;h2 id=&quot;第一步&quot;&gt;第一步&lt;/h2&gt;
+&lt;p&gt;执行：sudo fdisk -l  //目的在于查看分区挂载情况&lt;/p&gt;
+&lt;h2 id=&quot;第二步用ntfsfix命令&quot;&gt;第二步用ntfsfix命令&lt;/h2&gt;
+&lt;p&gt;进行挂载区的修复：sudo ntfsfix /dev/sda8（例如修复/dev/sda8，具体看自己的）&lt;/p&gt;
+
+&lt;p&gt;脚下留心：若提示找不到ntfsfix命令，则需要安装ntfsfix，执行：sudo apt-get install ntfs-3g即可&lt;/p&gt;
+
+&lt;h2 id=&quot;第三步&quot;&gt;第三步&lt;/h2&gt;
+&lt;p&gt;弹出优盘再次插入电脑即可读取了&lt;/p&gt;
+
+&lt;h1 id=&quot;如何解决谷歌浏览器翻墙后访问网页有时候网页图片不能显示问题&quot;&gt;如何解决谷歌浏览器翻墙后访问网页有时候网页图片不能显示问题？&lt;/h1&gt;
+&lt;p&gt;最可靠且最好的方法：直接访问&lt;a href=&quot;https://githubusercontent.com.ipaddress.com/raw.githubusercontent.com&quot;&gt;链接&lt;/a&gt;，显示美国官方github的最新ip，更新到hosts文件夹中即可．
+现在已ubuntu系统为例子，解决在github网站中README.md描述文档中png图片无法显示且无法下载问题，解决步骤如下：&lt;/p&gt;
+&lt;h2 id=&quot;第一步-1&quot;&gt;第一步&lt;/h2&gt;
+&lt;p&gt;分析原因应该是访问国外网址ip的原因，因此需要修改/etc/hosts文件，尝试配置hosts文件，直接指向github的服务器。用ipaddress查一下raw.githubusercontent.com 的ip，可以参考ip:199.232.68.133 raw.githubusercontent.com和199.232.68.133 githubusercontent.com&lt;/p&gt;
+&lt;h2 id=&quot;第二步&quot;&gt;第二步&lt;/h2&gt;
+&lt;p&gt;那么如果进入hosts文件才有修改的权利呢，我们需要以root身份打开hosts文件，在etc文件下：输入vim hosts或者其他文件下则需要加入相应路径将199.232.68.133 raw.githubusercontent.com和199.232.68.133 githubusercontent.com
+注意：上面的两个ip我发现在2021年2月初已经无法使用，即无法加载github里面的图片，下面是更新的ip
+151.101.64.133 raw.githubusercontent.com
+151.101.0.133 raw.githubusercontent.com&lt;/p&gt;
+&lt;h2 id=&quot;第三步-1&quot;&gt;第三步&lt;/h2&gt;
+&lt;p&gt;两个ip都加入到hosts文件中，然后保存退出，刷新网页图片就可以显示了
+具体情况可以参考这两个网址：&lt;a href=&quot;https://blog.csdn.net/qq_41709370/article/details/106282229?utm_medium=distribute.pc_relevant_t0.none-task-blog-OPENSEARCH-1.not_use_machine_learn_pai&amp;amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-OPENSEARCH-1.not_use_machine_learn_pai&quot;&gt;网址１&lt;/a&gt;和&lt;a href=&quot;https://www.cnblogs.com/henryhappier/archive/2013/02/21/2920493.html&quot;&gt;网址２&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;k-vim安装后打开文件显示按enter键继续解决方案&quot;&gt;k-vim安装后打开文件显示按enter键继续解决方案：&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.codeprj.com/blog/9298f01.html&quot;&gt;参考链接&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;ubuntu下解压文件&quot;&gt;ubuntu下解压文件&lt;/h1&gt;
+&lt;p&gt;解压zip文件：unzip + 文件名。若是windows下的zip中文文件解压可能有乱码，此时要用unzip -O CP936 + 文件名&lt;/p&gt;
+
+&lt;p&gt;万能解压：unar，可以解决mac，windows下的各类压缩文件，且不乱码&lt;/p&gt;
+</description>
+        <pubDate>Mon, 17 May 2021 00:00:00 +0800</pubDate>
+        <link>www.xiangtao.net.cn/2021/05/ubuntu1/</link>
+        <guid isPermaLink="true">www.xiangtao.net.cn/2021/05/ubuntu1/</guid>
+        
+        <category>linux</category>
+        
+        
+      </item>
     
       <item>
         <title>Python-Matplotlib-Chapter1</title>

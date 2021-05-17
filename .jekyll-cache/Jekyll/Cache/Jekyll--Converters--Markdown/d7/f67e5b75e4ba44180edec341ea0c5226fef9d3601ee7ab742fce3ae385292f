@@ -1,0 +1,38 @@
+I"�
+<ul>
+  <li><a href="#0-自动补全tab键">0. 自动补全：Tab键</a></li>
+  <li><a href="#1-ls命令">1. ls命令</a></li>
+  <li><a href="#2cd命令">2.cd命令</a></li>
+  <li><a href="#3相对路径和绝对路径">3.相对路径和绝对路径</a></li>
+  <li><a href="#4touch命令">4.touch命令</a></li>
+  <li><a href="#5mkdir命令">5.mkdir命令</a></li>
+  <li><a href="#6rm命令注意该命令删除文件或者目录时候不可恢复">6.rm命令（注意该命令删除文件或者目录时候不可恢复</a></li>
+  <li><a href="#7tree命令">7.tree命令</a></li>
+  <li><a href="#8cp命令">8.cp命令</a></li>
+  <li><a href="#9mv命令">9.mv命令</a></li>
+  <li><a href="#10cat和more命令">10.cat和more命令</a></li>
+  <li><a href="#11grep命令">11.grep命令</a></li>
+  <li><a href="#12echo命令">12.echo命令</a></li>
+  <li><a href="#13重定向-and">13.重定向&gt; and »</a></li>
+  <li><a href="#14管道">14.管道|</a></li>
+  <li><a href="#5关机重启命令shutdown">5.关机重启命令shutdown</a></li>
+  <li><a href="#16chmod命令">16.chmod命令</a>
+    <ul>
+      <li><a href="#重要的内容">重要的内容</a></li>
+    </ul>
+  </li>
+  <li><a href="#17压缩解压相关命令rar-tar-zip-targz">17.压缩解压相关命令rar tar zip tar.gz</a>
+    <ul>
+      <li><a href="#打包和解包">打包和解包</a></li>
+      <li><a href="#参数说明">参数说明：</a></li>
+      <li><a href="#压缩和解压gzip">压缩和解压gzip</a></li>
+      <li><a href="#linux下的另为一种压缩格式bzip2">linux下的另为一种压缩格式bzip2:</a></li>
+      <li><a href="#关于zip">关于zip:</a></li>
+      <li><a href="#关于rar">关于rar:</a></li>
+      <li><a href="#linux下最强解压unar命令">linux下最强解压：unar命令</a></li>
+    </ul>
+  </li>
+  <li><a href="#18apt简介">18.apt简介</a></li>
+  <li><a href="#19which命令">19.which命令</a></li>
+</ul>
+:ET

@@ -1,0 +1,43 @@
+I"�	
+<ul>
+  <li><a href="#ubuntu中谷歌浏览器的安装">ubuntu中谷歌浏览器的安装</a>
+    <ul>
+      <li><a href="#第一步下载谷歌浏览器">第一步：下载谷歌浏览器</a></li>
+      <li><a href="#第二步在下载谷歌安装包所在的文件中打开终端">第二步：在下载谷歌安装包所在的文件中打开终端</a></li>
+      <li><a href="#第三步依次执行如下命令即可">第三步依次执行如下命令即可：</a></li>
+    </ul>
+  </li>
+  <li><a href="#ubuntu中搜狗输入法的安装">ubuntu中搜狗输入法的安装</a>
+    <ul>
+      <li><a href="#第一步下载搜狗输入法">第一步：下载搜狗输入法</a></li>
+      <li><a href="#第二步修改语言栏设置为fcitx然后关闭">第二步：修改语言栏设置为fcitx,然后关闭</a></li>
+      <li><a href="#第三步在所在文件中打开终端">第三步：在所在文件中打开终端</a></li>
+      <li><a href="#第四步一次执行如下命令">第四步：一次执行如下命令</a></li>
+      <li><a href="#第五步重启ubuntu即可">第五步：重启ubuntu即可</a></li>
+    </ul>
+  </li>
+  <li><a href="#ubuntu中wps的安装">ubuntu中wps的安装</a>
+    <ul>
+      <li><a href="#第一步下载wps">第一步：下载wps</a></li>
+      <li><a href="#第二步执行命令-sudo-gdebi-wps文件名">第二步：执行命令 sudo gdebi wps文件名</a></li>
+      <li><a href="#第三步完成安装">第三步：完成安装</a></li>
+    </ul>
+  </li>
+  <li><a href="#解决ubuntu中优盘不能够读取的问题步骤">解决ubuntu中优盘不能够读取的问题步骤</a>
+    <ul>
+      <li><a href="#第一步">第一步</a></li>
+      <li><a href="#第二步用ntfsfix命令">第二步用ntfsfix命令</a></li>
+      <li><a href="#第三步">第三步</a></li>
+    </ul>
+  </li>
+  <li><a href="#如何解决谷歌浏览器翻墙后访问网页有时候网页图片不能显示问题">如何解决谷歌浏览器翻墙后访问网页有时候网页图片不能显示问题？</a>
+    <ul>
+      <li><a href="#第一步-1">第一步</a></li>
+      <li><a href="#第二步">第二步</a></li>
+      <li><a href="#第三步-1">第三步</a></li>
+    </ul>
+  </li>
+  <li><a href="#k-vim安装后打开文件显示按enter键继续解决方案">k-vim安装后打开文件显示按enter键继续解决方案：</a></li>
+  <li><a href="#ubuntu下解压文件">ubuntu下解压文件</a></li>
+</ul>
+:ET
