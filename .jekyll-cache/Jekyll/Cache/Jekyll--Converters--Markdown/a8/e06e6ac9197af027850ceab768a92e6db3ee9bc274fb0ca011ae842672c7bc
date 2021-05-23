@@ -1,4 +1,4 @@
-I"�.<h1 id="0-自动补全tab键">0. 自动补全：Tab键</h1>
+I"�0<h1 id="0-自动补全tab键">0. 自动补全：Tab键</h1>
 
 <p>如果有歧义，则再按一下Tab键盘就有多种选择。</p>
 
@@ -150,24 +150,9 @@
 
 <h1 id="14管道">14.管道|</h1>
 
-<table>
-  <tbody>
-    <tr>
-      <td>命令</td>
-      <td>命令：例如：</td>
-    </tr>
-  </tbody>
-</table>
+<p>命令 | 命令：例如：</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>ls -lah</td>
-      <td>more  or ls -lah</td>
-      <td>grep hello等，左边的命令将输出的信息传递给右边的命令进行操作，具体使用很广泛可以自行百度。</td>
-    </tr>
-  </tbody>
-</table>
+<p>ls -lah | more  or ls -lah | grep hello等，左边的命令将输出的信息传递给右边的命令进行操作，具体使用很广泛可以自行百度。</p>
 
 <h1 id="5关机重启命令shutdown">5.关机重启命令shutdown</h1>
 
@@ -279,6 +264,8 @@
 <p>unar + 文件名</p>
 
 <p>可以解压来自linux windows mac三个系统下的压缩文件，不会乱码.</p>
+
+<p>除此之外，unzip -O cp936 + 文件名也可以解压一些乱码文件，解压后不会乱码，这个和unar命令之间可以相互合作使用，有时候他们是互补的（因为我遇到过用unzip -O cp936解压仍然是乱码，但是用unar解压就正常了，也同时遇到过unar解压仍是乱码，但是用cp396解压正常，因此优先选择用unar，后面可以再试试其他方法），unzip -O GBK，unzip -O GB18030或者用unar　-e GBK 也是可行的，都可以说明字体编码问题．此外lsar + 文件名可以看到解压文件内部内容，也可以用lsar -e GBK+文件名查看内容．unar -p 123456 test.zip可以指定解压密码（123456）.unar test.zip -o /home/dir/  指定解压路径.</p>
 
 <h1 id="18apt简介">18.apt简介</h1>
 

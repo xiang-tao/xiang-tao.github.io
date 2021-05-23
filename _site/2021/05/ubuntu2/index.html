@@ -498,6 +498,8 @@
 
 <p>可以解压来自linux windows mac三个系统下的压缩文件，不会乱码.</p>
 
+<p>除此之外，unzip -O cp936 + 文件名也可以解压一些乱码文件，解压后不会乱码，这个和unar命令之间可以相互合作使用，有时候他们是互补的（因为我遇到过用unzip -O cp936解压仍然是乱码，但是用unar解压就正常了，也同时遇到过unar解压仍是乱码，但是用cp396解压正常，因此优先选择用unar，后面可以再试试其他方法），unzip -O GBK，unzip -O GB18030或者用unar　-e GBK 也是可行的，都可以说明字体编码问题．此外lsar + 文件名可以看到解压文件内部内容，也可以用lsar -e GBK+文件名查看内容．unar -p 123456 test.zip可以指定解压密码（123456）.unar test.zip -o /home/dir/  指定解压路径.</p>
+
 <h1 id="18apt简介">18.apt简介</h1>
 
 <p>安装软件：sudo apt install 软件名</p>
@@ -556,6 +558,11 @@
             </a>
         </li>
         
+        
+        <li class="next">
+            <a href="/2021/05/vim/" data-toggle="tooltip" data-placement="top" title="vim基本操作">下一篇：  <span>vim基本操作</span>
+            </a>
+        </li>
         
     </ul>
 </section>

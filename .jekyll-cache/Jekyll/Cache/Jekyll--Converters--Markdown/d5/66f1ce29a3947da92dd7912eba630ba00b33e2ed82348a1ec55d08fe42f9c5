@@ -1,0 +1,4 @@
+I"�<h1 id="vim基本操作命令">vim基本操作命令</h1>
+<h2 id="进入相关的编辑模式命令">进入相关的编辑模式命令</h2>
+<p>基本上 vi/vim 共分为三种模式，分别是<strong>命令模式</strong>（Command mode），<strong>输入模式</strong>（Insert mode）和<strong>底线命令模式</strong>（Last line mode）。 这三种模式的作用分别是：</p>
+:ET

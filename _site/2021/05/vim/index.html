@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>vim基本操作</title>
+  <meta name="description" content="vim基本操作命令进入相关的编辑模式命令基本上 vi/vim 共分为三种模式，分别是命令模式（Command mode），输入模式（Insert mode）和底线命令模式（Last line mode）。 这三种模式的作用分别是：">
+  <meta name="author" content="leopardpan">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="vim基本操作">
+  <meta name="twitter:description" content="vim基本操作命令进入相关的编辑模式命令基本上 vi/vim 共分为三种模式，分别是命令模式（Command mode），输入模式（Insert mode）和底线命令模式（Last line mode）。 这三种模式的作用分别是：">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="vim基本操作">
+  <meta property="og:description" content="vim基本操作命令进入相关的编辑模式命令基本上 vi/vim 共分为三种模式，分别是命令模式（Command mode），输入模式（Insert mode）和底线命令模式（Last line mode）。 这三种模式的作用分别是：">
+  
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
+  <link href="/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="www.xiangtao.net.cn/2021/05/vim/">
+  <link rel="alternate" type="application/rss+xml" title="向涛" href="www.xiangtao.net.cn/feed.xml">
+  
+  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
+
+<!-- 站点统计 -->
+  <script 
+  async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>  
+
+<!-- 百度统计 -->
+  
+  <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?2021d6d9cbde9a628234bfd2aa9ffdfd";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+  </script>
+  
+
+<!-- google 统计 -->
+  
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-9005224472374751",
+    enable_page_level_ads: true
+  });
+</script>
+
+</head>
+
+
+  <body>
+
+    <span class="mobile btn-mobile-menu">        
+      <div class="nav_container">
+         <nav class="nav-menu-item" style = "float:right">
+            <i class="nav-menu-item">
+              <a href="/#blog" title="" class="blog-button">  博客主页
+              </a>
+            </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/archive" title="archive" class="btn-mobile-menu__icon">
+                      所有文章
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/tags" title="tags" class="btn-mobile-menu__icon">
+                      标签
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/support" title="support" class="btn-mobile-menu__icon">
+                      技术支持
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/about" title="about" class="btn-mobile-menu__icon">
+                      关于我
+                  </a>
+                </i>
+            
+          </nav>
+      </div>
+    </span>
+    
+    <header class="panel-cover panel-cover--collapsed" style="background-image: url('/images/background-cover.jpg')">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+        <!-- 头像效果-start -->
+        <div class="ih-item circle effect right_to_left">            
+            <a href="/#blog" title="前往 向涛 的主页" class="blog-button">
+                <div class="img"><img src="/images/avatar.jpg" alt="img"></div>
+                <div class="info">
+                    <div class="info-back">
+                        <h2> 
+                            
+                                研究生
+                            
+                        </h2>
+                        <p>
+                           
+                                数学
+                            
+                        </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- 头像效果-end -->
+        <h1 class="panel-cover__title panel-title"><a href="/#blog" title="link to homepage for 向涛" class="blog-button">向涛</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">个人网站</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">Welcome to my personal website~</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+        
+        
+
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客主页</a></li>
+                
+                  <li class="navigation__item"><a href="/archive" title="archive">所有文章</a></li>
+                
+                  <li class="navigation__item"><a href="/tags" title="tags">标签</a></li>
+                
+                  <li class="navigation__item"><a href="/support" title="support">技术支持</a></li>
+                
+                  <li class="navigation__item"><a href="/about" title="about">关于我</a></li>
+                
+              </ul>
+            </nav>
+          </div>          
+        </div>
+
+
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="panel-cover--overlay cover-clear"></div>
+    
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <head>
+  <link rel="stylesheet" href="/css/post.css">
+</head>
+
+<article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title">vim基本操作</h1>
+    <div class="post-meta">
+      <img src="/images/calendar.png" width="20px"/> 
+      <time datetime="2021-05-23 00:00:00 +0800" itemprop="datePublished" class="post-meta__date date">2021-05-23</time>  
+
+      <span id="busuanzi_container_page_pv"> | 阅读：<span id="busuanzi_value_page_pv"></span>次</span>
+    </p>
+    </div>
+  </header>
+
+  
+    <h2 class="post-title">目录</h2>
+    <ul>
+  <li><a href="#vim基本操作命令">vim基本操作命令</a>
+    <ul>
+      <li><a href="#进入相关的编辑模式命令">进入相关的编辑模式命令</a></li>
+      <li><a href="#复制">复制</a></li>
+      <li><a href="#剪切">剪切</a></li>
+      <li><a href="#粘贴">粘贴</a></li>
+      <li><a href="#光标位置">光标位置</a></li>
+      <li><a href="#回退和前进">回退和前进</a></li>
+      <li><a href="#光标移动">光标移动</a></li>
+      <li><a href="#多行缩进和删除多行前面的空格">多行缩进和删除多行前面的空格</a></li>
+      <li><a href="#k-vim配置基本信息">k-vim配置基本信息</a></li>
+    </ul>
+  </li>
+</ul>
+
+  
+
+  <section class="post">
+    <h1 id="vim基本操作命令">vim基本操作命令</h1>
+<h2 id="进入相关的编辑模式命令">进入相关的编辑模式命令</h2>
+<p>基本上 vi/vim 共分为三种模式，分别是<strong>命令模式</strong>（Command mode），<strong>输入模式</strong>（Insert mode）和<strong>底线命令模式</strong>（Last line mode）。 这三种模式的作用分别是：</p>
+
+<p>命令模式：
+用户刚刚启动 vi/vim，便进入了命令模式。
+此状态下敲击键盘动作会被Vim识别为命令，而非输入字符。比如我们此时按下i，并不会输入一个字符，i被当作了一个命令。</p>
+<ol>
+  <li>i 为『从目前光标所在处输入』， I 为『在目前所在行的第一个非空格符处开始输入』</li>
+  <li>a 为『从目前光标所在的下一个字符处开始输入』， A 为『从光标所在行的最后一个字符处开始输入』</li>
+  <li>这是英文字母 o 的大小写。o 为在目前光标所在的下一行处输入新的一行； O 为在目前光标所在的上一行处输入新的一行！
+命令模式只有一些最基本的命令，因此仍要依靠底线命令模式输入更多命令。</li>
+</ol>
+
+<p>输入模式:ESC，退出输入模式，切换到命令模式</p>
+
+<p>底线命令模式:</p>
+
+<p>在命令模式下按下:（英文冒号）就进入了底线命令模式。</p>
+
+<p>底线命令模式可以输入单个或多个字符的命令，可用的命令非常多。</p>
+
+<p>在底线命令模式中，基本的命令有（已经省略了冒号）：</p>
+
+<p>q 退出程序</p>
+
+<p>w 保存文件</p>
+
+<h2 id="复制">复制</h2>
+<p>yy  复制游标所在行整行 </p>
+
+<p>        2yy或y2y    复制 2 行</p>
+
+<p>        y^    复制至行首，或y0</p>
+
+<p>        y$    复制至行尾</p>
+
+<p>        yw    复制一个word</p>
+
+<p>        y2w    复制两个word </p>
+
+<p>        yG    复制至文件尾</p>
+
+<p>        y1G    复制至文件首</p>
+
+<p>当复制的行很多推荐下面的操作：</p>
+
+<p>即将９到15行的内容复制到16行后面</p>
+
+<p>：9，15 copy 16 或 ：9，15 co 16</p>
+
+<h2 id="剪切">剪切</h2>
+<p>dd    剪切游标所在行整行</p>
+
+<p>​        d^    剪切至行首，或d0</p>
+
+<p>​        d$    剪切至行尾</p>
+
+<p>​        dw    剪切一个word</p>
+
+<p>​        dG    剪切至文件尾</p>
+
+<p>当要剪切很多行推荐使用：</p>
+
+<p>：9，15 move 16  或 :9,15 m 16</p>
+
+<p>将第9行到第15行的文本内容移动到第16行的后面</p>
+
+<h2 id="粘贴">粘贴</h2>
+<p>小p:将复制的内容粘贴到光标所在的下一行</p>
+
+<p>大P:将复制的内容粘贴到光标所在的上一行</p>
+
+<h2 id="光标位置">光标位置</h2>
+<p>1.跳到文本的最后一行：按“G”,即“shift+g”</p>
+
+<p>2.跳到最后一行的最后一个字符 ： 先重复1的操作即按“G”，之后按“$”键，即“shift+4”。</p>
+
+<p>3.跳到第一行的第一个字符：先按两次“g”，</p>
+
+<p>4.跳转到当前行的第一个字符：在当前行按“0”。</p>
+
+<h2 id="回退和前进">回退和前进</h2>
+<p>u:回退一步</p>
+
+<p>crtl+r:前进一步</p>
+
+<h2 id="光标移动">光标移动</h2>
+<p>命令模式下：kjhl表示上下左右移动</p>
+
+<p>输入模式下:上下左右键进行移动</p>
+
+<p>可以在底线模式下输入命令：:n，进入到n行</p>
+
+<h2 id="多行缩进和删除多行前面的空格">多行缩进和删除多行前面的空格</h2>
+<p>删除空格：ctrl+v进入块模式，然后上下左右移动，选中多行以及多个空格，注意此时上下左右移动只能用kjhl键．
+多行缩进：</p>
+<ol>
+  <li>ESC之后，ctrl+v进入多行行首选中模式</li>
+  <li>使用上下键进行上下移动，选中多行行首</li>
+  <li>shift+i，进入插入模式</li>
+  <li>连续敲击4个空格（注意在敲击空格按键的时候，注意这个时候不能够多行立即缩进，显示的是仅仅一行进行缩进，在执行第五步的时候，才会出现多行缩进的效果）</li>
+  <li>然后按esc按键，即可发现，你选中的行都缩进了</li>
+</ol>
+
+<h2 id="k-vim配置基本信息">k-vim配置基本信息</h2>
+
+<p>注意, 以下 ‘,’ 代表<leader></leader></p>
+
+<ol>
+  <li>可以自己修改vimrc中配置，决定是否开启鼠标</li>
+</ol>
+
+<p>set mouse-=a           “ 鼠标暂不启用, 键盘党….
+set mouse=a            “ 开启鼠标</p>
+
+<ol>
+  <li>退出vim后，内容显示在终端屏幕, 可以用于查看和复制, 如果不需要可以关掉
+好处：误删什么的，如果以前屏幕打开，可以找回….惨痛的经历</li>
+</ol>
+
+<p>set t_ti= t_te=</p>
+
+<ol>
+  <li>可以自己修改vimrc决定是否使用方向键进行上下左右移动，默认关闭，强迫自己用 hjkl，可以注解
+hjkl  上下左右</li>
+</ol>
+
+<p>map <Left> <Nop></Nop></Left></p>
+
+<p>map <Right> <Nop></Nop></Right></p>
+
+<p>map <Up> <Nop></Nop></Up></p>
+
+<p>map <Down> <Nop></Nop></Down></p>
+
+<ol>
+  <li>上排F功能键</li>
+</ol>
+
+<p>F1 废弃这个键,防止调出系统帮助</p>
+
+<p>F2 set nu/nonu,行号开关，用于鼠标复制代码用</p>
+
+<p>F3 set list/nolist,显示可打印字符开关</p>
+
+<p>F4 set wrap/nowrap,换行开关</p>
+
+<p>F5 set paste/nopaste,粘贴模式paste_mode开关,用于有格式的代码粘贴</p>
+
+<p>F6 syntax on/off,语法开关，关闭语法可以加快大文件的展示</p>
+
+<p>F9 tagbar</p>
+
+<p>F10 运行当前文件(quickrun)</p>
+
+<ol>
+  <li>分屏移动</li>
+</ol>
+
+<p>ctrl + j/k/h/l   进行上下左右窗口跳转,不需要ctrl+w+jkhl</p>
+
+  </section>
+
+</article>
+
+<section>
+
+           
+            </div>
+            <script type="text/javascript">
+            function dashangToggle(){
+              $(".hide_box-play").fadeToggle();
+              $(".shang_box-play").fadeToggle();
+            }
+            </script>
+
+            <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';"></div>
+
+            <style type="text/css">
+              .content-play{width:80%;margin-top: 20px;margin-bottom: 10px;height:40px;}
+              .hide_box-play{z-index:999;filter:alpha(opacity=50);background:#666;opacity: 0.5;-moz-opacity: 0.5;left:0;top:0;height:99%;width:100%;position:fixed;display:none;}
+              .shang_box-play{width:540px;height:540px;padding:10px;background-color:#fff;border-radius:10px;position:fixed;z-index:1000;left:50%;top:50%;margin-left:-280px;margin-top:-280px;border:1px dotted #dedede;display:none;}
+              .shang_box-play img{border:none;border-width:0;}
+              .dashang{display:block;width:100px;margin:5px auto;height:25px;line-height:25px;padding:10px;background-color:#E74851;color:#fff;text-align:center;text-decoration:none;border-radius:10px;font-weight:bold;font-size:16px;transition: all 0.3s;}
+              .dashang:hover{opacity:0.8;padding:15px;font-size:18px;}
+              .shang_close-play{float:right;display:inline-block;
+                margin-right: 10px;margin-top: 20px;
+              }
+              .shang_logo{display:block;text-align:center;margin:20px auto;}
+              .shang_tit-play{width: 100%;height: 75px;text-align: center;line-height: 66px;color: #a3a3a3;font-size: 16px;background: url('/images/payimg/cy-reward-title-bg.jpg');font-family: 'Microsoft YaHei';margin-top: 7px;margin-right:2px;}
+              .shang_tit-play p{color:#a3a3a3;text-align:center;font-size:16px;}
+              .shang_payimg{width:140px;padding:10px;padding-left: 80px; /*border:6px solid #EA5F00;**/margin:0 auto;border-radius:3px;height:140px;display:inline-block;}
+              .shang_payimg img{display:inline-block;margin-right:10px;float:left;text-align:center;width:140px;height:140px; }
+              .pay_explain{text-align:center;margin:10px auto;font-size:12px;color:#545454;}
+              .shang_payselect{text-align:center;margin:0 auto;margin-top:40px;cursor:pointer;height:60px;width:500px;margin-left:110px;}
+              .shang_payselect .pay_item{display:inline-block;margin-right:140px;float:left;}
+              .shang_info-play{clear:both;}
+              .shang_info-play p,.shang_info-play a{color:#C3C3C3;text-align:center;font-size:12px;text-decoration:none;line-height:2em;}
+            </style>
+
+       <ul class="pager">
+        
+        <li class="previous">
+            <a href="/2021/05/ubuntu2/" data-toggle="tooltip" data-placement="top" title="ubuntu下基于linux的一些常用终端命令">上一篇：  <span>ubuntu下基于linux的一些常用终端命令</span>
+            </a>
+        </li>
+        
+        
+    </ul>
+</section>
+
+<section class="post-comments">
+
+
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTcxNs82Mjgz">
+      <script type="text/javascript">
+         (function(d, s) {
+             var j, e = d.getElementsByTagName(s)[0];
+
+             if (typeof LivereTower === 'function') { return; }
+             j = d.createElement(s);
+             j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+             j.async = true;
+             e.parentNode.insertBefore(j, e);
+         })(document, 'script');
+      </script>
+      <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+      </div>
+
+
+
+</section>
+
+
+            <section class="footer">
+    <footer>
+        <div class = "footer_div">  
+        <nav class="cover-navigation navigation--social">
+          <ul class="navigation">
+
+          
+          <!-- Github -->
+          <li class="navigation__item_social">
+            <a href="https://github.com/xiang-tao" title="@xiang-tao 的 Github" target="_blank">
+              <div class="footer-social-icon" style="background:url(/images/github.png);"></div>
+            </a>
+          </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+
+          
+          <!-- Email -->
+          <li class="navigation__item_social">
+            <a href="mailto:1689415053@qq.com" title="Contact me">
+              <div class="footer-social-icon" style="background:url(/images/email.png);"></div>
+            </a>
+          </li>
+          
+          
+          <!-- RSS -->
+          <li class="navigation__item_social">
+            <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+              <div class="footer-social-icon" style="background:url(/images/rss.png);"></div>
+              <span class="label">RSS</span>
+            </a>
+          </li>
+
+          </ul>
+        </nav>
+
+        </div>
+
+        <div class = "footer_div">  
+           <p class="copyright text-muted">
+            Copyright &copy; 向涛 2021 Theme by <a href="https://leopardpan.cn/">leopardpan</a> |
+            <iframe
+                style="margin-left: 2px; margin-bottom:-5px;"
+                frameborder="0" scrolling="0" width="91px" height="20px"
+                src="https://ghbtns.com/github-btn.html?user=leopardpan&repo=leopardpan.github.io&type=star&count=true" >
+            </iframe>
+            </p>
+        	<div align="right">
+    			<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+          <!-- 访问统计 -->
+          <span id="busuanzi_container_site_pv">
+            本站总访问量
+            <span id="busuanzi_value_site_pv"></span>次
+          </span>
+
+        </div>
+        <div>
+    </footer>
+</section>
+
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+<script type="text/javascript" src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+  </body>
+
+</html>

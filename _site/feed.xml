@@ -5,9 +5,182 @@
     <description>Welcome to my personal website~</description>
     <link>www.xiangtao.net.cn/</link>
     <atom:link href="www.xiangtao.net.cn/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 17 May 2021 10:27:46 +0800</pubDate>
-    <lastBuildDate>Mon, 17 May 2021 10:27:46 +0800</lastBuildDate>
+    <pubDate>Sun, 23 May 2021 21:12:14 +0800</pubDate>
+    <lastBuildDate>Sun, 23 May 2021 21:12:14 +0800</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>vim基本操作</title>
+        <description>&lt;h1 id=&quot;vim基本操作命令&quot;&gt;vim基本操作命令&lt;/h1&gt;
+&lt;h2 id=&quot;进入相关的编辑模式命令&quot;&gt;进入相关的编辑模式命令&lt;/h2&gt;
+&lt;p&gt;基本上 vi/vim 共分为三种模式，分别是&lt;strong&gt;命令模式&lt;/strong&gt;（Command mode），&lt;strong&gt;输入模式&lt;/strong&gt;（Insert mode）和&lt;strong&gt;底线命令模式&lt;/strong&gt;（Last line mode）。 这三种模式的作用分别是：&lt;/p&gt;
+
+&lt;p&gt;命令模式：
+用户刚刚启动 vi/vim，便进入了命令模式。
+此状态下敲击键盘动作会被Vim识别为命令，而非输入字符。比如我们此时按下i，并不会输入一个字符，i被当作了一个命令。&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;i 为『从目前光标所在处输入』， I 为『在目前所在行的第一个非空格符处开始输入』&lt;/li&gt;
+  &lt;li&gt;a 为『从目前光标所在的下一个字符处开始输入』， A 为『从光标所在行的最后一个字符处开始输入』&lt;/li&gt;
+  &lt;li&gt;这是英文字母 o 的大小写。o 为在目前光标所在的下一行处输入新的一行； O 为在目前光标所在的上一行处输入新的一行！
+命令模式只有一些最基本的命令，因此仍要依靠底线命令模式输入更多命令。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;输入模式:ESC，退出输入模式，切换到命令模式&lt;/p&gt;
+
+&lt;p&gt;底线命令模式:&lt;/p&gt;
+
+&lt;p&gt;在命令模式下按下:（英文冒号）就进入了底线命令模式。&lt;/p&gt;
+
+&lt;p&gt;底线命令模式可以输入单个或多个字符的命令，可用的命令非常多。&lt;/p&gt;
+
+&lt;p&gt;在底线命令模式中，基本的命令有（已经省略了冒号）：&lt;/p&gt;
+
+&lt;p&gt;q 退出程序&lt;/p&gt;
+
+&lt;p&gt;w 保存文件&lt;/p&gt;
+
+&lt;h2 id=&quot;复制&quot;&gt;复制&lt;/h2&gt;
+&lt;p&gt;yy  复制游标所在行整行 &lt;/p&gt;
+
+&lt;p&gt;        2yy或y2y    复制 2 行&lt;/p&gt;
+
+&lt;p&gt;        y^    复制至行首，或y0&lt;/p&gt;
+
+&lt;p&gt;        y$    复制至行尾&lt;/p&gt;
+
+&lt;p&gt;        yw    复制一个word&lt;/p&gt;
+
+&lt;p&gt;        y2w    复制两个word &lt;/p&gt;
+
+&lt;p&gt;        yG    复制至文件尾&lt;/p&gt;
+
+&lt;p&gt;        y1G    复制至文件首&lt;/p&gt;
+
+&lt;p&gt;当复制的行很多推荐下面的操作：&lt;/p&gt;
+
+&lt;p&gt;即将９到15行的内容复制到16行后面&lt;/p&gt;
+
+&lt;p&gt;：9，15 copy 16 或 ：9，15 co 16&lt;/p&gt;
+
+&lt;h2 id=&quot;剪切&quot;&gt;剪切&lt;/h2&gt;
+&lt;p&gt;dd    剪切游标所在行整行&lt;/p&gt;
+
+&lt;p&gt;​        d^    剪切至行首，或d0&lt;/p&gt;
+
+&lt;p&gt;​        d$    剪切至行尾&lt;/p&gt;
+
+&lt;p&gt;​        dw    剪切一个word&lt;/p&gt;
+
+&lt;p&gt;​        dG    剪切至文件尾&lt;/p&gt;
+
+&lt;p&gt;当要剪切很多行推荐使用：&lt;/p&gt;
+
+&lt;p&gt;：9，15 move 16  或 :9,15 m 16&lt;/p&gt;
+
+&lt;p&gt;将第9行到第15行的文本内容移动到第16行的后面&lt;/p&gt;
+
+&lt;h2 id=&quot;粘贴&quot;&gt;粘贴&lt;/h2&gt;
+&lt;p&gt;小p:将复制的内容粘贴到光标所在的下一行&lt;/p&gt;
+
+&lt;p&gt;大P:将复制的内容粘贴到光标所在的上一行&lt;/p&gt;
+
+&lt;h2 id=&quot;光标位置&quot;&gt;光标位置&lt;/h2&gt;
+&lt;p&gt;1.跳到文本的最后一行：按“G”,即“shift+g”&lt;/p&gt;
+
+&lt;p&gt;2.跳到最后一行的最后一个字符 ： 先重复1的操作即按“G”，之后按“$”键，即“shift+4”。&lt;/p&gt;
+
+&lt;p&gt;3.跳到第一行的第一个字符：先按两次“g”，&lt;/p&gt;
+
+&lt;p&gt;4.跳转到当前行的第一个字符：在当前行按“0”。&lt;/p&gt;
+
+&lt;h2 id=&quot;回退和前进&quot;&gt;回退和前进&lt;/h2&gt;
+&lt;p&gt;u:回退一步&lt;/p&gt;
+
+&lt;p&gt;crtl+r:前进一步&lt;/p&gt;
+
+&lt;h2 id=&quot;光标移动&quot;&gt;光标移动&lt;/h2&gt;
+&lt;p&gt;命令模式下：kjhl表示上下左右移动&lt;/p&gt;
+
+&lt;p&gt;输入模式下:上下左右键进行移动&lt;/p&gt;
+
+&lt;p&gt;可以在底线模式下输入命令：:n，进入到n行&lt;/p&gt;
+
+&lt;h2 id=&quot;多行缩进和删除多行前面的空格&quot;&gt;多行缩进和删除多行前面的空格&lt;/h2&gt;
+&lt;p&gt;删除空格：ctrl+v进入块模式，然后上下左右移动，选中多行以及多个空格，注意此时上下左右移动只能用kjhl键．
+多行缩进：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;ESC之后，ctrl+v进入多行行首选中模式&lt;/li&gt;
+  &lt;li&gt;使用上下键进行上下移动，选中多行行首&lt;/li&gt;
+  &lt;li&gt;shift+i，进入插入模式&lt;/li&gt;
+  &lt;li&gt;连续敲击4个空格（注意在敲击空格按键的时候，注意这个时候不能够多行立即缩进，显示的是仅仅一行进行缩进，在执行第五步的时候，才会出现多行缩进的效果）&lt;/li&gt;
+  &lt;li&gt;然后按esc按键，即可发现，你选中的行都缩进了&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;k-vim配置基本信息&quot;&gt;k-vim配置基本信息&lt;/h2&gt;
+
+&lt;p&gt;注意, 以下 ‘,’ 代表&lt;leader&gt;&lt;/leader&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;可以自己修改vimrc中配置，决定是否开启鼠标&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;set mouse-=a           “ 鼠标暂不启用, 键盘党….
+set mouse=a            “ 开启鼠标&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;退出vim后，内容显示在终端屏幕, 可以用于查看和复制, 如果不需要可以关掉
+好处：误删什么的，如果以前屏幕打开，可以找回….惨痛的经历&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;set t_ti= t_te=&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;可以自己修改vimrc决定是否使用方向键进行上下左右移动，默认关闭，强迫自己用 hjkl，可以注解
+hjkl  上下左右&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;map &lt;Left&gt; &lt;Nop&gt;&lt;/Nop&gt;&lt;/Left&gt;&lt;/p&gt;
+
+&lt;p&gt;map &lt;Right&gt; &lt;Nop&gt;&lt;/Nop&gt;&lt;/Right&gt;&lt;/p&gt;
+
+&lt;p&gt;map &lt;Up&gt; &lt;Nop&gt;&lt;/Nop&gt;&lt;/Up&gt;&lt;/p&gt;
+
+&lt;p&gt;map &lt;Down&gt; &lt;Nop&gt;&lt;/Nop&gt;&lt;/Down&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;上排F功能键&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;F1 废弃这个键,防止调出系统帮助&lt;/p&gt;
+
+&lt;p&gt;F2 set nu/nonu,行号开关，用于鼠标复制代码用&lt;/p&gt;
+
+&lt;p&gt;F3 set list/nolist,显示可打印字符开关&lt;/p&gt;
+
+&lt;p&gt;F4 set wrap/nowrap,换行开关&lt;/p&gt;
+
+&lt;p&gt;F5 set paste/nopaste,粘贴模式paste_mode开关,用于有格式的代码粘贴&lt;/p&gt;
+
+&lt;p&gt;F6 syntax on/off,语法开关，关闭语法可以加快大文件的展示&lt;/p&gt;
+
+&lt;p&gt;F9 tagbar&lt;/p&gt;
+
+&lt;p&gt;F10 运行当前文件(quickrun)&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;分屏移动&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;ctrl + j/k/h/l   进行上下左右窗口跳转,不需要ctrl+w+jkhl&lt;/p&gt;
+</description>
+        <pubDate>Sun, 23 May 2021 00:00:00 +0800</pubDate>
+        <link>www.xiangtao.net.cn/2021/05/vim/</link>
+        <guid isPermaLink="true">www.xiangtao.net.cn/2021/05/vim/</guid>
+        
+        <category>linux</category>
+        
+        
+      </item>
     
       <item>
         <title>ubuntu下基于linux的一些常用终端命令</title>
@@ -277,6 +450,8 @@
 &lt;p&gt;unar + 文件名&lt;/p&gt;
 
 &lt;p&gt;可以解压来自linux windows mac三个系统下的压缩文件，不会乱码.&lt;/p&gt;
+
+&lt;p&gt;除此之外，unzip -O cp936 + 文件名也可以解压一些乱码文件，解压后不会乱码，这个和unar命令之间可以相互合作使用，有时候他们是互补的（因为我遇到过用unzip -O cp936解压仍然是乱码，但是用unar解压就正常了，也同时遇到过unar解压仍是乱码，但是用cp396解压正常，因此优先选择用unar，后面可以再试试其他方法），unzip -O GBK，unzip -O GB18030或者用unar　-e GBK 也是可行的，都可以说明字体编码问题．此外lsar + 文件名可以看到解压文件内部内容，也可以用lsar -e GBK+文件名查看内容．unar -p 123456 test.zip可以指定解压密码（123456）.unar test.zip -o /home/dir/  指定解压路径.&lt;/p&gt;
 
 &lt;h1 id=&quot;18apt简介&quot;&gt;18.apt简介&lt;/h1&gt;
 
@@ -588,7 +763,7 @@ line 3 of code
         <link>www.xiangtao.net.cn/2021/05/myfirst/</link>
         <guid isPermaLink="true">www.xiangtao.net.cn/2021/05/myfirst/</guid>
         
-        <category>jekyll</category>
+        <category>markdown</category>
         
         
       </item>
