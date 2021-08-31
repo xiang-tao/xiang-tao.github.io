@@ -1,0 +1,160 @@
+I"�=<h1 id="11">1.1</h1>
+<h2 id="figure11">Figure1.1</h2>
+
+<p><img src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/picture/chapter_1_1.2rderkjbfps0.png" alt="chapter_1_1" /></p>
+
+<details>
+  <summary>View Code</summary>
+  <pre><code> 
+import matplotlib.pyplot as plt
+import numpy as np
+from matplotlib import cm as cm
+
+# define data
+x = np.linspace(0.5, 3.5, 100)
+y = np.sin(x)
+y1 = np.random.randn(100)
+
+# scatter figure
+plt.scatter(x, y1, c='0.25', label='scatter figure')
+
+# plot figure
+plt.plot(x, y, ls='--', lw=2, label='plot figure')
+
+# some clean up
+# 去掉上边框和有边框
+for spine in plt.gca().spines.keys():
+    if spine == 'top' or spine == 'right':
+        plt.gca().spines[spine].set_color('none')
+
+# x轴的刻度在下边框
+plt.gca().xaxis.set_ticks_position('bottom')
+
+# y轴的刻度在左边框
+plt.gca().yaxis.set_ticks_position('left')
+
+# 设置x轴、y轴范围
+plt.xlim(0.0, 4.0)
+plt.ylim(-3.0, 3.0)
+
+# 设置x轴、y轴标签
+plt.xlabel('x_axis')
+plt.ylabel('y_axis')
+
+# 绘制x、y轴网格
+plt.grid(True, ls=':', color='r')
+
+# 绘制水平参考线
+plt.axhline(y=0.0, c='r', ls='--', lw=2)
+
+# 绘制垂直参考区域
+plt.axvspan(xmin=1.0, xmax=2.0, facecolor='y', alpha=0.5)
+
+# 绘制注解
+plt.annotate('maximum', xy=(np.pi / 2, 1.0), xytext=((np.pi / 2) + 0.15, 1.5),
+             weight='bold', color='r', arrowprops=dict(arrowstyle='-&gt;',
+                                                       connectionstyle='arc3', color='r'))
+
+# 绘制注解
+plt.annotate('spines', xy=(0.75, -3), xytext=(0.35, -2.25),
+             weight='bold', color='r', arrowprops=dict(arrowstyle='-&gt;',
+                                                       connectionstyle='arc3', color='r'))
+
+# 绘制注解
+plt.annotate('', xy=(0, -2.78), xytext=(0.4, -2.32),
+             weight='bold', color='r', arrowprops=dict(arrowstyle='-&gt;',
+                                                       connectionstyle='arc3', color='r'))
+
+# 绘制注解
+plt.annotate('', xy=(3.5, -2.98), xytext=(3.6, -2.7),
+             weight='bold', color='r', arrowprops=dict(arrowstyle='-&gt;',
+                                                       connectionstyle='arc3', color='r'))
+
+# 绘制文本
+plt.text(3.6, -2.70, "'|' is tickline", weight='bold', color='b')
+plt.text(3.6, -2.95, "3.5 is tickline", weight='bold', color='b')
+
+plt.title("structure of matplotlib")
+
+plt.legend(loc='upper right')
+
+plt.show() 
+  </code></pre>
+</details>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">cm</span> <span class="k">as</span> <span class="n">cm</span>
+
+<span class="c1"># define data
+</span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="c1"># scatter figure
+</span><span class="n">plt</span><span class="p">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s">'0.25'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">'scatter figure'</span><span class="p">)</span>
+
+<span class="c1"># plot figure
+</span><span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s">'--'</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">'plot figure'</span><span class="p">)</span>
+
+<span class="c1"># some clean up
+# 去掉上边框和有边框
+</span><span class="k">for</span> <span class="n">spine</span> <span class="ow">in</span> <span class="n">plt</span><span class="p">.</span><span class="n">gca</span><span class="p">().</span><span class="n">spines</span><span class="p">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">spine</span> <span class="o">==</span> <span class="s">'top'</span> <span class="ow">or</span> <span class="n">spine</span> <span class="o">==</span> <span class="s">'right'</span><span class="p">:</span>
+        <span class="n">plt</span><span class="p">.</span><span class="n">gca</span><span class="p">().</span><span class="n">spines</span><span class="p">[</span><span class="n">spine</span><span class="p">].</span><span class="n">set_color</span><span class="p">(</span><span class="s">'none'</span><span class="p">)</span>
+
+<span class="c1"># x轴的刻度在下边框
+</span><span class="n">plt</span><span class="p">.</span><span class="n">gca</span><span class="p">().</span><span class="n">xaxis</span><span class="p">.</span><span class="n">set_ticks_position</span><span class="p">(</span><span class="s">'bottom'</span><span class="p">)</span>
+
+<span class="c1"># y轴的刻度在左边框
+</span><span class="n">plt</span><span class="p">.</span><span class="n">gca</span><span class="p">().</span><span class="n">yaxis</span><span class="p">.</span><span class="n">set_ticks_position</span><span class="p">(</span><span class="s">'left'</span><span class="p">)</span>
+
+<span class="c1"># 设置x轴、y轴范围
+</span><span class="n">plt</span><span class="p">.</span><span class="n">xlim</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">)</span>
+
+<span class="c1"># 设置x轴、y轴标签
+</span><span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">'x_axis'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'y_axis'</span><span class="p">)</span>
+
+<span class="c1"># 绘制x、y轴网格
+</span><span class="n">plt</span><span class="p">.</span><span class="n">grid</span><span class="p">(</span><span class="bp">True</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s">':'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'r'</span><span class="p">)</span>
+
+<span class="c1"># 绘制水平参考线
+</span><span class="n">plt</span><span class="p">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s">'r'</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s">'--'</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># 绘制垂直参考区域
+</span><span class="n">plt</span><span class="p">.</span><span class="n">axvspan</span><span class="p">(</span><span class="n">xmin</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s">'y'</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="c1"># 绘制注解
+</span><span class="n">plt</span><span class="p">.</span><span class="n">annotate</span><span class="p">(</span><span class="s">'maximum'</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">((</span><span class="n">np</span><span class="p">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.15</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">),</span>
+             <span class="n">weight</span><span class="o">=</span><span class="s">'bold'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'r'</span><span class="p">,</span> <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s">'-&gt;'</span><span class="p">,</span>
+                                                       <span class="n">connectionstyle</span><span class="o">=</span><span class="s">'arc3'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'r'</span><span class="p">))</span>
+
+<span class="c1"># 绘制注解
+</span><span class="n">plt</span><span class="p">.</span><span class="n">annotate</span><span class="p">(</span><span class="s">'spines'</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mf">0.75</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mf">0.35</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.25</span><span class="p">),</span>
+             <span class="n">weight</span><span class="o">=</span><span class="s">'bold'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'r'</span><span class="p">,</span> <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s">'-&gt;'</span><span class="p">,</span>
+                                                       <span class="n">connectionstyle</span><span class="o">=</span><span class="s">'arc3'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'r'</span><span class="p">))</span>
+
+<span class="c1"># 绘制注解
+</span><span class="n">plt</span><span class="p">.</span><span class="n">annotate</span><span class="p">(</span><span class="s">''</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.78</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mf">0.4</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.32</span><span class="p">),</span>
+             <span class="n">weight</span><span class="o">=</span><span class="s">'bold'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'r'</span><span class="p">,</span> <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s">'-&gt;'</span><span class="p">,</span>
+                                                       <span class="n">connectionstyle</span><span class="o">=</span><span class="s">'arc3'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'r'</span><span class="p">))</span>
+
+<span class="c1"># 绘制注解
+</span><span class="n">plt</span><span class="p">.</span><span class="n">annotate</span><span class="p">(</span><span class="s">''</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mf">3.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.98</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mf">3.6</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.7</span><span class="p">),</span>
+             <span class="n">weight</span><span class="o">=</span><span class="s">'bold'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'r'</span><span class="p">,</span> <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s">'-&gt;'</span><span class="p">,</span>
+                                                       <span class="n">connectionstyle</span><span class="o">=</span><span class="s">'arc3'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'r'</span><span class="p">))</span>
+
+<span class="c1"># 绘制文本
+</span><span class="n">plt</span><span class="p">.</span><span class="n">text</span><span class="p">(</span><span class="mf">3.6</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.70</span><span class="p">,</span> <span class="s">"'|' is tickline"</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s">'bold'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'b'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">text</span><span class="p">(</span><span class="mf">3.6</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.95</span><span class="p">,</span> <span class="s">"3.5 is tickline"</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s">'bold'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'b'</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">"structure of matplotlib"</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s">'upper right'</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span> 
+</code></pre></div></div>
+
+:ET

@@ -5,9 +5,307 @@
     <description>Welcome to my personal website~</description>
     <link>www.xiangtao.net.cn/</link>
     <atom:link href="www.xiangtao.net.cn/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 23 May 2021 21:12:14 +0800</pubDate>
-    <lastBuildDate>Sun, 23 May 2021 21:12:14 +0800</lastBuildDate>
+    <pubDate>Tue, 31 Aug 2021 15:59:56 +0800</pubDate>
+    <lastBuildDate>Tue, 31 Aug 2021 15:59:56 +0800</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>markdown 语法入门</title>
+        <description>&lt;h1 id=&quot;markdown语法&quot;&gt;markdown语法&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;$x\in Y$&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+\[\begin{equation}
+\left \{
+\begin{aligned}
+&amp;amp; \dfrac{\partial u}{\partial t}-k\dfrac{\partial^2 u}{\partial x^2}=0 \\
+&amp;amp; u(0,t)=0,~~u(1,t)=0,~~t\in [0,0.1] \\
+&amp;amp; u(x,0) = e^{-\dfrac{(x-0.25)^2}{0.01}}+0.1*sin(20\pi x), x\in (0,1)
+\end{aligned}
+\right.
+\end{equation}\]
+  &lt;/li&gt;
+  &lt;li&gt;
+\[\begin{align}
+v(t_1) &amp;amp;= v(t_0) + \int_{t_0}^{t_1} a(t) dt \\  
+x(t_1) &amp;amp;= x(t_0) + \int_{t_0}^{t_1} v(t) dt \\
+\end{align}\]
+  &lt;/li&gt;
+  &lt;li&gt;
+\[\begin{equation*}
+\left \{
+\begin{aligned}
+&amp;amp; \dfrac{\partial u}{\partial t}-k\dfrac{\partial^2 u}{\partial x^2}=0 \\
+&amp;amp; u(0,t)=0,~~u(1,t)=0,~~t\in [0,0.1] \\
+&amp;amp; u(x,0) = e^{-\dfrac{(x-0.25)^2}{0.01}}+0.1*sin(20\pi x), x\in (0,1)
+\end{aligned}
+\right.
+\end{equation*}\]
+  &lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;插入代码块&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;vector&amp;gt;
+#include &amp;lt;algorithm&amp;gt;
+#include &amp;lt;string&amp;gt;
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;//常用的查找算法 find&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;//查找内置数据类型 例如vector&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;test01&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;push_back&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//查找容器中是否有5这个元素&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;iterator&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;it&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;begin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;it&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;没有找到！&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;找到了！&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+</description>
+        <pubDate>Tue, 31 Aug 2021 00:00:00 +0800</pubDate>
+        <link>www.xiangtao.net.cn/2021/08/markdown/</link>
+        <guid isPermaLink="true">www.xiangtao.net.cn/2021/08/markdown/</guid>
+        
+        <category>markdown</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>本地仓库上传到github/gitlab命令及一些常见问题解决方案</title>
+        <description>&lt;h2 id=&quot;本地仓库上传命令github为例&quot;&gt;本地仓库上传命令，github为例&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;git init: 初始化仓库&lt;/li&gt;
+  &lt;li&gt;git add .   或者 git add 文件名 ：分别表示上传所有文件和单个文件&lt;/li&gt;
+  &lt;li&gt;git commit -m ‘上传说明内容’:将要上传的文件上传到缓存区&lt;/li&gt;
+  &lt;li&gt;git push:上传到远程仓库&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;注意：上面的操作一般是在通过命令&lt;/p&gt;
+
+&lt;p&gt;git clone 远程仓库地址&lt;/p&gt;
+
+&lt;p&gt;后直接使用后面的三步就可以达到上传更新远程仓库的效果，第一步一般不用。&lt;/p&gt;
+
+&lt;p&gt;更新本地仓库使用： git pull   前提是config文件下有如下代码(config文件位于.git/config)&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;core&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;repositoryformatversion&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; 
+    &lt;span class=&quot;nx&quot;&gt;filemode&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;bare&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;logallrefupdates&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;remote&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;origin&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;自己的仓库地址&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;fetch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;refs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;heads&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/*:refs/remotes/origin/*                                       
+[branch &quot;main&quot;]
+    remote = origin
+    merge = refs/heads/main
+[pull]
+    rebase = false
+    
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;注意：一般克隆的文件不会包含&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pull&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;rebase&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;需要使用命令：git config pull.rebase false，使用命令后config文件里面会多出如上的代码，或者直接在config文件中添加如上的代码进去，不然使用git pull 更新命令时候会有警告。&lt;/p&gt;
+
+&lt;p&gt;值得一提的是上面的操作是在克隆的前提下，本地仓库已经和远程仓库有连接了的前提下进行的，否则应该运行一些其他的连接远程仓库命令，具体可以自行百度。&lt;/p&gt;
+
+&lt;h2 id=&quot;如何上传大型文件&quot;&gt;如何上传大型文件&lt;/h2&gt;
+
+&lt;p&gt;说明：一般情况下上传大型文件会显示错误上传失败的信息，那么如何上传大型的文件或者文件夹呢，一般简单的做法是先运行如下命令：&lt;/p&gt;
+
+&lt;p&gt;git config http.postBuffer 524288000&lt;/p&gt;
+
+&lt;p&gt;该命令的作用是在config文件中添加了如下代码&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;http&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;postBuffer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;524288000&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;同样也可以不运行命令自己手动添加进去，但是要注意格式，比如空格等。这个代码的意思是增加缓存空间来上传大型文件，但是有时候添加这个命令还是要报错，因此可以使用另一个方法，使用如下：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;你需要安装git LFS&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;什么是git LFS&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;LFS是Large File Storage的缩写，用了帮助git管理大的文件&lt;/p&gt;
+
+&lt;p&gt;原理：不同于git每次保存diff，对于git来说，如果是模型或者一些设计大文件，改变一点，对于仓库来说会增加很大的体积，不一会就能几个G。对于git lfs来说，在使用git lfs track命令后，git push的时候，git lfs会截取要管理的大文件，并将其传至git lfs的服务器中，从而减小仓库的体积&lt;/p&gt;
+
+&lt;p&gt;如果你是ubuntu:&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;curl&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;https&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;apt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;git&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;lfs&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;lfs&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;install&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;如果你是mac系统：&lt;/p&gt;
+
+&lt;p&gt;运行&lt;strong&gt;brew install git-lfs&lt;/strong&gt;即可安装&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;如何使用，才能够上传大型文件不报错&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;先运行：git lfs track model.pb，其中model.pb是自己的文件名字，如果是文件夹，则使用如下命令&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;lfs&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;track&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;wenjian&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/*
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;如果是第一次上传大型文件，则然后会在当地仓库下生成一个&lt;strong&gt;.gitattributes&lt;/strong&gt;的隐藏文件，我们需要先用如下命令上传它：&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;gitattributes&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;commit&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;update&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;然后就可以上传自己的大型文件了，例如：&lt;/p&gt;
+
+&lt;p&gt;假设上传文件名为model.pb&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pb&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;commit&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;update&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;假设上传的是文件夹&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;wenjian&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/*
+git commit -m 'update'
+git push
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;如果后面还需要上传大型文件，则不再需要上传&lt;strong&gt;.gitattributes&lt;/strong&gt;的隐藏文件，只需要运行如下命令即可，只是比上传普通文件多了一个命令。&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;lfs&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;track&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pb&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;pb&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;commit&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;update&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;注意当运行了&lt;strong&gt;git lfs install&lt;/strong&gt;后，config文件下会多一些代码，如下所示(其中内部的链接十个人的远程仓库对应的网址)：&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;lfs&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;https://hub.fastgit.org/xiang-tao/python3.git/info/lfs&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;access&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;basic&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;但是当安装了lfs后发现，每次更新文件都要输入两次用户名和两次密码，很麻烦，目前没有找到好的解决方案，可以先把把整个文件删除后，同时需要把远程仓库中的&lt;strong&gt;.gitattributes&lt;/strong&gt;文件删除，然后重新克隆，然后就不会出现两次密码的情况了，但是会导致后面克隆的时候由于缺少了&lt;strong&gt;.gitattributes&lt;/strong&gt;文件，导致克隆的大文件失真无法正常使用。且后面若想上传大型数据，那就需要根据上面重新操作。&lt;/p&gt;
+
+&lt;h2 id=&quot;如何在本地可以同时更新多个远程仓库比如githubgitlabgitee以github和gitee为例&quot;&gt;如何在本地可以同时更新多个远程仓库，比如github\gitlab\gitee.以GitHub和gitee为例&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;使用命令来将本地项目和Github/Gitee上面项目进行关联&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;git remote add gitee/github 项目地址&lt;/p&gt;
+
+&lt;p&gt;运行后config文件夹会多出一些代码，不管怎样，最后的代码至少有如下的形式，一般需要打开后进行手动改动一些东西，反正一般要如下的形式，你甚至可以不运行命令，自己输入到config文件中，但是格式要对。&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;core&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+   &lt;span class=&quot;nx&quot;&gt;repositoryformatversion&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;    
+   &lt;span class=&quot;nx&quot;&gt;filemode&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;     
+   &lt;span class=&quot;nx&quot;&gt;bare&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;     
+   &lt;span class=&quot;nx&quot;&gt;logallrefupdates&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;     
+   &lt;span class=&quot;nx&quot;&gt;symlinks&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;     
+   &lt;span class=&quot;nx&quot;&gt;ignorecase&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;    
+&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;remote&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;github&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;     
+   &lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;github项目地址&lt;/span&gt;     
+   &lt;span class=&quot;nx&quot;&gt;fetch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;refs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;heads&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/*:refs/remotes/origin/*    
+[remote &quot;gitee&quot;]      
+   url = gitee项目地址     
+   fetch = +refs/heads/*:refs/remotes/origin/*   
+[branch &quot;master&quot;]     
+   remote = origin     
+   merge = refs/heads/master
+
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;使用&lt;strong&gt;git remote -v&lt;/strong&gt;命令可以查看是否成功，出现如下形式则成功：&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;gitee&lt;/span&gt;   &lt;span class=&quot;nx&quot;&gt;git&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;gitee&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;com&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;chloneda&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;demo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fetch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;gitee&lt;/span&gt;   &lt;span class=&quot;nx&quot;&gt;git&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;gitee&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;com&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;chloneda&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;demo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;github&lt;/span&gt;  &lt;span class=&quot;nx&quot;&gt;git&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;github&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;com&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;chloneda&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;demo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fetch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;github&lt;/span&gt;  &lt;span class=&quot;nx&quot;&gt;git&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;github&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;com&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;chloneda&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;demo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;上传代码&lt;/p&gt;
+
+&lt;p&gt;git add .&lt;/p&gt;
+
+&lt;p&gt;git commit -m “update”&lt;/p&gt;
+
+&lt;p&gt;提交到github&lt;/p&gt;
+
+&lt;p&gt;git push github master&lt;/p&gt;
+
+&lt;p&gt;提交到码云&lt;/p&gt;
+
+&lt;p&gt;git push gitee master&lt;/p&gt;
+
+&lt;p&gt;注意一般情况下master可以省略&lt;/p&gt;
+
+&lt;p&gt;更新代码&lt;/p&gt;
+
+&lt;p&gt;#从github拉取更新&lt;/p&gt;
+
+&lt;p&gt;git pull github&lt;/p&gt;
+
+&lt;p&gt;从gitee拉取更新&lt;/p&gt;
+
+&lt;p&gt;git pull gitee&lt;/p&gt;
+
+&lt;p&gt;拉取更新，有时候需要加master或者main或者其他分支名字，需要看config文件夹下的&lt;strong&gt;[branch “分支名字”]&lt;/strong&gt;，即用git pull github + 分支命令。&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 23 Jul 2021 00:00:00 +0800</pubDate>
+        <link>www.xiangtao.net.cn/2021/07/git/</link>
+        <guid isPermaLink="true">www.xiangtao.net.cn/2021/07/git/</guid>
+        
+        <category>git</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>other guide</title>
+        <description>&lt;h2 id=&quot;数学与计算科学学院研究生分会招新报名表&quot;&gt;数学与计算科学学院研究生分会招新报名表&lt;/h2&gt;
+&lt;p&gt;点击下载：&lt;a href=&quot;https://github.com/xiang-tao/Strange-document/blob/master/%E6%95%B0%E5%AD%A6%E4%B8%8E%E8%AE%A1%E7%AE%97%E7%A7%91%E5%AD%A6%E5%AD%A6%E9%99%A2%E7%A0%94%E7%A9%B6%E7%94%9F%E5%88%86%E4%BC%9A%E6%8B%9B%E6%96%B0%E6%8A%A5%E5%90%8D%E8%A1%A8.docx&quot;&gt;Download&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 19 Jul 2021 00:00:00 +0800</pubDate>
+        <link>www.xiangtao.net.cn/2021/07/Application/</link>
+        <guid isPermaLink="true">www.xiangtao.net.cn/2021/07/Application/</guid>
+        
+        <category>other</category>
+        
+        
+      </item>
     
       <item>
         <title>vim基本操作</title>
@@ -106,7 +404,7 @@
 &lt;p&gt;可以在底线模式下输入命令：:n，进入到n行&lt;/p&gt;
 
 &lt;h2 id=&quot;多行缩进和删除多行前面的空格&quot;&gt;多行缩进和删除多行前面的空格&lt;/h2&gt;
-&lt;p&gt;删除空格：ctrl+v进入块模式，然后上下左右移动，选中多行以及多个空格，注意此时上下左右移动只能用kjhl键．
+&lt;p&gt;删除空格：ctrl+v进入块模式，然后上下左右移动，选中多行以及多个空格，按d即可进行删除，注意此时上下左右移动只能用kjhl键．
 多行缩进：&lt;/p&gt;
 &lt;ol&gt;
   &lt;li&gt;ESC之后，ctrl+v进入多行行首选中模式&lt;/li&gt;
@@ -115,6 +413,96 @@
   &lt;li&gt;连续敲击4个空格（注意在敲击空格按键的时候，注意这个时候不能够多行立即缩进，显示的是仅仅一行进行缩进，在执行第五步的时候，才会出现多行缩进的效果）&lt;/li&gt;
   &lt;li&gt;然后按esc按键，即可发现，你选中的行都缩进了&lt;/li&gt;
 &lt;/ol&gt;
+
+&lt;h2 id=&quot;多行注释&quot;&gt;多行注释：&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;首先按esc进入命令行模式下，按下Ctrl + v，进入列（也叫区块）模式;&lt;/li&gt;
+  &lt;li&gt;在行首使用上下键选择需要注释的多行;&lt;/li&gt;
+  &lt;li&gt;按下键盘（大写）“I”键，进入插入模式；&lt;/li&gt;
+  &lt;li&gt;然后输入注释符（“//”、“#”等）;&lt;/li&gt;
+  &lt;li&gt;最后按下“Esc”键。 注：在按下esc键后，会稍等一会才会出现注释，不要着急 ~~时间很短的&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;需要注意的是除了输入#号之外，是可以输入任意字符和汉字的，该方案也可以用可视行+normal实现，具体做法是：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;按shift+v进入可视行，选中多行区域&lt;/li&gt;
+  &lt;li&gt;按冒号进入底线模式，输入normal，如果是在多行前面加信息，就用I+信息，在尾部就用A+信息。例如normal I#，即加入#在多行的前面，normal A#，则在多行的尾部加入数据。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;注意：但是要删除多行的相同信息，比如同时去掉#，那么一般用可视块选中按d就可以了，总是可视块和可视行功能很强大，实现相应的功能需要自己总结分析。可视块的功能可能更加强大，它可以在任何位置添加多行相同的信息。&lt;/p&gt;
+
+&lt;h2 id=&quot;多行删除&quot;&gt;多行删除&lt;/h2&gt;
+&lt;p&gt;1.首先在命令模式下，输入“：set nu”显示行号； 2.通过行号确定你要删除的行； 3.命令输入“：32,65d”,回车键，32-65行就被删除了，很快捷吧
+如果无意中删除错了，可以使用‘u’键恢复（命令模式下）&lt;/p&gt;
+
+&lt;h2 id=&quot;其他说明&quot;&gt;其他说明&lt;/h2&gt;
+&lt;p&gt;,sa:全选，然后按yy可以复制全部内容&lt;/p&gt;
+
+&lt;p&gt;crtl+o:光标返回至前一个位置&lt;/p&gt;
+
+&lt;p&gt;crtl+i:光标返回至后一个位置&lt;/p&gt;
+
+&lt;p&gt;注意：ctrl+v进入可视块，按hjkl进行选择区域，但是选中的是矩形形状，按v是可视界面，按hjkl可进行选择区域，就像鼠标选择一样，选择后按y可以复制该区域，按d可以剪切该区域。与按2yy,2dd等进行相关行的复制不一样的是粘贴过程，具体不一样的地方操作即可看见，主要是格式各位置的不同。与用2yy及2dd相似的操作是可视行模式，按shift+v进入，然后通过j与k键实现选中多行，同理按y复制，按d进行剪切，效果与2yy这些是类似的。&lt;/p&gt;
+
+&lt;h2 id=&quot;分屏操作&quot;&gt;分屏操作&lt;/h2&gt;
+&lt;p&gt;:sp 文件名，是实现上下分屏，可通过crtl+j与k键实现屏幕光标的移动，其中sp是split的缩写，可以直接用:split。&lt;/p&gt;
+
+&lt;p&gt;:vsp 文件名，实现左右分屏，同样可以通过ctrl+h与l进行屏幕光标位置移动&lt;/p&gt;
+
+&lt;p&gt;创建新的未命名的分屏可以直接使用:new或:vsp new&lt;/p&gt;
+
+&lt;p&gt;也可以直接用:vsp，则打开和本体一样的副本，即两个屏幕信息一样，且无论光标在那个分屏上进行操作时候，此时两个屏幕都会进行同样的操作。&lt;/p&gt;
+
+&lt;p&gt;如何关闭当前分屏：使用:q，我的可以用,q即可，也可以用:close，只留下当前分屏可以用:only&lt;/p&gt;
+
+&lt;p&gt;值得注意的是，我们一般都喜欢左右分屏，所以基本上都是使用:vsp命令，但是当打开的新文件总是在左边，那么你需要在运行:vsp命令前，运行:set splitright命令。这样的操作无疑是很麻烦的，因此可以自己重新设置，vimrc的设置中加入如下代码即可：&lt;/p&gt;
+
+&lt;p&gt;map sl :set splitright&lt;CR&gt;:vsplit&lt;CR&gt;&lt;/CR&gt;&lt;/CR&gt;&lt;/p&gt;
+
+&lt;p&gt;map sh :set nosplitright&lt;CR&gt;:vsplit&lt;CR&gt;&lt;/CR&gt;&lt;/CR&gt;&lt;/p&gt;
+
+&lt;p&gt;map sk :set nosplitbelow&lt;CR&gt;:split&lt;CR&gt;&lt;/CR&gt;&lt;/CR&gt;&lt;/p&gt;
+
+&lt;p&gt;map sj :set splitbelow&lt;CR&gt;:split&lt;CR&gt;&lt;/CR&gt;&lt;/CR&gt;&lt;/p&gt;
+
+&lt;p&gt;即实现了s+hjkl实现上下左右快速分屏。但是实现分屏后的内容是一样的，因此可以使用:e 文件名来打开新的文件。&lt;/p&gt;
+
+&lt;p&gt;下面的配置是实现分屏幕的大小控制，通过上下左右键来控制，但是这个设置后，用命令:e 文件名打开的文件就不能够通过上下左右键来时间移动，但是可以继续用:e 文件名的方式访问不同路径下的文件，无法直接移动并不重要，可以用下面讲的标签页来实现移动，而且屏幕上方还会显示对应标签的文件名。&lt;/p&gt;
+
+&lt;p&gt;map &lt;up&gt; :res +5&lt;CR&gt;
+		map &lt;down&gt; :res -5&lt;CR&gt;
+		map &lt;left&gt; :vertical resize -5&lt;CR&gt;
+		map &lt;right&gt; :vertical resize +5&lt;CR&gt;&lt;/CR&gt;&lt;/right&gt;&lt;/CR&gt;&lt;/left&gt;&lt;/CR&gt;&lt;/down&gt;&lt;/CR&gt;&lt;/up&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;标签页&quot;&gt;标签页&lt;/h2&gt;
+&lt;p&gt;新建标签页：使用:tabe 名字，若用:tabe则会创建未命名的标签页，同时也可以用:tabe 文件名，打开已有的文件标签。实现标签的移动要用:+tabnext右移，:-tabnext实现左移，也可以用下面的配置文件实现快捷方式移动：&lt;/p&gt;
+
+&lt;p&gt;tn打开新的标签&lt;/p&gt;
+
+&lt;p&gt;th左移标签，tl右移标签&lt;/p&gt;
+
+&lt;p&gt;map tn :tabe&lt;CR&gt;       
+		map th :-tabnext&lt;CR&gt;
+		map tl :+tabnext&lt;CR&gt;&lt;/CR&gt;&lt;/CR&gt;&lt;/CR&gt;&lt;/p&gt;
+
+&lt;p&gt;下面是系统自带的一些关于标签页快捷键的操作功能&lt;/p&gt;
+
+&lt;p&gt;:tabn或gt：顺序切换到下一个标签页&lt;/p&gt;
+
+&lt;p&gt;:tabp或gT：逆序切换到上一个标签页&lt;/p&gt;
+
+&lt;p&gt;:tabfirst或:tabr：移动到第一个标签页&lt;/p&gt;
+
+&lt;p&gt;:tablast：移动到最后一个标签页&lt;/p&gt;
+
+&lt;p&gt;:tabm n：将本标签页的数字变为n，即交换本标签页和第n的标签页的位置。&lt;/p&gt;
+
+&lt;p&gt;##vim书签Mark&lt;/p&gt;
+
+&lt;p&gt;参考&lt;a href=&quot;https://blog.csdn.net/rudy_yuan/article/details/83004721&quot;&gt;mark详解&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;代码折叠&quot;&gt;代码折叠&lt;/h2&gt;
+&lt;p&gt;目前我的vim配置文档是以缩进来进行代码折叠，光标进入到要折叠的起始行，按zc是折叠，zo是打开折叠，也可以直接用za，即若是折叠状态则打开折叠，若是未折叠状态则折叠相应的代码。还有许多折叠方式，需要自行配置，可自行百度，或者打开我的vim找到折叠设置的地方自行设计。&lt;/p&gt;
 
 &lt;h2 id=&quot;k-vim配置基本信息&quot;&gt;k-vim配置基本信息&lt;/h2&gt;
 
@@ -172,6 +560,27 @@ hjkl  上下左右&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;ctrl + j/k/h/l   进行上下左右窗口跳转,不需要ctrl+w+jkhl&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;搜索
+space 空格，进入搜索状态
+/       同上
+,/      去除匹配高亮&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;终端的基本快捷键&quot;&gt;终端的基本快捷键&lt;/h2&gt;
+
+&lt;p&gt;ctrl+alt+t是打开一个terminal&lt;/p&gt;
+
+&lt;p&gt;Alt + F4 关闭终端 ，即所有标签页，exit命令可关闭当前标签页&lt;/p&gt;
+
+&lt;p&gt;ctrl+shift+t是在terminal中打开多个标签&lt;/p&gt;
+
+&lt;p&gt;Shift+Ctrl+W 关闭当前标签页&lt;/p&gt;
+
+&lt;p&gt;Alt + n 切换到标签n&lt;/p&gt;
+
+&lt;p&gt;进入退出终端全屏：f11&lt;/p&gt;
 </description>
         <pubDate>Sun, 23 May 2021 00:00:00 +0800</pubDate>
         <link>www.xiangtao.net.cn/2021/05/vim/</link>
@@ -464,6 +873,44 @@ hjkl  上下左右&lt;/li&gt;
 &lt;h1 id=&quot;19which命令&quot;&gt;19.which命令&lt;/h1&gt;
 
 &lt;p&gt;which 软件名　　例如：which python3  可查到python3的安装路径&lt;/p&gt;
+
+&lt;h1 id=&quot;20ubuntu更新相关命令&quot;&gt;20.ubuntu更新相关命令&lt;/h1&gt;
+
+&lt;p&gt;更新软件源&lt;/p&gt;
+
+&lt;p&gt;apt-get update&lt;/p&gt;
+
+&lt;p&gt;更新升级所有软件&lt;/p&gt;
+
+&lt;p&gt;apt-get upgrade&lt;/p&gt;
+
+&lt;p&gt;更新某个软件&lt;/p&gt;
+
+&lt;p&gt;apt-get upgrade 名&lt;/p&gt;
+
+&lt;p&gt;列出可更新的软件&lt;/p&gt;
+
+&lt;p&gt;apt list --upgradable&lt;/p&gt;
+
+&lt;p&gt;升级系统版本(Ubuntu的升级)&lt;/p&gt;
+
+&lt;p&gt;apt-get dist-upgrade&lt;/p&gt;
+
+&lt;p&gt;安装一个软件包&lt;/p&gt;
+
+&lt;p&gt;apt-get install package_name&lt;/p&gt;
+
+&lt;p&gt;删除一个软件包&lt;/p&gt;
+
+&lt;p&gt;apt-get remove package&lt;/p&gt;
+
+&lt;p&gt;列举其他apt-get 命令&lt;/p&gt;
+
+&lt;p&gt;apt-get help&lt;/p&gt;
+
+&lt;p&gt;一般来说。更新完成之后会有一些不需要的旧组件需要清除。此时使用&lt;/p&gt;
+
+&lt;p&gt;sudo apt autoremove即可完成清理。&lt;/p&gt;
 </description>
         <pubDate>Mon, 17 May 2021 00:00:00 +0800</pubDate>
         <link>www.xiangtao.net.cn/2021/05/ubuntu2/</link>
@@ -731,6 +1178,17 @@ plt.show()
   &lt;li&gt;foo&lt;/li&gt;
   &lt;li&gt;bar&lt;/li&gt;
 &lt;/ol&gt;
+
+&lt;h2 id=&quot;复制按钮&quot;&gt;复制按钮&lt;/h2&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fealpy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;mesh&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;MeshFactory&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fealpy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;mesh&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;MeshFactory&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fealpy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;mesh&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;MeshFactory&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fealpy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;mesh&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;MeshFactory&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fealpy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;mesh&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;MeshFactory&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;代码&quot;&gt;代码&lt;/h2&gt;
 

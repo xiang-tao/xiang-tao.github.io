@@ -1,0 +1,192 @@
+I"�5<h2 id="本地仓库上传命令github为例">本地仓库上传命令，github为例</h2>
+
+<ol>
+  <li>git init: 初始化仓库</li>
+  <li>git add .   或者 git add 文件名 ：分别表示上传所有文件和单个文件</li>
+  <li>git commit -m ‘上传说明内容’:将要上传的文件上传到缓存区</li>
+  <li>git push:上传到远程仓库</li>
+</ol>
+
+<p>注意：上面的操作一般是在通过命令</p>
+
+<p>git clone 远程仓库地址</p>
+
+<p>后直接使用后面的三步就可以达到上传更新远程仓库的效果，第一步一般不用。</p>
+
+<p>更新本地仓库使用： git pull   前提是config文件下有如下代码(config文件位于.git/config)</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="p">[</span><span class="nx">core</span><span class="p">]</span>
+    <span class="nx">repositoryformatversion</span> <span class="o">=</span> <span class="mi">0</span> 
+    <span class="nx">filemode</span> <span class="o">=</span> <span class="kc">true</span>
+    <span class="nx">bare</span> <span class="o">=</span> <span class="kc">false</span>
+    <span class="nx">logallrefupdates</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="p">[</span><span class="nx">remote</span> <span class="dl">"</span><span class="s2">origin</span><span class="dl">"</span><span class="p">]</span>
+    <span class="nx">url</span> <span class="o">=</span> <span class="nx">自己的仓库地址</span>
+    <span class="nx">fetch</span> <span class="o">=</span> <span class="o">+</span><span class="nx">refs</span><span class="o">/</span><span class="nx">heads</span><span class="cm">/*:refs/remotes/origin/*                                       
+[branch "main"]
+    remote = origin
+    merge = refs/heads/main
+[pull]
+    rebase = false
+    
+</span></code></pre></div></div>
+
+<p>注意：一般克隆的文件不会包含</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nx">pull</span><span class="p">]</span>
+    <span class="nx">rebase</span> <span class="o">=</span> <span class="kc">false</span>
+</code></pre></div></div>
+
+<p>需要使用命令：git config pull.rebase false，使用命令后config文件里面会多出如上的代码，或者直接在config文件中添加如上的代码进去，不然使用git pull 更新命令时候会有警告。</p>
+
+<p>值得一提的是上面的操作是在克隆的前提下，本地仓库已经和远程仓库有连接了的前提下进行的，否则应该运行一些其他的连接远程仓库命令，具体可以自行百度。</p>
+
+<h2 id="如何上传大型文件">如何上传大型文件</h2>
+
+<p>说明：一般情况下上传大型文件会显示错误上传失败的信息，那么如何上传大型的文件或者文件夹呢，一般简单的做法是先运行如下命令：</p>
+
+<p>git config http.postBuffer 524288000</p>
+
+<p>该命令的作用是在config文件中添加了如下代码</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nx">http</span><span class="p">]</span>
+    <span class="nx">postBuffer</span> <span class="o">=</span> <span class="mi">524288000</span>
+</code></pre></div></div>
+
+<p>同样也可以不运行命令自己手动添加进去，但是要注意格式，比如空格等。这个代码的意思是增加缓存空间来上传大型文件，但是有时候添加这个命令还是要报错，因此可以使用另一个方法，使用如下：</p>
+
+<ol>
+  <li>你需要安装git LFS</li>
+</ol>
+
+<p><strong>什么是git LFS</strong></p>
+
+<p>LFS是Large File Storage的缩写，用了帮助git管理大的文件</p>
+
+<p>原理：不同于git每次保存diff，对于git来说，如果是模型或者一些设计大文件，改变一点，对于仓库来说会增加很大的体积，不一会就能几个G。对于git lfs来说，在使用git lfs track命令后，git push的时候，git lfs会截取要管理的大文件，并将其传至git lfs的服务器中，从而减小仓库的体积</p>
+
+<p>如果你是ubuntu:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">1</span><span class="p">.</span> <span class="nx">curl</span> <span class="o">-</span><span class="nx">s</span> <span class="nx">https</span><span class="p">:</span><span class="c1">//packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash</span>
+<span class="mi">2</span><span class="p">.</span> <span class="nx">sudo</span> <span class="nx">apt</span><span class="o">-</span><span class="kd">get</span> <span class="nx">install</span> <span class="nx">git</span><span class="o">-</span><span class="nx">lfs</span>
+<span class="mi">3</span><span class="p">.</span> <span class="nx">git</span> <span class="nx">lfs</span> <span class="nx">install</span>
+</code></pre></div></div>
+<p>如果你是mac系统：</p>
+
+<p>运行<strong>brew install git-lfs</strong>即可安装</p>
+
+<ol>
+  <li>如何使用，才能够上传大型文件不报错</li>
+</ol>
+
+<p>先运行：git lfs track model.pb，其中model.pb是自己的文件名字，如果是文件夹，则使用如下命令</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">git</span> <span class="nx">lfs</span> <span class="nx">track</span> <span class="nx">wenjian</span><span class="cm">/*
+</span></code></pre></div></div>
+
+<p>如果是第一次上传大型文件，则然后会在当地仓库下生成一个<strong>.gitattributes</strong>的隐藏文件，我们需要先用如下命令上传它：</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">git</span> <span class="nx">add</span> <span class="p">.</span><span class="nx">gitattributes</span>
+<span class="nx">git</span> <span class="nx">commit</span> <span class="o">-</span><span class="nx">m</span> <span class="dl">'</span><span class="s1">update</span><span class="dl">'</span>
+<span class="nx">git</span> <span class="nx">push</span>
+</code></pre></div></div>
+
+<p>然后就可以上传自己的大型文件了，例如：</p>
+
+<p>假设上传文件名为model.pb</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">git</span> <span class="nx">add</span> <span class="nx">model</span><span class="p">.</span><span class="nx">pb</span>
+<span class="nx">git</span> <span class="nx">commit</span> <span class="o">-</span><span class="nx">m</span> <span class="dl">'</span><span class="s1">update</span><span class="dl">'</span>
+<span class="nx">git</span> <span class="nx">push</span>
+</code></pre></div></div>
+<p>假设上传的是文件夹</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">git</span> <span class="nx">add</span> <span class="nx">wenjian</span><span class="cm">/*
+git commit -m 'update'
+git push
+</span></code></pre></div></div>
+
+<p>如果后面还需要上传大型文件，则不再需要上传<strong>.gitattributes</strong>的隐藏文件，只需要运行如下命令即可，只是比上传普通文件多了一个命令。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">git</span> <span class="nx">lfs</span> <span class="nx">track</span> <span class="nx">model</span><span class="p">.</span><span class="nx">pb</span>
+<span class="nx">git</span> <span class="nx">add</span> <span class="nx">model</span><span class="p">.</span><span class="nx">pb</span>
+<span class="nx">git</span> <span class="nx">commit</span> <span class="o">-</span><span class="nx">m</span> <span class="dl">'</span><span class="s1">update</span><span class="dl">'</span>
+<span class="nx">git</span> <span class="nx">push</span>
+</code></pre></div></div>
+
+<p>注意当运行了<strong>git lfs install</strong>后，config文件下会多一些代码，如下所示(其中内部的链接十个人的远程仓库对应的网址)：</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nx">lfs</span> <span class="dl">"</span><span class="s2">https://hub.fastgit.org/xiang-tao/python3.git/info/lfs</span><span class="dl">"</span><span class="p">]</span>
+    <span class="nx">access</span> <span class="o">=</span> <span class="nx">basic</span>
+</code></pre></div></div>
+
+<p>但是当安装了lfs后发现，每次更新文件都要输入两次用户名和两次密码，很麻烦，目前没有找到好的解决方案，可以先把把整个文件删除后，同时需要把远程仓库中的<strong>.gitattributes</strong>文件删除，然后重新克隆，然后就不会出现两次密码的情况了，但是会导致后面克隆的时候由于缺少了<strong>.gitattributes</strong>文件，导致克隆的大文件失真无法正常使用。且后面若想上传大型数据，那就需要根据上面重新操作。</p>
+
+<h2 id="如何在本地可以同时更新多个远程仓库比如githubgitlabgitee以github和gitee为例">如何在本地可以同时更新多个远程仓库，比如github\gitlab\gitee.以GitHub和gitee为例</h2>
+
+<ol>
+  <li>使用命令来将本地项目和Github/Gitee上面项目进行关联</li>
+</ol>
+
+<p>git remote add gitee/github 项目地址</p>
+
+<p>运行后config文件夹会多出一些代码，不管怎样，最后的代码至少有如下的形式，一般需要打开后进行手动改动一些东西，反正一般要如下的形式，你甚至可以不运行命令，自己输入到config文件中，但是格式要对。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="p">[</span><span class="nx">core</span><span class="p">]</span>
+   <span class="nx">repositoryformatversion</span> <span class="o">=</span> <span class="mi">0</span>    
+   <span class="nx">filemode</span> <span class="o">=</span> <span class="kc">false</span>     
+   <span class="nx">bare</span> <span class="o">=</span> <span class="kc">false</span>     
+   <span class="nx">logallrefupdates</span> <span class="o">=</span> <span class="kc">true</span>     
+   <span class="nx">symlinks</span> <span class="o">=</span> <span class="kc">false</span>     
+   <span class="nx">ignorecase</span> <span class="o">=</span> <span class="kc">true</span>    
+<span class="p">[</span><span class="nx">remote</span> <span class="dl">"</span><span class="s2">github</span><span class="dl">"</span><span class="p">]</span>     
+   <span class="nx">url</span> <span class="o">=</span> <span class="nx">github项目地址</span>     
+   <span class="nx">fetch</span> <span class="o">=</span> <span class="o">+</span><span class="nx">refs</span><span class="o">/</span><span class="nx">heads</span><span class="cm">/*:refs/remotes/origin/*    
+[remote "gitee"]      
+   url = gitee项目地址     
+   fetch = +refs/heads/*:refs/remotes/origin/*   
+[branch "master"]     
+   remote = origin     
+   merge = refs/heads/master
+
+</span></code></pre></div></div>
+
+<p>使用<strong>git remote -v</strong>命令可以查看是否成功，出现如下形式则成功：</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">gitee</span>   <span class="nx">git</span><span class="p">@</span><span class="nd">gitee</span><span class="p">.</span><span class="nx">com</span><span class="p">:</span><span class="nx">chloneda</span><span class="o">/</span><span class="nx">demo</span><span class="p">.</span><span class="nx">git</span> <span class="p">(</span><span class="nx">fetch</span><span class="p">)</span>
+<span class="nx">gitee</span>   <span class="nx">git</span><span class="p">@</span><span class="nd">gitee</span><span class="p">.</span><span class="nx">com</span><span class="p">:</span><span class="nx">chloneda</span><span class="o">/</span><span class="nx">demo</span><span class="p">.</span><span class="nx">git</span> <span class="p">(</span><span class="nx">push</span><span class="p">)</span>
+<span class="nx">github</span>  <span class="nx">git</span><span class="p">@</span><span class="nd">github</span><span class="p">.</span><span class="nx">com</span><span class="p">:</span><span class="nx">chloneda</span><span class="o">/</span><span class="nx">demo</span><span class="p">.</span><span class="nx">git</span> <span class="p">(</span><span class="nx">fetch</span><span class="p">)</span>
+<span class="nx">github</span>  <span class="nx">git</span><span class="p">@</span><span class="nd">github</span><span class="p">.</span><span class="nx">com</span><span class="p">:</span><span class="nx">chloneda</span><span class="o">/</span><span class="nx">demo</span><span class="p">.</span><span class="nx">git</span> <span class="p">(</span><span class="nx">push</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>上传代码</p>
+
+<p>git add .</p>
+
+<p>git commit -m “update”</p>
+
+<p>提交到github</p>
+
+<p>git push github master</p>
+
+<p>提交到码云</p>
+
+<p>git push gitee master</p>
+
+<p>注意一般情况下master可以省略</p>
+
+<p>更新代码</p>
+
+<p>#从github拉取更新</p>
+
+<p>git pull github</p>
+
+<p>从gitee拉取更新</p>
+
+<p>git pull gitee</p>
+
+<p>拉取更新，有时候需要加master或者main或者其他分支名字，需要看config文件夹下的<strong>[branch “分支名字”]</strong>，即用git pull github + 分支命令。</p>
+
+:ET

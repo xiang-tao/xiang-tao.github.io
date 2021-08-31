@@ -58,6 +58,9 @@
   });
 </script>
 
+ <!-- for mathjax support -->
+   
+
 </head>
 
 
@@ -226,10 +229,11 @@
   </li>
   <li><a href="#18apt简介">18.apt简介</a></li>
   <li><a href="#19which命令">19.which命令</a></li>
+  <li><a href="#20ubuntu更新相关命令">20.ubuntu更新相关命令</a></li>
 </ul>
 
   
-
+  
   <section class="post">
     <h1 id="0-自动补全tab键">0. 自动补全：Tab键</h1>
 
@@ -511,6 +515,44 @@
 <h1 id="19which命令">19.which命令</h1>
 
 <p>which 软件名　　例如：which python3  可查到python3的安装路径</p>
+
+<h1 id="20ubuntu更新相关命令">20.ubuntu更新相关命令</h1>
+
+<p>更新软件源</p>
+
+<p>apt-get update</p>
+
+<p>更新升级所有软件</p>
+
+<p>apt-get upgrade</p>
+
+<p>更新某个软件</p>
+
+<p>apt-get upgrade 名</p>
+
+<p>列出可更新的软件</p>
+
+<p>apt list --upgradable</p>
+
+<p>升级系统版本(Ubuntu的升级)</p>
+
+<p>apt-get dist-upgrade</p>
+
+<p>安装一个软件包</p>
+
+<p>apt-get install package_name</p>
+
+<p>删除一个软件包</p>
+
+<p>apt-get remove package</p>
+
+<p>列举其他apt-get 命令</p>
+
+<p>apt-get help</p>
+
+<p>一般来说。更新完成之后会有一些不需要的旧组件需要清除。此时使用</p>
+
+<p>sudo apt autoremove即可完成清理。</p>
 
   </section>
 

@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>本地仓库上传到github/gitlab命令及一些常见问题解决方案</title>
+  <meta name="description" content="本地仓库上传命令，github为例">
+  <meta name="author" content="leopardpan">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="本地仓库上传到github/gitlab命令及一些常见问题解决方案">
+  <meta name="twitter:description" content="本地仓库上传命令，github为例">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="本地仓库上传到github/gitlab命令及一些常见问题解决方案">
+  <meta property="og:description" content="本地仓库上传命令，github为例">
+  
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
+  <link href="/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="www.xiangtao.net.cn/2021/07/git/">
+  <link rel="alternate" type="application/rss+xml" title="向涛" href="www.xiangtao.net.cn/feed.xml">
+  
+  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
+
+<!-- 站点统计 -->
+  <script 
+  async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>  
+
+<!-- 百度统计 -->
+  
+  <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?2021d6d9cbde9a628234bfd2aa9ffdfd";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+  </script>
+  
+
+<!-- google 统计 -->
+  
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-9005224472374751",
+    enable_page_level_ads: true
+  });
+</script>
+
+ <!-- for mathjax support -->
+   
+
+</head>
+
+
+  <body>
+
+    <span class="mobile btn-mobile-menu">        
+      <div class="nav_container">
+         <nav class="nav-menu-item" style = "float:right">
+            <i class="nav-menu-item">
+              <a href="/#blog" title="" class="blog-button">  博客主页
+              </a>
+            </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/archive" title="archive" class="btn-mobile-menu__icon">
+                      所有文章
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/tags" title="tags" class="btn-mobile-menu__icon">
+                      标签
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/support" title="support" class="btn-mobile-menu__icon">
+                      技术支持
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/about" title="about" class="btn-mobile-menu__icon">
+                      关于我
+                  </a>
+                </i>
+            
+          </nav>
+      </div>
+    </span>
+    
+    <header class="panel-cover panel-cover--collapsed" style="background-image: url('/images/background-cover.jpg')">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+        <!-- 头像效果-start -->
+        <div class="ih-item circle effect right_to_left">            
+            <a href="/#blog" title="前往 向涛 的主页" class="blog-button">
+                <div class="img"><img src="/images/avatar.jpg" alt="img"></div>
+                <div class="info">
+                    <div class="info-back">
+                        <h2> 
+                            
+                                研究生
+                            
+                        </h2>
+                        <p>
+                           
+                                数学
+                            
+                        </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- 头像效果-end -->
+        <h1 class="panel-cover__title panel-title"><a href="/#blog" title="link to homepage for 向涛" class="blog-button">向涛</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">个人网站</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">Welcome to my personal website~</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+        
+        
+
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客主页</a></li>
+                
+                  <li class="navigation__item"><a href="/archive" title="archive">所有文章</a></li>
+                
+                  <li class="navigation__item"><a href="/tags" title="tags">标签</a></li>
+                
+                  <li class="navigation__item"><a href="/support" title="support">技术支持</a></li>
+                
+                  <li class="navigation__item"><a href="/about" title="about">关于我</a></li>
+                
+              </ul>
+            </nav>
+          </div>          
+        </div>
+
+
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="panel-cover--overlay cover-clear"></div>
+    
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <head>
+  <link rel="stylesheet" href="/css/post.css">
+</head>
+
+<article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title">本地仓库上传到github/gitlab命令及一些常见问题解决方案</h1>
+    <div class="post-meta">
+      <img src="/images/calendar.png" width="20px"/> 
+      <time datetime="2021-07-23 00:00:00 +0800" itemprop="datePublished" class="post-meta__date date">2021-07-23</time>  
+
+      <span id="busuanzi_container_page_pv"> | 阅读：<span id="busuanzi_value_page_pv"></span>次</span>
+    </p>
+    </div>
+  </header>
+
+  
+    <h2 class="post-title">目录</h2>
+    <ul>
+  <li><a href="#本地仓库上传命令github为例">本地仓库上传命令，github为例</a></li>
+  <li><a href="#如何上传大型文件">如何上传大型文件</a></li>
+  <li><a href="#如何在本地可以同时更新多个远程仓库比如githubgitlabgitee以github和gitee为例">如何在本地可以同时更新多个远程仓库，比如github\gitlab\gitee.以GitHub和gitee为例</a></li>
+</ul>
+
+  
+  
+  <section class="post">
+    <h2 id="本地仓库上传命令github为例">本地仓库上传命令，github为例</h2>
+
+<ol>
+  <li>git init: 初始化仓库</li>
+  <li>git add .   或者 git add 文件名 ：分别表示上传所有文件和单个文件</li>
+  <li>git commit -m ‘上传说明内容’:将要上传的文件上传到缓存区</li>
+  <li>git push:上传到远程仓库</li>
+</ol>
+
+<p>注意：上面的操作一般是在通过命令</p>
+
+<p>git clone 远程仓库地址</p>
+
+<p>后直接使用后面的三步就可以达到上传更新远程仓库的效果，第一步一般不用。</p>
+
+<p>更新本地仓库使用： git pull   前提是config文件下有如下代码(config文件位于.git/config)</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="p">[</span><span class="nx">core</span><span class="p">]</span>
+    <span class="nx">repositoryformatversion</span> <span class="o">=</span> <span class="mi">0</span> 
+    <span class="nx">filemode</span> <span class="o">=</span> <span class="kc">true</span>
+    <span class="nx">bare</span> <span class="o">=</span> <span class="kc">false</span>
+    <span class="nx">logallrefupdates</span> <span class="o">=</span> <span class="kc">true</span>
+<span class="p">[</span><span class="nx">remote</span> <span class="dl">"</span><span class="s2">origin</span><span class="dl">"</span><span class="p">]</span>
+    <span class="nx">url</span> <span class="o">=</span> <span class="nx">自己的仓库地址</span>
+    <span class="nx">fetch</span> <span class="o">=</span> <span class="o">+</span><span class="nx">refs</span><span class="o">/</span><span class="nx">heads</span><span class="cm">/*:refs/remotes/origin/*                                       
+[branch "main"]
+    remote = origin
+    merge = refs/heads/main
+[pull]
+    rebase = false
+    
+</span></code></pre></div></div>
+
+<p>注意：一般克隆的文件不会包含</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nx">pull</span><span class="p">]</span>
+    <span class="nx">rebase</span> <span class="o">=</span> <span class="kc">false</span>
+</code></pre></div></div>
+
+<p>需要使用命令：git config pull.rebase false，使用命令后config文件里面会多出如上的代码，或者直接在config文件中添加如上的代码进去，不然使用git pull 更新命令时候会有警告。</p>
+
+<p>值得一提的是上面的操作是在克隆的前提下，本地仓库已经和远程仓库有连接了的前提下进行的，否则应该运行一些其他的连接远程仓库命令，具体可以自行百度。</p>
+
+<h2 id="如何上传大型文件">如何上传大型文件</h2>
+
+<p>说明：一般情况下上传大型文件会显示错误上传失败的信息，那么如何上传大型的文件或者文件夹呢，一般简单的做法是先运行如下命令：</p>
+
+<p>git config http.postBuffer 524288000</p>
+
+<p>该命令的作用是在config文件中添加了如下代码</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nx">http</span><span class="p">]</span>
+    <span class="nx">postBuffer</span> <span class="o">=</span> <span class="mi">524288000</span>
+</code></pre></div></div>
+
+<p>同样也可以不运行命令自己手动添加进去，但是要注意格式，比如空格等。这个代码的意思是增加缓存空间来上传大型文件，但是有时候添加这个命令还是要报错，因此可以使用另一个方法，使用如下：</p>
+
+<ol>
+  <li>你需要安装git LFS</li>
+</ol>
+
+<p><strong>什么是git LFS</strong></p>
+
+<p>LFS是Large File Storage的缩写，用了帮助git管理大的文件</p>
+
+<p>原理：不同于git每次保存diff，对于git来说，如果是模型或者一些设计大文件，改变一点，对于仓库来说会增加很大的体积，不一会就能几个G。对于git lfs来说，在使用git lfs track命令后，git push的时候，git lfs会截取要管理的大文件，并将其传至git lfs的服务器中，从而减小仓库的体积</p>
+
+<p>如果你是ubuntu:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">1</span><span class="p">.</span> <span class="nx">curl</span> <span class="o">-</span><span class="nx">s</span> <span class="nx">https</span><span class="p">:</span><span class="c1">//packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash</span>
+<span class="mi">2</span><span class="p">.</span> <span class="nx">sudo</span> <span class="nx">apt</span><span class="o">-</span><span class="kd">get</span> <span class="nx">install</span> <span class="nx">git</span><span class="o">-</span><span class="nx">lfs</span>
+<span class="mi">3</span><span class="p">.</span> <span class="nx">git</span> <span class="nx">lfs</span> <span class="nx">install</span>
+</code></pre></div></div>
+<p>如果你是mac系统：</p>
+
+<p>运行<strong>brew install git-lfs</strong>即可安装</p>
+
+<ol>
+  <li>如何使用，才能够上传大型文件不报错</li>
+</ol>
+
+<p>先运行：git lfs track model.pb，其中model.pb是自己的文件名字，如果是文件夹，则使用如下命令</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">git</span> <span class="nx">lfs</span> <span class="nx">track</span> <span class="nx">wenjian</span><span class="cm">/*
+</span></code></pre></div></div>
+
+<p>如果是第一次上传大型文件，则然后会在当地仓库下生成一个<strong>.gitattributes</strong>的隐藏文件，我们需要先用如下命令上传它：</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">git</span> <span class="nx">add</span> <span class="p">.</span><span class="nx">gitattributes</span>
+<span class="nx">git</span> <span class="nx">commit</span> <span class="o">-</span><span class="nx">m</span> <span class="dl">'</span><span class="s1">update</span><span class="dl">'</span>
+<span class="nx">git</span> <span class="nx">push</span>
+</code></pre></div></div>
+
+<p>然后就可以上传自己的大型文件了，例如：</p>
+
+<p>假设上传文件名为model.pb</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">git</span> <span class="nx">add</span> <span class="nx">model</span><span class="p">.</span><span class="nx">pb</span>
+<span class="nx">git</span> <span class="nx">commit</span> <span class="o">-</span><span class="nx">m</span> <span class="dl">'</span><span class="s1">update</span><span class="dl">'</span>
+<span class="nx">git</span> <span class="nx">push</span>
+</code></pre></div></div>
+<p>假设上传的是文件夹</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">git</span> <span class="nx">add</span> <span class="nx">wenjian</span><span class="cm">/*
+git commit -m 'update'
+git push
+</span></code></pre></div></div>
+
+<p>如果后面还需要上传大型文件，则不再需要上传<strong>.gitattributes</strong>的隐藏文件，只需要运行如下命令即可，只是比上传普通文件多了一个命令。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">git</span> <span class="nx">lfs</span> <span class="nx">track</span> <span class="nx">model</span><span class="p">.</span><span class="nx">pb</span>
+<span class="nx">git</span> <span class="nx">add</span> <span class="nx">model</span><span class="p">.</span><span class="nx">pb</span>
+<span class="nx">git</span> <span class="nx">commit</span> <span class="o">-</span><span class="nx">m</span> <span class="dl">'</span><span class="s1">update</span><span class="dl">'</span>
+<span class="nx">git</span> <span class="nx">push</span>
+</code></pre></div></div>
+
+<p>注意当运行了<strong>git lfs install</strong>后，config文件下会多一些代码，如下所示(其中内部的链接十个人的远程仓库对应的网址)：</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nx">lfs</span> <span class="dl">"</span><span class="s2">https://hub.fastgit.org/xiang-tao/python3.git/info/lfs</span><span class="dl">"</span><span class="p">]</span>
+    <span class="nx">access</span> <span class="o">=</span> <span class="nx">basic</span>
+</code></pre></div></div>
+
+<p>但是当安装了lfs后发现，每次更新文件都要输入两次用户名和两次密码，很麻烦，目前没有找到好的解决方案，可以先把把整个文件删除后，同时需要把远程仓库中的<strong>.gitattributes</strong>文件删除，然后重新克隆，然后就不会出现两次密码的情况了，但是会导致后面克隆的时候由于缺少了<strong>.gitattributes</strong>文件，导致克隆的大文件失真无法正常使用。且后面若想上传大型数据，那就需要根据上面重新操作。</p>
+
+<h2 id="如何在本地可以同时更新多个远程仓库比如githubgitlabgitee以github和gitee为例">如何在本地可以同时更新多个远程仓库，比如github\gitlab\gitee.以GitHub和gitee为例</h2>
+
+<ol>
+  <li>使用命令来将本地项目和Github/Gitee上面项目进行关联</li>
+</ol>
+
+<p>git remote add gitee/github 项目地址</p>
+
+<p>运行后config文件夹会多出一些代码，不管怎样，最后的代码至少有如下的形式，一般需要打开后进行手动改动一些东西，反正一般要如下的形式，你甚至可以不运行命令，自己输入到config文件中，但是格式要对。</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="p">[</span><span class="nx">core</span><span class="p">]</span>
+   <span class="nx">repositoryformatversion</span> <span class="o">=</span> <span class="mi">0</span>    
+   <span class="nx">filemode</span> <span class="o">=</span> <span class="kc">false</span>     
+   <span class="nx">bare</span> <span class="o">=</span> <span class="kc">false</span>     
+   <span class="nx">logallrefupdates</span> <span class="o">=</span> <span class="kc">true</span>     
+   <span class="nx">symlinks</span> <span class="o">=</span> <span class="kc">false</span>     
+   <span class="nx">ignorecase</span> <span class="o">=</span> <span class="kc">true</span>    
+<span class="p">[</span><span class="nx">remote</span> <span class="dl">"</span><span class="s2">github</span><span class="dl">"</span><span class="p">]</span>     
+   <span class="nx">url</span> <span class="o">=</span> <span class="nx">github项目地址</span>     
+   <span class="nx">fetch</span> <span class="o">=</span> <span class="o">+</span><span class="nx">refs</span><span class="o">/</span><span class="nx">heads</span><span class="cm">/*:refs/remotes/origin/*    
+[remote "gitee"]      
+   url = gitee项目地址     
+   fetch = +refs/heads/*:refs/remotes/origin/*   
+[branch "master"]     
+   remote = origin     
+   merge = refs/heads/master
+
+</span></code></pre></div></div>
+
+<p>使用<strong>git remote -v</strong>命令可以查看是否成功，出现如下形式则成功：</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">gitee</span>   <span class="nx">git</span><span class="p">@</span><span class="nd">gitee</span><span class="p">.</span><span class="nx">com</span><span class="p">:</span><span class="nx">chloneda</span><span class="o">/</span><span class="nx">demo</span><span class="p">.</span><span class="nx">git</span> <span class="p">(</span><span class="nx">fetch</span><span class="p">)</span>
+<span class="nx">gitee</span>   <span class="nx">git</span><span class="p">@</span><span class="nd">gitee</span><span class="p">.</span><span class="nx">com</span><span class="p">:</span><span class="nx">chloneda</span><span class="o">/</span><span class="nx">demo</span><span class="p">.</span><span class="nx">git</span> <span class="p">(</span><span class="nx">push</span><span class="p">)</span>
+<span class="nx">github</span>  <span class="nx">git</span><span class="p">@</span><span class="nd">github</span><span class="p">.</span><span class="nx">com</span><span class="p">:</span><span class="nx">chloneda</span><span class="o">/</span><span class="nx">demo</span><span class="p">.</span><span class="nx">git</span> <span class="p">(</span><span class="nx">fetch</span><span class="p">)</span>
+<span class="nx">github</span>  <span class="nx">git</span><span class="p">@</span><span class="nd">github</span><span class="p">.</span><span class="nx">com</span><span class="p">:</span><span class="nx">chloneda</span><span class="o">/</span><span class="nx">demo</span><span class="p">.</span><span class="nx">git</span> <span class="p">(</span><span class="nx">push</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>上传代码</p>
+
+<p>git add .</p>
+
+<p>git commit -m “update”</p>
+
+<p>提交到github</p>
+
+<p>git push github master</p>
+
+<p>提交到码云</p>
+
+<p>git push gitee master</p>
+
+<p>注意一般情况下master可以省略</p>
+
+<p>更新代码</p>
+
+<p>#从github拉取更新</p>
+
+<p>git pull github</p>
+
+<p>从gitee拉取更新</p>
+
+<p>git pull gitee</p>
+
+<p>拉取更新，有时候需要加master或者main或者其他分支名字，需要看config文件夹下的<strong>[branch “分支名字”]</strong>，即用git pull github + 分支命令。</p>
+
+
+  </section>
+
+</article>
+
+<section>
+
+           
+            </div>
+            <script type="text/javascript">
+            function dashangToggle(){
+              $(".hide_box-play").fadeToggle();
+              $(".shang_box-play").fadeToggle();
+            }
+            </script>
+
+            <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';"></div>
+
+            <style type="text/css">
+              .content-play{width:80%;margin-top: 20px;margin-bottom: 10px;height:40px;}
+              .hide_box-play{z-index:999;filter:alpha(opacity=50);background:#666;opacity: 0.5;-moz-opacity: 0.5;left:0;top:0;height:99%;width:100%;position:fixed;display:none;}
+              .shang_box-play{width:540px;height:540px;padding:10px;background-color:#fff;border-radius:10px;position:fixed;z-index:1000;left:50%;top:50%;margin-left:-280px;margin-top:-280px;border:1px dotted #dedede;display:none;}
+              .shang_box-play img{border:none;border-width:0;}
+              .dashang{display:block;width:100px;margin:5px auto;height:25px;line-height:25px;padding:10px;background-color:#E74851;color:#fff;text-align:center;text-decoration:none;border-radius:10px;font-weight:bold;font-size:16px;transition: all 0.3s;}
+              .dashang:hover{opacity:0.8;padding:15px;font-size:18px;}
+              .shang_close-play{float:right;display:inline-block;
+                margin-right: 10px;margin-top: 20px;
+              }
+              .shang_logo{display:block;text-align:center;margin:20px auto;}
+              .shang_tit-play{width: 100%;height: 75px;text-align: center;line-height: 66px;color: #a3a3a3;font-size: 16px;background: url('/images/payimg/cy-reward-title-bg.jpg');font-family: 'Microsoft YaHei';margin-top: 7px;margin-right:2px;}
+              .shang_tit-play p{color:#a3a3a3;text-align:center;font-size:16px;}
+              .shang_payimg{width:140px;padding:10px;padding-left: 80px; /*border:6px solid #EA5F00;**/margin:0 auto;border-radius:3px;height:140px;display:inline-block;}
+              .shang_payimg img{display:inline-block;margin-right:10px;float:left;text-align:center;width:140px;height:140px; }
+              .pay_explain{text-align:center;margin:10px auto;font-size:12px;color:#545454;}
+              .shang_payselect{text-align:center;margin:0 auto;margin-top:40px;cursor:pointer;height:60px;width:500px;margin-left:110px;}
+              .shang_payselect .pay_item{display:inline-block;margin-right:140px;float:left;}
+              .shang_info-play{clear:both;}
+              .shang_info-play p,.shang_info-play a{color:#C3C3C3;text-align:center;font-size:12px;text-decoration:none;line-height:2em;}
+            </style>
+
+       <ul class="pager">
+        
+        <li class="previous">
+            <a href="/2021/07/Application/" data-toggle="tooltip" data-placement="top" title="other guide">上一篇：  <span>other guide</span>
+            </a>
+        </li>
+        
+        
+        <li class="next">
+            <a href="/2021/08/markdown/" data-toggle="tooltip" data-placement="top" title="markdown 语法入门">下一篇：  <span>markdown 语法入门</span>
+            </a>
+        </li>
+        
+    </ul>
+</section>
+
+<section class="post-comments">
+
+
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTcxNs82Mjgz">
+      <script type="text/javascript">
+         (function(d, s) {
+             var j, e = d.getElementsByTagName(s)[0];
+
+             if (typeof LivereTower === 'function') { return; }
+             j = d.createElement(s);
+             j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+             j.async = true;
+             e.parentNode.insertBefore(j, e);
+         })(document, 'script');
+      </script>
+      <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+      </div>
+
+
+
+</section>
+
+
+            <section class="footer">
+    <footer>
+        <div class = "footer_div">  
+        <nav class="cover-navigation navigation--social">
+          <ul class="navigation">
+
+          
+          <!-- Github -->
+          <li class="navigation__item_social">
+            <a href="https://github.com/xiang-tao" title="@xiang-tao 的 Github" target="_blank">
+              <div class="footer-social-icon" style="background:url(/images/github.png);"></div>
+            </a>
+          </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+
+          
+          <!-- Email -->
+          <li class="navigation__item_social">
+            <a href="mailto:1689415053@qq.com" title="Contact me">
+              <div class="footer-social-icon" style="background:url(/images/email.png);"></div>
+            </a>
+          </li>
+          
+          
+          <!-- RSS -->
+          <li class="navigation__item_social">
+            <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+              <div class="footer-social-icon" style="background:url(/images/rss.png);"></div>
+              <span class="label">RSS</span>
+            </a>
+          </li>
+
+          </ul>
+        </nav>
+
+        </div>
+
+        <div class = "footer_div">  
+           <p class="copyright text-muted">
+            Copyright &copy; 向涛 2021 Theme by <a href="https://leopardpan.cn/">leopardpan</a> |
+            <iframe
+                style="margin-left: 2px; margin-bottom:-5px;"
+                frameborder="0" scrolling="0" width="91px" height="20px"
+                src="https://ghbtns.com/github-btn.html?user=leopardpan&repo=leopardpan.github.io&type=star&count=true" >
+            </iframe>
+            </p>
+        	<div align="right">
+    			<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+          <!-- 访问统计 -->
+          <span id="busuanzi_container_site_pv">
+            本站总访问量
+            <span id="busuanzi_value_site_pv"></span>次
+          </span>
+
+        </div>
+        <div>
+    </footer>
+</section>
+
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+<script type="text/javascript" src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+  </body>
+
+</html>
