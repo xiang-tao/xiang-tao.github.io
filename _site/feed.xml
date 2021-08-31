@@ -5,61 +5,36 @@
     <description>Welcome to my personal website~</description>
     <link>www.xiangtao.net.cn/</link>
     <atom:link href="www.xiangtao.net.cn/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 31 Aug 2021 15:59:56 +0800</pubDate>
-    <lastBuildDate>Tue, 31 Aug 2021 15:59:56 +0800</lastBuildDate>
+    <pubDate>Tue, 31 Aug 2021 18:49:36 +0800</pubDate>
+    <lastBuildDate>Tue, 31 Aug 2021 18:49:36 +0800</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
     
       <item>
         <title>markdown 语法入门</title>
         <description>&lt;h1 id=&quot;markdown语法&quot;&gt;markdown语法&lt;/h1&gt;
 
+&lt;h2 id=&quot;插入latex公式&quot;&gt;插入\(\LaTeX\)公式&lt;/h2&gt;
+
 &lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;$x\in Y$&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-\[\begin{equation}
-\left \{
-\begin{aligned}
-&amp;amp; \dfrac{\partial u}{\partial t}-k\dfrac{\partial^2 u}{\partial x^2}=0 \\
-&amp;amp; u(0,t)=0,~~u(1,t)=0,~~t\in [0,0.1] \\
-&amp;amp; u(x,0) = e^{-\dfrac{(x-0.25)^2}{0.01}}+0.1*sin(20\pi x), x\in (0,1)
-\end{aligned}
-\right.
-\end{equation}\]
-  &lt;/li&gt;
-  &lt;li&gt;
-\[\begin{align}
-v(t_1) &amp;amp;= v(t_0) + \int_{t_0}^{t_1} a(t) dt \\  
-x(t_1) &amp;amp;= x(t_0) + \int_{t_0}^{t_1} v(t) dt \\
-\end{align}\]
-  &lt;/li&gt;
-  &lt;li&gt;
-\[\begin{equation*}
-\left \{
-\begin{aligned}
-&amp;amp; \dfrac{\partial u}{\partial t}-k\dfrac{\partial^2 u}{\partial x^2}=0 \\
-&amp;amp; u(0,t)=0,~~u(1,t)=0,~~t\in [0,0.1] \\
-&amp;amp; u(x,0) = e^{-\dfrac{(x-0.25)^2}{0.01}}+0.1*sin(20\pi x), x\in (0,1)
-\end{aligned}
-\right.
-\end{equation*}\]
-  &lt;/li&gt;
-  &lt;li&gt;&lt;/li&gt;
-  &lt;li&gt;插入代码块&lt;/li&gt;
+  &lt;li&gt;插入文字间的公式，为了网页端的需要，仍然使用$$转义，例如\(x\in Y\)。&lt;/li&gt;
+  &lt;li&gt;插入行间的LaTeX公式，网页端显示目前我的配置只支持使用$$&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;iostream&amp;gt;
-#include &amp;lt;vector&amp;gt;
-#include &amp;lt;algorithm&amp;gt;
-#include &amp;lt;string&amp;gt;
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+\[\begin{equation}
+   \left \{
+   \begin{aligned}
+   &amp;amp; \dfrac{\partial u}{\partial t}-k\dfrac{\partial^2 u}{\partial x^2}=0 \\
+   &amp;amp; u(0,t)=0,~~u(1,t)=0,~~t\in [0,0.1] \\
+   &amp;amp; u(x,0) = e^{-\dfrac{(x-0.25)^2}{0.01}}+0.1*sin(20\pi x), x\in (0,1)
+   \end{aligned}
+   \right.
+   \end{equation}\]
 
-&lt;span class=&quot;c1&quot;&gt;//常用的查找算法 find&lt;/span&gt;
+&lt;h2 id=&quot;插入代码&quot;&gt;插入代码&lt;/h2&gt;
 
-&lt;span class=&quot;c1&quot;&gt;//查找内置数据类型 例如vector&lt;/span&gt;
+&lt;p&gt;下面插入的是一段c++代码&lt;/p&gt;
 
-&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;test01&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;test01&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
@@ -78,6 +53,60 @@ x(t_1) &amp;amp;= x(t_0) + \int_{t_0}^{t_1} v(t) dt \\
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h2 id=&quot;插入表格&quot;&gt;插入表格&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;四川&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;贵州&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;云南&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;宜宾&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;毕节&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;昆明&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;成都&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;贵阳&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;丽江&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;\(x\in y\)&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;\(y\in x\)&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;\(N\)&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;插入链接图片&quot;&gt;插入链接图片&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/picture/20210509-3.5sgg78x5fyw0.png&quot; alt=&quot;来自github链接图片&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;其他的基本功能&quot;&gt;其他的基本功能&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;高亮: ==美丽的姑娘==&lt;/li&gt;
+  &lt;li&gt;上标与下标： 我^平方^，你~下标~&lt;/li&gt;
+  &lt;li&gt;注释： &lt;!--这是注释--&gt;&lt;/li&gt;
+  &lt;li&gt;加粗： &lt;strong&gt;B&lt;/strong&gt;B&lt;/li&gt;
+  &lt;li&gt;斜体： &lt;em&gt;A&lt;/em&gt;A&lt;/li&gt;
+  &lt;li&gt;下划线：&lt;u&gt;我爱她轰轰烈烈&lt;/u&gt;&lt;/li&gt;
+  &lt;li&gt;删除线: &lt;del&gt;等到时光破碎&lt;/del&gt;&lt;/li&gt;
+  &lt;li&gt;超链接: &lt;a href=&quot;www.github.com/xiang-tao&quot;&gt;我的GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;引用&quot;&gt;引用&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;参考文献1：偏微分方程数值解&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;水平分割线&quot;&gt;水平分割线&lt;/h2&gt;
+
+&lt;hr /&gt;
 
 </description>
         <pubDate>Tue, 31 Aug 2021 00:00:00 +0800</pubDate>

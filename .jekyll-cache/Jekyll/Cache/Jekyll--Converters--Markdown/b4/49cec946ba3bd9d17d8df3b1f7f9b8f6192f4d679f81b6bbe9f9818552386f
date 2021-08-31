@@ -1,0 +1,94 @@
+I"�<h1 id="markdown语法">markdown语法</h1>
+
+<h2 id="插入latex公式">插入\(\LaTeX\)公式</h2>
+
+<ol>
+  <li>插入文字间的公式，为了网页端的需要，仍然使用$$转义，例如\(x\in Y\)。</li>
+  <li>插入行间的LaTeX公式，网页端显示目前我的配置只支持使用$$</li>
+</ol>
+
+\[\begin{equation}
+   \left \{
+   \begin{aligned}
+   &amp; \dfrac{\partial u}{\partial t}-k\dfrac{\partial^2 u}{\partial x^2}=0 \\
+   &amp; u(0,t)=0,~~u(1,t)=0,~~t\in [0,0.1] \\
+   &amp; u(x,0) = e^{-\dfrac{(x-0.25)^2}{0.01}}+0.1*sin(20\pi x), x\in (0,1)
+   \end{aligned}
+   \right.
+   \end{equation}\]
+
+<h2 id="插入代码">插入代码</h2>
+
+<p>下面插入的是一段c++代码</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">test01</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="c1">//查找容器中是否有5这个元素</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">it</span> <span class="o">=</span> <span class="n">find</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="mi">50</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">it</span> <span class="o">==</span> <span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+    <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"没有找到！"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"找到了！"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h2 id="插入表格">插入表格</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">四川</th>
+      <th style="text-align: center">贵州</th>
+      <th style="text-align: center">云南</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">宜宾</td>
+      <td style="text-align: center">毕节</td>
+      <td style="text-align: center">昆明</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">成都</td>
+      <td style="text-align: center">贵阳</td>
+      <td style="text-align: center">丽江</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">\(x\in y\)</td>
+      <td style="text-align: center">\(y\in x\)</td>
+      <td style="text-align: center">\(N\)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="插入链接图片">插入链接图片</h2>
+<p><img src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/picture/20210509-3.5sgg78x5fyw0.png" alt="来自github链接图片" /></p>
+
+<h2 id="其他的基本功能">其他的基本功能</h2>
+
+<ol>
+  <li>高亮: ==美丽的姑娘==</li>
+  <li>上标与下标： 我^平方^，你~下标~</li>
+  <li>注释： <!--这是注释--></li>
+  <li>加粗： <strong>B</strong>B</li>
+  <li>斜体： <em>A</em>A</li>
+  <li>下划线：<u>我爱她轰轰烈烈</u></li>
+  <li>删除线: <del>等到时光破碎</del></li>
+  <li>超链接: <a href="www.github.com/xiang-tao">我的GitHub</a></li>
+</ol>
+
+<h2 id="引用">引用</h2>
+
+<blockquote>
+  <p>参考文献1：偏微分方程数值解</p>
+</blockquote>
+
+:ET
