@@ -5,8 +5,8 @@
     <description>Welcome to my personal website~</description>
     <link>www.xiangtao.net.cn/</link>
     <atom:link href="www.xiangtao.net.cn/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 31 Aug 2021 18:49:36 +0800</pubDate>
-    <lastBuildDate>Tue, 31 Aug 2021 18:49:36 +0800</lastBuildDate>
+    <pubDate>Tue, 31 Aug 2021 18:54:59 +0800</pubDate>
+    <lastBuildDate>Tue, 31 Aug 2021 18:54:59 +0800</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
     
       <item>
@@ -95,7 +95,7 @@
   &lt;li&gt;斜体： &lt;em&gt;A&lt;/em&gt;A&lt;/li&gt;
   &lt;li&gt;下划线：&lt;u&gt;我爱她轰轰烈烈&lt;/u&gt;&lt;/li&gt;
   &lt;li&gt;删除线: &lt;del&gt;等到时光破碎&lt;/del&gt;&lt;/li&gt;
-  &lt;li&gt;超链接: &lt;a href=&quot;www.github.com/xiang-tao&quot;&gt;我的GitHub&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;超链接: &lt;a href=&quot;https://github.com/xiang-tao&quot;&gt;Github&lt;/a&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2 id=&quot;引用&quot;&gt;引用&lt;/h2&gt;

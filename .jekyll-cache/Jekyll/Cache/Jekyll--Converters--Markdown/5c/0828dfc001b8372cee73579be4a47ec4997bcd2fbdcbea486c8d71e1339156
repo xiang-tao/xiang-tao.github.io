@@ -1,9 +1,9 @@
-I"�<h1 id="markdown语法">markdown语法</h1>
+I"�<h1 id="markdown语法">markdown语法</h1>
 
 <h2 id="插入latex公式">插入\(\LaTeX\)公式</h2>
 
 <ol>
-  <li>插入文字间的公式，为了网页的需要，仍然使用$$转义，例如\(x\in Y\)。</li>
+  <li>插入文字间的公式，为了网页端的需要，仍然使用$$转义，例如\(x\in Y\)。</li>
   <li>插入行间的LaTeX公式，网页端显示目前我的配置只支持使用$$</li>
 </ol>
 
@@ -40,5 +40,59 @@
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
+<h2 id="插入表格">插入表格</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">四川</th>
+      <th style="text-align: center">贵州</th>
+      <th style="text-align: center">云南</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">宜宾</td>
+      <td style="text-align: center">毕节</td>
+      <td style="text-align: center">昆明</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">成都</td>
+      <td style="text-align: center">贵阳</td>
+      <td style="text-align: center">丽江</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">\(x\in y\)</td>
+      <td style="text-align: center">\(y\in x\)</td>
+      <td style="text-align: center">\(N\)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="插入链接图片">插入链接图片</h2>
+<p><img src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/picture/20210509-3.5sgg78x5fyw0.png" alt="来自github链接图片" /></p>
+
+<h2 id="其他的基本功能">其他的基本功能</h2>
+
+<ol>
+  <li>高亮: ==美丽的姑娘==</li>
+  <li>上标与下标： 我^平方^，你~下标~</li>
+  <li>注释： <!--这是注释--></li>
+  <li>加粗： <strong>B</strong>B</li>
+  <li>斜体： <em>A</em>A</li>
+  <li>下划线：<u>我爱她轰轰烈烈</u></li>
+  <li>删除线: <del>等到时光破碎</del></li>
+  <li>超链接: <a href="https://github.com/xiang-tao">Github</a>.</li>
+</ol>
+
+<h2 id="引用">引用</h2>
+
+<blockquote>
+  <p>参考文献1：偏微分方程数值解</p>
+</blockquote>
+
+<h2 id="水平分割线">水平分割线</h2>
+
+<hr />
 
 :ET
