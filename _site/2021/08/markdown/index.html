@@ -7,16 +7,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <title>markdown 语法入门</title>
-  <meta name="description" content="markdown语法">
+  <meta name="description" content="插入\(\LaTeX\)公式">
   <meta name="author" content="leopardpan">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="markdown 语法入门">
-  <meta name="twitter:description" content="markdown语法">
+  <meta name="twitter:description" content="插入\(\LaTeX\)公式">
   
   <meta property="og:type" content="article">
   <meta property="og:title" content="markdown 语法入门">
-  <meta property="og:description" content="markdown语法">
+  <meta property="og:description" content="插入\(\LaTeX\)公式">
   
   <link rel="icon" type="image/png" href="/images/favicon.png" />
   <link href="/images/favicon.png" rel="shortcut icon" type="image/png">
@@ -58,11 +58,15 @@
   });
 </script>
 
-
-
+<!-- 在网页端显示LaTeX公式，但是只支持$$格式 -->
 <script type="text/javascript" id="MathJax-script" async
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
 </script>
+
+<!-- Using Mermaid in Jekyll -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
+
 
 </head>
 
@@ -198,25 +202,20 @@
   
     <h2 class="post-title">目录</h2>
     <ul>
-  <li><a href="#markdown语法">markdown语法</a>
-    <ul>
-      <li><a href="#插入latex公式">插入(\LaTeX)公式</a></li>
-      <li><a href="#插入代码">插入代码</a></li>
-      <li><a href="#插入表格">插入表格</a></li>
-      <li><a href="#插入链接图片">插入链接图片</a></li>
-      <li><a href="#其他的基本功能">其他的基本功能</a></li>
-      <li><a href="#引用">引用</a></li>
-      <li><a href="#水平分割线">水平分割线</a></li>
-    </ul>
-  </li>
+  <li><a href="#插入latex公式">插入(\LaTeX)公式</a></li>
+  <li><a href="#插入代码">插入代码</a></li>
+  <li><a href="#插入表格">插入表格</a></li>
+  <li><a href="#插入链接图片">插入链接图片</a></li>
+  <li><a href="#其他的基本功能">其他的基本功能</a></li>
+  <li><a href="#引用">引用</a></li>
+  <li><a href="#水平分割线">水平分割线</a></li>
+  <li><a href="#画流程图">画流程图</a></li>
 </ul>
 
   
   
   <section class="post">
-    <h1 id="markdown语法">markdown语法</h1>
-
-<h2 id="插入latex公式">插入\(\LaTeX\)公式</h2>
+    <h2 id="插入latex公式">插入\(\LaTeX\)公式</h2>
 
 <ol>
   <li>插入文字间的公式，为了网页端的需要，仍然使用$$转义，例如\(x\in Y\)。</li>
@@ -305,12 +304,62 @@
 
 <blockquote>
   <p>参考文献1：偏微分方程数值解</p>
+
+  <blockquote>
+    <p>参考文献2</p>
+  </blockquote>
 </blockquote>
 
 <h2 id="水平分割线">水平分割线</h2>
 
 <hr />
 
+<h2 id="画流程图">画流程图</h2>
+
+<pre><code class="language-mermaid">graph LR
+A[方形] --&gt;B(圆角)
+    B --&gt; C{条件a}
+    C --&gt;|a=1| D[结果1]
+    C --&gt;|a=2| E[结果2]
+    F[横向流程图]
+</code></pre>
+<pre><code class="language-mermaid">%% 时序图例子,-&gt; 直线，--&gt;虚线，-&gt;&gt;实线箭头
+  sequenceDiagram
+    participant 张三
+    participant 李四
+    张三-&gt;王五: 王五你好吗？
+    loop 健康检查
+        王五-&gt;王五: 与疾病战斗
+    end
+    Note right of 王五: 合理 食物 &lt;br/&gt;看医生...
+    李四--&gt;&gt;张三: 很好!
+    王五-&gt;李四: 你怎么样?
+    李四--&gt;王五: 很好!
+</code></pre>
+
+<div class="mermaid">
+graph LR
+A[方形] --&gt;B(圆角)
+    B --&gt; C{条件a}
+    C --&gt;|a=1| D[结果1]
+    C --&gt;|a=2| E[结果2]
+    F[横向流程图]
+</div>
+
+<div class="mermaid">
+%% 时序图例子,-&gt; 直线，--&gt;虚线，-&gt;&gt;实线箭头
+  sequenceDiagram
+    participant 张三
+    participant 李四
+    张三-&gt;王五: 王五你好吗？
+    loop 健康检查
+        王五-&gt;王五: 与疾病战斗
+    end
+    Note right of 王五: 合理 食物 <br />看医生...
+    李四--&gt;&gt;张三: 很好!
+    王五-&gt;李四: 你怎么样?
+    李四--&gt;王五: 很好!
+</div>
 
   </section>
 

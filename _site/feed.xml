@@ -5,15 +5,13 @@
     <description>Welcome to my personal website~</description>
     <link>www.xiangtao.net.cn/</link>
     <atom:link href="www.xiangtao.net.cn/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 31 Aug 2021 18:54:59 +0800</pubDate>
-    <lastBuildDate>Tue, 31 Aug 2021 18:54:59 +0800</lastBuildDate>
+    <pubDate>Wed, 01 Sep 2021 08:37:20 +0800</pubDate>
+    <lastBuildDate>Wed, 01 Sep 2021 08:37:20 +0800</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
     
       <item>
         <title>markdown 语法入门</title>
-        <description>&lt;h1 id=&quot;markdown语法&quot;&gt;markdown语法&lt;/h1&gt;
-
-&lt;h2 id=&quot;插入latex公式&quot;&gt;插入\(\LaTeX\)公式&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;插入latex公式&quot;&gt;插入\(\LaTeX\)公式&lt;/h2&gt;
 
 &lt;ol&gt;
   &lt;li&gt;插入文字间的公式，为了网页端的需要，仍然使用$$转义，例如\(x\in Y\)。&lt;/li&gt;
@@ -102,12 +100,62 @@
 
 &lt;blockquote&gt;
   &lt;p&gt;参考文献1：偏微分方程数值解&lt;/p&gt;
+
+  &lt;blockquote&gt;
+    &lt;p&gt;参考文献2&lt;/p&gt;
+  &lt;/blockquote&gt;
 &lt;/blockquote&gt;
 
 &lt;h2 id=&quot;水平分割线&quot;&gt;水平分割线&lt;/h2&gt;
 
 &lt;hr /&gt;
 
+&lt;h2 id=&quot;画流程图&quot;&gt;画流程图&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-mermaid&quot;&gt;graph LR
+A[方形] --&amp;gt;B(圆角)
+    B --&amp;gt; C{条件a}
+    C --&amp;gt;|a=1| D[结果1]
+    C --&amp;gt;|a=2| E[结果2]
+    F[横向流程图]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&quot;language-mermaid&quot;&gt;%% 时序图例子,-&amp;gt; 直线，--&amp;gt;虚线，-&amp;gt;&amp;gt;实线箭头
+  sequenceDiagram
+    participant 张三
+    participant 李四
+    张三-&amp;gt;王五: 王五你好吗？
+    loop 健康检查
+        王五-&amp;gt;王五: 与疾病战斗
+    end
+    Note right of 王五: 合理 食物 &amp;lt;br/&amp;gt;看医生...
+    李四--&amp;gt;&amp;gt;张三: 很好!
+    王五-&amp;gt;李四: 你怎么样?
+    李四--&amp;gt;王五: 很好!
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div class=&quot;mermaid&quot;&gt;
+graph LR
+A[方形] --&amp;gt;B(圆角)
+    B --&amp;gt; C{条件a}
+    C --&amp;gt;|a=1| D[结果1]
+    C --&amp;gt;|a=2| E[结果2]
+    F[横向流程图]
+&lt;/div&gt;
+
+&lt;div class=&quot;mermaid&quot;&gt;
+%% 时序图例子,-&amp;gt; 直线，--&amp;gt;虚线，-&amp;gt;&amp;gt;实线箭头
+  sequenceDiagram
+    participant 张三
+    participant 李四
+    张三-&amp;gt;王五: 王五你好吗？
+    loop 健康检查
+        王五-&amp;gt;王五: 与疾病战斗
+    end
+    Note right of 王五: 合理 食物 &lt;br /&gt;看医生...
+    李四--&amp;gt;&amp;gt;张三: 很好!
+    王五-&amp;gt;李四: 你怎么样?
+    李四--&amp;gt;王五: 很好!
+&lt;/div&gt;
 </description>
         <pubDate>Tue, 31 Aug 2021 00:00:00 +0800</pubDate>
         <link>www.xiangtao.net.cn/2021/08/markdown/</link>
