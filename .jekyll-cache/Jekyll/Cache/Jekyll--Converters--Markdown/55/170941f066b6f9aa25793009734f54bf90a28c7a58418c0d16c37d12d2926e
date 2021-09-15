@@ -1,4 +1,4 @@
-I"<center>
+I"P"<center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/picture/CMP.6wtduy66xrk0.png" width="60%" />
     <br />
@@ -107,6 +107,7 @@
     color: #999;
     padding: 2px;">CMP速度关系式</div>
 </center>
+
 <p>变换关系式为:</p>
 
 \[\begin{equation}
@@ -136,5 +137,111 @@
 \end{aligned}
 \right.
 \end{equation}\]
+
+<p>速度关系式</p>
+
+\[\begin{equation}
+\left \{
+\begin{aligned}
+u_1 &amp;= \omega\cdot\cos\theta-u\cdot\sin\theta \\
+u_2 &amp;= \omega\cdot\sin\theta+u\cdot\cos\theta 
+\end{aligned}
+\right.
+\end{equation}\]
+
+<p>于是可得(5)与(6)式的柱坐标形式如下:</p>
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/picture/4.3ptd88rgsdq0.png" width="50%" />
+    <br />
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">(10)</div>
+</center>
+
+<p>p只与x,y相关，即p=p(r,\(\theta\))，记</p>
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/picture/5.7k69mslimvs0.png" width="50%" />
+    <br />
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">(11)</div>
+</center>
+
+<p>对(10)的中间两项在[0,z]上进行两次积分可得</p>
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/picture/6.411uvg8embc0.png" width="50%" />
+    <br />
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">(12)</div>
+</center>
+
+<p>对一阶对z的偏导数进行泰勒展式:</p>
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/picture/7.3ahyvvwxxvw0.png" width="50%" />
+    <br />
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">(13)</div>
+</center>
+
+<p>将(10)中间两项代入(13)，(13)代入(12)，然后再将(12)代入到(10)的第一个公式中，则有</p>
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/picture/8.3lxudsmnch40.png" width="50%" />
+    <br />
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">(14)</div>
+</center>
+
+<p>将(14)沿z轴[0,h]积分，积分过程中采用中矩形公式近似，于是得到了CMP润滑方程</p>
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/picture/10.978yo8qdzv4.png" width="50%" />
+    <br />
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;"></div>
+</center>
+<p>记晶片中心厚度为\(h_{piv}\)，晶片转角和倾角分别为\(\alpha~~\beta\)，则在(r,\(\theta\))处膜厚h满足</p>
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/picture/11.6o1ewjpwjh00.png" width="50%" />
+    <br />
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;"></div>
+</center>
+<p>速度边界条件满足如下:</p>
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/picture/12.5nc0z2tduzo0.png" width="50%" />
+    <br />
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;"></div>
+</center>
+<p>其中\(\omega_{\omega}\)为晶片的转速，\(\omega_p\)为抛光垫的转速，d为抛光垫中心到晶片中心的距离。</p>
 
 :ET
