@@ -1,0 +1,144 @@
+I"�3<h2 id="c内联函数">c++内联函数</h2>
+
+<h2 id="引用变量">引用变量</h2>
+
+<ol>
+  <li>
+    <p>创建引用变量</p>
+
+    <p><strong>引用的创建</strong></p>
+
+    <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">rats</span><span class="p">;</span>
+<span class="kt">int</span> <span class="o">&amp;</span><span class="n">rodents</span> <span class="o">=</span> <span class="n">rats</span><span class="p">;</span> <span class="c1">//rodents是rats的一个引用</span>
+</code></pre></div>    </div>
+
+    <p>说明：此时相当于一个地址上套了两个标签，即rats和rodents的地址相同，其中一个变量改变则另一个随之改变。</p>
+
+    <p><strong>引用和指针的区别</strong></p>
+
+    <p>指针可以先声明，再初始化，而引用在声明时候必须进行初始化。</p>
+
+    <p><strong>引用的本质</strong></p>
+
+    <p>引用可以理解成为变量取一个别名，但其本质是一个<strong>const</strong>指针</p>
+
+    <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="o">&amp;</span><span class="n">rodents</span> <span class="o">=</span> <span class="n">rats</span><span class="p">;</span>
+<span class="kt">int</span> <span class="o">*</span> <span class="k">const</span> <span class="n">pr</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">rats</span><span class="p">;</span><span class="c1">//引用的本质</span>
+</code></pre></div>    </div>
+
+    <p>上面的第1行代码的本质是第2行，其中引用rodents扮演的角色与*pr相同</p>
+
+    <p><strong>赋值与引用</strong></p>
+
+    <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="kt">int</span> <span class="o">&amp;</span><span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span> <span class="c1">//声明并初始化，即b是a的一个引用</span>
+<span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span> <span class="c1">//仅仅是赋值，等价于a = temp</span>
+</code></pre></div>    </div>
+
+    <p>上面的代码中第2行声明引用并初始化，而第4行仅仅是重新给b赋值，并不能理解成b变成了temp的引用；简而言之就是可以通过初始化声明来设置引用，但不能够通过赋值来设置。</p>
+
+    <p><strong>注意：上述并不是引用的典型用途</strong></p>
+  </li>
+  <li>
+    <p>将引用变量作为函数参数</p>
+
+    <p><strong>按值传递 指针传递 引用传递</strong></p>
+
+    <p><strong>按值传递</strong>会产生一个副本，函数的功能将会是对副本的数据进行操作，而实参并不会随之改变。</p>
+
+    <p><strong>指针传递</strong>和<strong>引用传递</strong>都不会产生一个新的副本，而是与实际的数据共用。</p>
+
+    <p>例如交换两个整数的函数声明及调用形式如下:</p>
+
+    <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">swap</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span><span class="kt">int</span> <span class="n">b</span><span class="p">);</span> <span class="c1">//按值传递函数声明</span>
+<span class="n">swap</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">);</span><span class="c1">//调用形式</span>
+<span class="n">swap</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">a</span><span class="p">,</span><span class="kt">int</span> <span class="o">*</span><span class="n">b</span><span class="p">);</span> <span class="c1">//指针传递函数声明</span>
+<span class="n">swap</span><span class="p">(</span><span class="o">&amp;</span><span class="n">a</span><span class="p">,</span><span class="o">&amp;</span><span class="n">b</span><span class="p">);</span><span class="c1">//调用形式</span>
+<span class="n">swap</span><span class="p">(</span><span class="kt">int</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">,</span><span class="kt">int</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">);</span> <span class="c1">//引用传递函数声明</span>
+<span class="n">swap</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">);</span><span class="c1">//调用形式</span>
+</code></pre></div>    </div>
+
+    <p>需要注意的是指针传递和引用传递他们的功能一样，但是在函数调用以及函数体写法上的区别，初次之外引用传递和按值传递他们除了在函数定义或者声明之处不一样外，其他都是一致的。</p>
+  </li>
+  <li>
+    <p>引用的属性和特别之处</p>
+
+    <p><strong>引用加const修饰符来防止数据被修改</strong></p>
+
+    <p>如果程序员的意图是让函数传递信息，而不需要对传递的信息进行修改，同时又想使用引用，则应使用const</p>
+
+    <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">double</span> <span class="n">refcube</span><span class="p">(</span><span class="k">const</span> <span class="kt">double</span> <span class="o">&amp;</span><span class="n">ra</span><span class="p">)</span><span class="c1">//此时在函数体中ra不允许修改，否则报错</span>
+</code></pre></div>    </div>
+
+    <p><strong>按值传递和引用传递的调用时机</strong></p>
+
+    <p>如果使用的是基本数据类型，且不希望原始的数据被破坏，数据量小，则应该使用按值传递。</p>
+
+    <p>如果数据比较大(比如结构和类)，则应该使用引用传递，这样避免了副本的产生从而大大节约了内存和代码的运行时间(因为副本是复制产生的，复制时候需要占用大量的运行时间)。</p>
+
+    <p><strong>临时变量 引用参数和const</strong></p>
+
+    <p>如果实参与引用参数不匹配，c++将产生临时变量，仅当参数为const引用时候生效，没有const编译器会报错。</p>
+
+    <p>如果引用参数是const，则产生临时变量的条件是</p>
+
+    <ul>
+      <li>实参的类型正确，但不是左值。</li>
+      <li>实参的类型不正确，但可以转换成正确的类型。</li>
+    </ul>
+
+    <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">double</span> <span class="nf">refcube</span><span class="p">(</span><span class="k">const</span> <span class="kt">double</span> <span class="o">&amp;</span><span class="n">ra</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">ra</span><span class="o">*</span><span class="n">ra</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">double</span> <span class="n">side</span> <span class="o">=</span> <span class="mf">3.0</span><span class="p">;</span>
+<span class="kt">double</span> <span class="o">*</span><span class="n">pd</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">side</span><span class="p">;</span>
+<span class="kt">double</span> <span class="o">&amp;</span><span class="n">rd</span> <span class="o">=</span> <span class="n">side</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">edge</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="kt">double</span> <span class="n">lens</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">,</span><span class="mf">3.0</span><span class="p">};</span>
+<span class="kt">double</span> <span class="n">c1</span> <span class="o">=</span> <span class="n">refcube</span><span class="p">(</span><span class="n">side</span><span class="p">);</span><span class="c1">//ra是side的引用，地址一致</span>
+<span class="kt">double</span> <span class="n">c2</span> <span class="o">=</span> <span class="n">refcube</span><span class="p">(</span><span class="n">lens</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span><span class="c1">//ra是lens[2]的引用，地址一致</span>
+<span class="kt">double</span> <span class="n">c3</span> <span class="o">=</span> <span class="n">refcube</span><span class="p">(</span><span class="n">rd</span><span class="p">);</span><span class="c1">//ra是rd的引用，rd是side引用，因此他们三个地址一致</span>
+<span class="kt">double</span> <span class="n">c4</span> <span class="o">=</span> <span class="n">refcube</span><span class="p">(</span><span class="o">*</span><span class="n">pd</span><span class="p">);</span><span class="c1">//ra是*pd的引用，而*pd=side，因此他们地址一致</span>
+<span class="kt">double</span> <span class="n">c5</span> <span class="o">=</span> <span class="n">refcube</span><span class="p">(</span><span class="n">edge</span><span class="p">);</span><span class="c1">//ra是一个临时变量，因为edge是int，类型不匹配</span>
+<span class="kt">double</span> <span class="n">c6</span> <span class="o">=</span> <span class="n">refcube</span><span class="p">(</span><span class="mf">7.0</span><span class="p">);</span><span class="c1">//ra是一个临时变量，ra=7.0,尽管7.0是double，但7.0不是左值表达式</span>
+<span class="kt">double</span> <span class="n">c7</span> <span class="o">=</span> <span class="n">refcube</span><span class="p">(</span><span class="n">side</span> <span class="o">+</span> <span class="mf">10.0</span><span class="p">);</span><span class="c1">//ra是临时变量,side+10.0尽管是double，但不是左值表达式</span>
+</code></pre></div>    </div>
+
+    <p>上面的15 16行也可以说是他们没哟名称，从而会产生一个临时变量，产生临时变量的本质是，例如</p>
+
+    <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">double</span> <span class="n">a</span> <span class="o">=</span> <span class="mf">2.0</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kt">int</span> <span class="o">&amp;</span><span class="n">c</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span><span class="c1">//ok,c是b的引用,地址一致</span>
+<span class="kt">int</span> <span class="o">&amp;</span><span class="n">d</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span><span class="c1">//ok,但会产生临时变量，导致d的地址是临时变量的地址，与a的地址不一样</span>
+<span class="cm">/*
+产生临时变量:
+int &amp;d =a;
+编译器进行了如下操作
+int temp = a;将double类型的a的数据存储到int类型的临时变量temp中
+int &amp;d =temp;此时d再引用临时变量temp，即d的地址与temp一致
+*/</span>
+</code></pre></div>    </div>
+
+    <p>也就是所当产生临时变量时候，引用参数的地址不再与传递参数的地址一致，所以改变他们其中一个数的值，另一个不会随之改变。前提是引用使用了const，否则编译会因为类型不同或者不是左值表达式而报错。</p>
+
+    <p><strong>注意</strong> 对于未加const的引用当类型不匹配时，有些较老的编译器仍然能够正确运行，只是发出临时变量的警告，这时候的警告我们不能够忽略它，<strong>此外我们应该在函数的引用参数中尽量使用const，</strong>这样能够接受更多类型的实参，只是当类型不匹配时候const引用参数功能就跟按值传递的功能一样(因为产生了临时变量实参和形参的地址不一样了)，同时在c++11标准中，<strong>&amp;称为左值引用，&amp;&amp;称为右值引用</strong>，关于&amp;&amp;引用此处不做说明。</p>
+  </li>
+  <li>
+    <p>将引用用于结构</p>
+
+    <p>c++设计左值引用的目的主要是针对结构体和类，而不是基本数据类型，原因上面已经说过，这样可以避免副本的产生而大大的减少程序运行时间。结构和类都是用户定义的数据类型，使用方式和使用基本的数据类型一样，例如定义了一个Student的结构，那么引用的时候Student就跟int一样去操作即可。</p>
+  </li>
+  <li>
+    <p>将引用用于类对象</p>
+  </li>
+  <li>
+    <p>对象 继承和引用</p>
+  </li>
+  <li>
+    <p>何时使用引用参数</p>
+  </li>
+</ol>
+
+:ET

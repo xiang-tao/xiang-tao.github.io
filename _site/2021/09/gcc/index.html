@@ -6,17 +6,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <title>markdown 语法入门</title>
-  <meta name="description" content="插入\(\LaTeX\)公式">
+  <title>gcc 命令参数</title>
+  <meta name="description" content="gcc命令参数">
   <meta name="author" content="leopardpan">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="markdown 语法入门">
-  <meta name="twitter:description" content="插入\(\LaTeX\)公式">
+  <meta name="twitter:title" content="gcc 命令参数">
+  <meta name="twitter:description" content="gcc命令参数">
   
   <meta property="og:type" content="article">
-  <meta property="og:title" content="markdown 语法入门">
-  <meta property="og:description" content="插入\(\LaTeX\)公式">
+  <meta property="og:title" content="gcc 命令参数">
+  <meta property="og:description" content="gcc命令参数">
   
   <link rel="icon" type="image/png" href="/images/favicon.png" />
   <link href="/images/favicon.png" rel="shortcut icon" type="image/png">
@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="/css/main.css">
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-  <link rel="canonical" href="www.xiangtao.net.cn/2021/08/markdown/">
+  <link rel="canonical" href="www.xiangtao.net.cn/2021/09/gcc/">
   <link rel="alternate" type="application/rss+xml" title="向涛" href="www.xiangtao.net.cn/feed.xml">
   
   <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
@@ -189,10 +189,10 @@
 
 <article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
-    <h1 class="post-title">markdown 语法入门</h1>
+    <h1 class="post-title">gcc 命令参数</h1>
     <div class="post-meta">
       <img src="/images/calendar.png" width="20px"/> 
-      <time datetime="2021-08-31 00:00:00 +0800" itemprop="datePublished" class="post-meta__date date">2021-08-31</time>  
+      <time datetime="2021-09-03 00:00:00 +0800" itemprop="datePublished" class="post-meta__date date">2021-09-03</time>  
 
       <span id="busuanzi_container_page_pv"> | 阅读：<span id="busuanzi_value_page_pv"></span>次</span>
     </p>
@@ -202,164 +202,83 @@
   
     <h2 class="post-title">目录</h2>
     <ul>
-  <li><a href="#插入latex公式">插入(\LaTeX)公式</a></li>
-  <li><a href="#插入代码">插入代码</a></li>
-  <li><a href="#插入表格">插入表格</a></li>
-  <li><a href="#插入链接图片">插入链接图片</a></li>
-  <li><a href="#其他的基本功能">其他的基本功能</a></li>
-  <li><a href="#引用">引用</a></li>
-  <li><a href="#水平分割线">水平分割线</a></li>
-  <li><a href="#画流程图">画流程图</a></li>
+  <li><a href="#gcc命令参数">gcc命令参数</a></li>
 </ul>
 
   
   
   <section class="post">
-    <h2 id="插入latex公式">插入\(\LaTeX\)公式</h2>
+    <h2 id="gcc命令参数">gcc命令参数</h2>
 
 <ol>
-  <li>插入文字间的公式，为了网页端的需要，仍然使用$$转义，例如\(x\in Y\)。</li>
-  <li>插入行间的LaTeX公式，网页端显示目前我的配置只支持使用$$</li>
+  <li>gcc -E source_file.c</li>
 </ol>
 
-\[\begin{equation}
-   \left \{
-   \begin{aligned}
-   &amp; \dfrac{\partial u}{\partial t}-k\dfrac{\partial^2 u}{\partial x^2}=0 \\
-   &amp; u(0,t)=0,~~u(1,t)=0,~~t\in [0,0.1] \\
-   &amp; u(x,0) = e^{-\dfrac{(x-0.25)^2}{0.01}}+0.1*sin(20\pi x), x\in (0,1)
-   \end{aligned}
-   \right.
-   \end{equation}\]
-
-<h2 id="插入代码">插入代码</h2>
-
-<p>下面插入的是一段c++代码</p>
-
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">test01</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="c1">//查找容器中是否有5这个元素</span>
-    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">it</span> <span class="o">=</span> <span class="n">find</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="mi">50</span><span class="p">);</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">it</span> <span class="o">==</span> <span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
-    <span class="p">{</span>
-        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"没有找到！"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">else</span>
-    <span class="p">{</span>
-        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"找到了！"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-<h2 id="插入表格">插入表格</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center">四川</th>
-      <th style="text-align: center">贵州</th>
-      <th style="text-align: center">云南</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: center">宜宾</td>
-      <td style="text-align: center">毕节</td>
-      <td style="text-align: center">昆明</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">成都</td>
-      <td style="text-align: center">贵阳</td>
-      <td style="text-align: center">丽江</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">\(x\in y\)</td>
-      <td style="text-align: center">\(y\in x\)</td>
-      <td style="text-align: center">\(N\)</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="插入链接图片">插入链接图片</h2>
-<p><img src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/picture/20210509-3.5sgg78x5fyw0.png" alt="来自github链接图片" /></p>
-
-<h2 id="其他的基本功能">其他的基本功能</h2>
+<p>　　-E，只执行到预编译。直接输出预编译结果。</p>
 
 <ol>
-  <li>高亮: ==美丽的姑娘==</li>
-  <li>上标与下标： 我^平方^，你~下标~</li>
-  <li>注释： <!--这是注释--></li>
-  <li>加粗： <strong>B</strong>B</li>
-  <li>斜体： <em>A</em>A</li>
-  <li>下划线：<u>我爱她轰轰烈烈</u></li>
-  <li>删除线: <del>等到时光破碎</del></li>
-  <li>超链接: <a href="https://github.com/xiang-tao">Github</a>.</li>
+  <li>gcc -S source_file.c</li>
 </ol>
 
-<h2 id="引用">引用</h2>
+<p>　　 -S，只执行到源代码到汇编代码的转换，输出汇编代码。</p>
 
-<blockquote>
-  <p>参考文献1：偏微分方程数值解</p>
+<ol>
+  <li>gcc -c source_file.c</li>
+</ol>
 
-  <blockquote>
-    <p>参考文献2</p>
-  </blockquote>
-</blockquote>
+<p>　　-c，只执行到编译，输出目标文件。</p>
 
-<h2 id="水平分割线">水平分割线</h2>
+<ol>
+  <li>gcc (-E/S/c/) source_file.c -o output_filename</li>
+</ol>
+
+<p>　　-o, 指定输出文件名，可以配合以上三种标签使用。-o 参数可以被省略。这种情况下编译器将使用以下默认名称输出：</p>
+
+<p>　　-E：预编译结果将被输出到标准输出端口（通常是显示器）</p>
+
+<p>　　-S：生成名为source_file.s的汇编代码</p>
+
+<p>　　-c：生成名为source_file.o的目标文件。无标签情况：生成名为a.out的可执行文件。</p>
+
+<ol>
+  <li>gcc -g source_file.c</li>
+</ol>
+
+<p>　　 -g，生成供调试用的可执行文件，可以在gdb中运行。由于文件中包含了调试信息因此运行效率很低，且文件也大不少。这里可以用strip命令重新将文件中debug信息删除。这是会发现生成的文件甚至比正常编译的输出更小了，这是因为strip把原先正常编译中的一些额外信息（如函数名之类）也删除了。用法为 strip a.out</p>
+
+<ol>
+  <li>gcc -s source_file.c</li>
+</ol>
+
+<p>　　-s, 直接生成与运用strip同样效果的可执行文件（删除了所有符号信息）。</p>
+
+<ol>
+  <li>gcc -O source_file.c</li>
+</ol>
+
+<p>　　-O（大写的字母O），编译器对代码进行自动优化编译，输出效率更高的可执行文件。</p>
+
+<p>　　-O 后面还可以跟上数字指定优化级别，如：gcc -O2 source_file.c数字越大，越加优化。但是通常情况下，自动的东西都不是太聪明，太大的优化级别可能会使生成的文件产生一系列的bug。一般可选择2；3会有一定风险。</p>
+
+<ol>
+  <li>gcc -Wall source_file.c</li>
+</ol>
+
+<p>　　-W，在编译中开启一些额外的警告（warning）信息。-Wall，将所有的警告信息全开。</p>
+
+<ol>
+  <li>gcc source_file.c -L/path/to/lib -lxxx -I/path/to/include</li>
+</ol>
+
+<p>　　-l,  指定所使用到的函数库，本例中链接器会尝试链接名为libxxx.a的函数库。</p>
+
+<p>　　-L，指定函数库所在的文件夹，本例中链接器会尝试搜索/path/to/lib文件夹。</p>
+
+<p>　　-I, 指定头文件所在的文件夹，本例中预编译器会尝试搜索/path/to/include文件夹。</p>
 
 <hr />
 
-<h2 id="画流程图">画流程图</h2>
-
-<pre><code class="language-mermaid">graph LR
-A[方形] --&gt;B(圆角)
-    B --&gt; C{条件a}
-    C --&gt;|a=1| D[结果1]
-    C --&gt;|a=2| E[结果2]
-    F[横向流程图]
-</code></pre>
-<pre><code class="language-mermaid">%% 时序图例子,-&gt; 直线，--&gt;虚线，-&gt;&gt;实线箭头
-  sequenceDiagram
-    participant 张三
-    participant 李四
-    张三-&gt;王五: 王五你好吗？
-    loop 健康检查
-        王五-&gt;王五: 与疾病战斗
-    end
-    Note right of 王五: 合理 食物 &lt;br/&gt;看医生...
-    李四--&gt;&gt;张三: 很好!
-    王五-&gt;李四: 你怎么样?
-    李四--&gt;王五: 很好!
-</code></pre>
-
-<div class="mermaid">
-graph LR
-A[方形] --&gt;B(圆角)
-    B --&gt; C{条件a}
-    C --&gt;|a=1| D[结果1]
-    C --&gt;|a=2| E[结果2]
-    F[横向流程图]
-</div>
-
-<div class="mermaid">
-%% 时序图例子,-&gt; 直线，--&gt;虚线，-&gt;&gt;实线箭头
-  sequenceDiagram
-    participant 张三
-    participant 李四
-    张三-&gt;王五: 王五你好吗？
-    loop 健康检查
-        王五-&gt;王五: 与疾病战斗
-    end
-    Note right of 王五: 合理 食物 <br />看医生...
-    李四--&gt;&gt;张三: 很好!
-    王五-&gt;李四: 你怎么样?
-    李四--&gt;王五: 很好!
-</div>
+<p>原文：https://blog.csdn.net/zhubaohua_bupt/article/details/52763639</p>
 
   </section>
 
@@ -403,13 +322,13 @@ A[方形] --&gt;B(圆角)
        <ul class="pager">
         
         <li class="previous">
-            <a href="/2021/07/git/" data-toggle="tooltip" data-placement="top" title="本地仓库上传到github/gitlab命令及一些常见问题解决方案">上一篇：  <span>本地仓库上传到github/gitlab命令及一些常见问题解决方案</span>
+            <a href="/2021/08/markdown/" data-toggle="tooltip" data-placement="top" title="markdown 语法入门">上一篇：  <span>markdown 语法入门</span>
             </a>
         </li>
         
         
         <li class="next">
-            <a href="/2021/09/gcc/" data-toggle="tooltip" data-placement="top" title="gcc 命令参数">下一篇：  <span>gcc 命令参数</span>
+            <a href="/2021/09/%E5%87%BD%E6%95%B0%E6%8E%A2%E5%B9%BD/" data-toggle="tooltip" data-placement="top" title="第八章 函数探幽">下一篇：  <span>第八章 函数探幽</span>
             </a>
         </li>
         

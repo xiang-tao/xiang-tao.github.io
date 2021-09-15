@@ -5,9 +5,397 @@
     <description>Welcome to my personal website~</description>
     <link>www.xiangtao.net.cn/</link>
     <atom:link href="www.xiangtao.net.cn/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 01 Sep 2021 08:37:20 +0800</pubDate>
-    <lastBuildDate>Wed, 01 Sep 2021 08:37:20 +0800</lastBuildDate>
+    <pubDate>Tue, 14 Sep 2021 21:45:30 +0800</pubDate>
+    <lastBuildDate>Tue, 14 Sep 2021 21:45:30 +0800</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>考虑对流效应和磁场的CMP模型及数值模拟论文笔记</title>
+        <description>&lt;center&gt;
+    &lt;img style=&quot;border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);&quot; src=&quot;https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/picture/CMP.6wtduy66xrk0.png&quot; width=&quot;60%&quot; /&gt;
+    &lt;br /&gt;
+    &lt;div style=&quot;color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;&quot;&gt;CMP工作示意图&lt;/div&gt;
+&lt;/center&gt;
+
+&lt;h2 id=&quot;具有对流效应的cmp润滑方程的推导&quot;&gt;具有对流效应的CMP润滑方程的推导&lt;/h2&gt;
+
+&lt;p&gt;连续方程为：
+\(\begin{equation}
+\nabla\cdot\pmb{u} = 0
+\end{equation}\)&lt;/p&gt;
+
+&lt;p&gt;该方程等价于&lt;/p&gt;
+
+\[\begin{equation}
+\dfrac{\partial u_1}{\partial x} 
++ \dfrac{\partial u_2}{\partial y} 
++ \dfrac{\partial u_3}{\partial z}=0
+\end{equation}\]
+
+&lt;p&gt;运动方程为：&lt;/p&gt;
+
+\[\begin{equation}
+\rho\dfrac{\partial \pmb{u}}{\partial t}
++ \rho\pmb{u}\cdot\nabla \pmb{u}
+= -\nabla p+ \eta\Delta \pmb{u} +\rho\pmb{F}
+\end{equation}\]
+
+&lt;p&gt;当假设\(\pmb{F} = \pmb{0}\)时，该方程等价于&lt;/p&gt;
+
+\[\begin{equation}
+\left \{
+\begin{aligned}
+\rho \left(\dfrac{\partial u_1}{\partial t}
++u_1 \dfrac{\partial u_1}{\partial x}
++u_2 \dfrac{\partial u_1}{\partial y}
++u_3 \dfrac{\partial u_1}{\partial z}\right)
+= -\dfrac{\partial p}{\partial x} + \eta
+\left( \dfrac{\partial^2 u_1}{\partial x^2} + \dfrac{\partial^2 u_1}{\partial y^2}
++\dfrac{\partial^2 u_1}{\partial z^2}  \right) \\
+\rho \left(\dfrac{\partial u_2}{\partial t}
++u_1 \dfrac{\partial u_2}{\partial x}
++u_2 \dfrac{\partial u_2}{\partial y}
++u_3 \dfrac{\partial u_2}{\partial z}\right)
+= -\dfrac{\partial p}{\partial y} + \eta
+\left( \dfrac{\partial^2 u_2}{\partial x^2} + \dfrac{\partial^2 u_2}{\partial y^2}
++\dfrac{\partial^2 u_2}{\partial z^2}  \right)\\
+\rho \left(\dfrac{\partial u_3}{\partial t}
++u_1 \dfrac{\partial u_3}{\partial x}
++u_2 \dfrac{\partial u_3}{\partial y}
++u_3 \dfrac{\partial u_3}{\partial z}\right)
+= -\dfrac{\partial p}{\partial z} + \eta
+\left( \dfrac{\partial^2 u_3}{\partial x^2} + \dfrac{\partial^2 u_3}{\partial y^2}
++\dfrac{\partial^2 u_3}{\partial z^2}  \right)
+\end{aligned}
+\right.
+\end{equation}\]
+
+&lt;p&gt;&lt;strong&gt;假设条件&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;CMP过程中载荷完全由抛光液来承载，晶片由于抛光液的隔离完全与抛光垫分离，因为膜厚比较博，忽略质量力。&lt;/li&gt;
+  &lt;li&gt;假设抛光液是牛顿性流体，在CMP过程中是稳态不可压的，流体的黏性系数是常数\(\eta\)。由于稳态所以\(\dfrac{\partial u_i}{\partial t} = 0\)。&lt;/li&gt;
+  &lt;li&gt;满足无纲量润滑条件。即\(\dfrac{\partial^2 u_i}{\partial x^2} + \dfrac{\partial^2 u_i}{\partial y^2}\)比\(\dfrac{\partial^2 u_i}{\partial z^2}\)量级小，可以忽略。&lt;/li&gt;
+  &lt;li&gt;在\(z\)轴方向总压力梯度为0，\(z\)轴方向的速度忽略不计。即\(u_3 = 0\)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;所以连续方程简化为&lt;/p&gt;
+
+\[\begin{equation}
+\dfrac{\partial u_1}{\partial x} 
++ \dfrac{\partial u_2}{\partial y} =0
+\end{equation}\]
+
+&lt;p&gt;运动方程简化为&lt;/p&gt;
+
+\[\begin{equation}
+\left \{
+\begin{aligned}
+\dfrac{\partial p}{\partial x}
++\rho u_1 \dfrac{\partial u_1}{\partial x}
++\rho u_2 \dfrac{\partial u_1}{\partial y}
+&amp;amp;= \eta \dfrac{\partial^2 u_1}{\partial z^2} \\
+\dfrac{\partial p}{\partial y}
++\rho u_1 \dfrac{\partial u_2}{\partial x}
++\rho u_2 \dfrac{\partial u_2}{\partial y}
+&amp;amp;= \eta \dfrac{\partial^2 u_2}{\partial z^2}
+\\
+ \dfrac{\partial p}{\partial z} &amp;amp;= 0
+\end{aligned}
+\right.
+\end{equation}\]
+
+&lt;p&gt;上式的坐标系是直角坐标系，将其转化为柱坐标，则速度转换关系如下图&lt;/p&gt;
+
+&lt;center&gt;
+    &lt;img style=&quot;border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);&quot; src=&quot;https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/picture/CMPspeed.6ivt4x8iwxc0.png&quot; width=&quot;50%&quot; /&gt;
+    &lt;br /&gt;
+    &lt;div style=&quot;color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;&quot;&gt;CMP速度关系式&lt;/div&gt;
+&lt;/center&gt;
+&lt;p&gt;变换关系式为:&lt;/p&gt;
+
+\[\begin{equation}
+\left \{
+\begin{aligned}
+\dfrac{\partial x}{\partial r} = \cos\theta
+~~~ \dfrac{\partial x}{\partial \theta}
+= -r\cdot \sin\theta \\
+\dfrac{\partial y}{\partial r} = \cos\theta
+~~~ \dfrac{\partial y}{\partial \theta}
+= r\cdot \cos\theta
+\end{aligned}
+\right.
+\end{equation}\]
+
+&lt;!--这里不太懂--&gt;
+&lt;p&gt;\(\begin{equation}
+\left \{
+\begin{aligned}
+\dfrac{\partial r}{\partial x} = \cos\theta
+~~~ \dfrac{\partial \theta}{\partial x}
+= -\dfrac{\sin\theta}{r} \\
+\dfrac{\partial r}{\partial y} = \cos\theta
+~~~ \dfrac{\partial \theta}{\partial y}
+= \dfrac{\cos\theta}{r} 
+\end{aligned}
+\right.
+\end{equation}\)&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 14 Sep 2021 00:00:00 +0800</pubDate>
+        <link>www.xiangtao.net.cn/2021/09/%E5%AF%B9%E6%B5%81%E6%95%88%E5%BA%94%E5%92%8C%E7%A3%81%E5%9C%BA%E7%9A%84CMP%E6%A8%A1%E5%9E%8B/</link>
+        <guid isPermaLink="true">www.xiangtao.net.cn/2021/09/%E5%AF%B9%E6%B5%81%E6%95%88%E5%BA%94%E5%92%8C%E7%A3%81%E5%9C%BA%E7%9A%84CMP%E6%A8%A1%E5%9E%8B/</guid>
+        
+        <category>mathematical</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>第八章 函数探幽</title>
+        <description>&lt;h2 id=&quot;c内联函数&quot;&gt;c++内联函数&lt;/h2&gt;
+
+&lt;h2 id=&quot;引用变量&quot;&gt;引用变量&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;创建引用变量&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;引用的创建&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rats&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rodents&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rats&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//rodents是rats的一个引用&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;p&gt;说明：此时相当于一个地址上套了两个标签，即rats和rodents的地址相同，其中一个变量改变则另一个随之改变。&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;引用和指针的区别&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;指针可以先声明，再初始化，而引用在声明时候必须进行初始化。&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;引用的本质&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;引用可以理解成为变量取一个别名，但其本质是一个&lt;strong&gt;const&lt;/strong&gt;指针&lt;/p&gt;
+
+    &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rodents&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rats&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rats&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//引用的本质&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;p&gt;上面的第1行代码的本质是第2行，其中引用rodents扮演的角色与*pr相同&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;赋值与引用&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//声明并初始化，即b是a的一个引用&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;temp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;temp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//仅仅是赋值，等价于a = temp&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;p&gt;上面的代码中第2行声明引用并初始化，而第4行仅仅是重新给b赋值，并不能理解成b变成了temp的引用；简而言之就是可以通过初始化声明来设置引用，但不能够通过赋值来设置。&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;注意：上述并不是引用的典型用途&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;将引用变量作为函数参数&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;按值传递 指针传递 引用传递&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;按值传递&lt;/strong&gt;会产生一个副本，函数的功能将会是对副本的数据进行操作，而实参并不会随之改变。&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;指针传递&lt;/strong&gt;和&lt;strong&gt;引用传递&lt;/strong&gt;都不会产生一个新的副本，而是与实际的数据共用。&lt;/p&gt;
+
+    &lt;p&gt;例如交换两个整数的函数声明及调用形式如下:&lt;/p&gt;
+
+    &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;swap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//按值传递函数声明&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;swap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//调用形式&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;swap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//指针传递函数声明&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;swap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//调用形式&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;swap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//引用传递函数声明&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;swap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//调用形式&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;p&gt;需要注意的是指针传递和引用传递他们的功能一样，但是在函数调用以及函数体写法上的区别，初次之外引用传递和按值传递他们除了在函数定义或者声明之处不一样外，其他都是一致的。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;引用的属性和特别之处&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;引用加const修饰符来防止数据被修改&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;如果程序员的意图是让函数传递信息，而不需要对传递的信息进行修改，同时又想使用引用，则应使用const&lt;/p&gt;
+
+    &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;refcube&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ra&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//此时在函数体中ra不允许修改，否则报错&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;p&gt;&lt;strong&gt;按值传递和引用传递的调用时机&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;如果使用的是基本数据类型，且不希望原始的数据被破坏，数据量小，则应该使用按值传递。&lt;/p&gt;
+
+    &lt;p&gt;如果数据比较大(比如结构和类)，则应该使用引用传递，这样避免了副本的产生从而大大节约了内存和代码的运行时间(因为副本是复制产生的，复制时候需要占用大量的运行时间)。&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;临时变量 引用参数和const&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;如果实参与引用参数不匹配，c++将产生临时变量，仅当参数为const引用时候生效，没有const编译器会报错。&lt;/p&gt;
+
+    &lt;p&gt;如果引用参数是const，则产生临时变量的条件是&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;实参的类型正确，但不是左值。&lt;/li&gt;
+      &lt;li&gt;实参的类型不正确，但可以转换成正确的类型。&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;refcube&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ra&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ra&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ra&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;side&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;3.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pd&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;side&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rd&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;side&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;edge&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lens&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;2.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;3.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;refcube&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;side&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//ra是side的引用，地址一致&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;refcube&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lens&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//ra是lens[2]的引用，地址一致&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;refcube&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//ra是rd的引用，rd是side引用，因此他们三个地址一致&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c4&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;refcube&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//ra是*pd的引用，而*pd=side，因此他们地址一致&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c5&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;refcube&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;edge&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//ra是一个临时变量，因为edge是int，类型不匹配&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c6&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;refcube&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;7.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//ra是一个临时变量，ra=7.0,尽管7.0是double，但7.0不是左值表达式&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c7&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;refcube&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;side&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;10.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//ra是临时变量,side+10.0尽管是double，但不是左值表达式&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;p&gt;上面的15 16行也可以说是他们没哟名称，从而会产生一个临时变量，产生临时变量的本质是，例如&lt;/p&gt;
+
+    &lt;div class=&quot;language-c++ highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;2.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//ok,c是b的引用,地址一致&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//ok,但会产生临时变量，导致d的地址是临时变量的地址，与a的地址不一样&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;/*
+产生临时变量:
+int &amp;amp;d =a;
+编译器进行了如下操作
+int temp = a;将double类型的a的数据存储到int类型的临时变量temp中
+int &amp;amp;d =temp;此时d再引用临时变量temp，即d的地址与temp一致
+*/&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;p&gt;也就是所当产生临时变量时候，引用参数的地址不再与传递参数的地址一致，所以改变他们其中一个数的值，另一个不会随之改变。前提是引用使用了const，否则编译会因为类型不同或者不是左值表达式而报错。&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt; 对于未加const的引用当类型不匹配时，有些较老的编译器仍然能够正确运行，只是发出临时变量的警告，这时候的警告我们不能够忽略它，&lt;strong&gt;此外我们应该在函数的引用参数中尽量使用const，&lt;/strong&gt;这样能够接受更多类型的实参，只是当类型不匹配时候const引用参数功能就跟按值传递的功能一样(因为产生了临时变量实参和形参的地址不一样了)，同时在c++11标准中，&lt;strong&gt;&amp;amp;称为左值引用，&amp;amp;&amp;amp;称为右值引用&lt;/strong&gt;，关于&amp;amp;&amp;amp;引用此处不做说明。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;将引用用于结构&lt;/p&gt;
+
+    &lt;p&gt;c++设计左值引用的目的主要是针对结构体和类，而不是基本数据类型，原因上面已经说过，这样可以避免副本的产生而大大的减少程序运行时间。结构和类都是用户定义的数据类型，使用方式和使用基本的数据类型一样，例如定义了一个Student的结构，那么引用的时候Student就跟int一样去操作即可。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;将引用用于类对象&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;对象 继承和引用&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;何时使用引用参数&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+</description>
+        <pubDate>Sun, 12 Sep 2021 00:00:00 +0800</pubDate>
+        <link>www.xiangtao.net.cn/2021/09/%E5%87%BD%E6%95%B0%E6%8E%A2%E5%B9%BD/</link>
+        <guid isPermaLink="true">www.xiangtao.net.cn/2021/09/%E5%87%BD%E6%95%B0%E6%8E%A2%E5%B9%BD/</guid>
+        
+        <category>c++</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>gcc 命令参数</title>
+        <description>&lt;h2 id=&quot;gcc命令参数&quot;&gt;gcc命令参数&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;gcc -E source_file.c&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;　　-E，只执行到预编译。直接输出预编译结果。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;gcc -S source_file.c&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;　　 -S，只执行到源代码到汇编代码的转换，输出汇编代码。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;gcc -c source_file.c&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;　　-c，只执行到编译，输出目标文件。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;gcc (-E/S/c/) source_file.c -o output_filename&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;　　-o, 指定输出文件名，可以配合以上三种标签使用。-o 参数可以被省略。这种情况下编译器将使用以下默认名称输出：&lt;/p&gt;
+
+&lt;p&gt;　　-E：预编译结果将被输出到标准输出端口（通常是显示器）&lt;/p&gt;
+
+&lt;p&gt;　　-S：生成名为source_file.s的汇编代码&lt;/p&gt;
+
+&lt;p&gt;　　-c：生成名为source_file.o的目标文件。无标签情况：生成名为a.out的可执行文件。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;gcc -g source_file.c&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;　　 -g，生成供调试用的可执行文件，可以在gdb中运行。由于文件中包含了调试信息因此运行效率很低，且文件也大不少。这里可以用strip命令重新将文件中debug信息删除。这是会发现生成的文件甚至比正常编译的输出更小了，这是因为strip把原先正常编译中的一些额外信息（如函数名之类）也删除了。用法为 strip a.out&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;gcc -s source_file.c&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;　　-s, 直接生成与运用strip同样效果的可执行文件（删除了所有符号信息）。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;gcc -O source_file.c&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;　　-O（大写的字母O），编译器对代码进行自动优化编译，输出效率更高的可执行文件。&lt;/p&gt;
+
+&lt;p&gt;　　-O 后面还可以跟上数字指定优化级别，如：gcc -O2 source_file.c数字越大，越加优化。但是通常情况下，自动的东西都不是太聪明，太大的优化级别可能会使生成的文件产生一系列的bug。一般可选择2；3会有一定风险。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;gcc -Wall source_file.c&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;　　-W，在编译中开启一些额外的警告（warning）信息。-Wall，将所有的警告信息全开。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;gcc source_file.c -L/path/to/lib -lxxx -I/path/to/include&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;　　-l,  指定所使用到的函数库，本例中链接器会尝试链接名为libxxx.a的函数库。&lt;/p&gt;
+
+&lt;p&gt;　　-L，指定函数库所在的文件夹，本例中链接器会尝试搜索/path/to/lib文件夹。&lt;/p&gt;
+
+&lt;p&gt;　　-I, 指定头文件所在的文件夹，本例中预编译器会尝试搜索/path/to/include文件夹。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;原文：https://blog.csdn.net/zhubaohua_bupt/article/details/52763639&lt;/p&gt;
+</description>
+        <pubDate>Fri, 03 Sep 2021 00:00:00 +0800</pubDate>
+        <link>www.xiangtao.net.cn/2021/09/gcc/</link>
+        <guid isPermaLink="true">www.xiangtao.net.cn/2021/09/gcc/</guid>
+        
+        <category>gcc</category>
+        
+        
+      </item>
     
       <item>
         <title>markdown 语法入门</title>
@@ -988,6 +1376,54 @@ space 空格，进入搜索状态
 &lt;p&gt;一般来说。更新完成之后会有一些不需要的旧组件需要清除。此时使用&lt;/p&gt;
 
 &lt;p&gt;sudo apt autoremove即可完成清理。&lt;/p&gt;
+
+&lt;h1 id=&quot;ubuntu如何彻底卸载一个软件&quot;&gt;ubuntu如何彻底卸载一个软件&lt;/h1&gt;
+
+&lt;p&gt;apt-get的卸载相关的命令有remove/purge/autoremove/clean/autoclean等。具体来说：&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;apt-get purge / apt-get –purge remove&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;删除已安装包（不保留配置文件)。&lt;/p&gt;
+
+&lt;p&gt;如软件包a，依赖软件包b，则执行该命令会删除a，而且不保留配置文件&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;apt-get autoremove&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;删除为了满足依赖而安装的，但现在不再需要的软件包（包括已安装包），保留配置文件。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;apt-get remove&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;删除已安装的软件包（保留配置文件），不会删除依赖软件包，且保留配置文件。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;apt-get autoclean&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;APT的底层包是dpkg, 而dpkg 安装Package时, 会将 *.deb 放在 /var/cache/apt/archives/中，apt-get autoclean 只会删除 /var/cache/apt/archives/ 已经过期的deb。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;apt-get clean&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;使用 apt-get clean 会将 /var/cache/apt/archives/ 的 所有 deb 删掉，可以理解为 rm /var/cache/apt/archives/*.deb。&lt;/p&gt;
+
+&lt;p&gt;那么如何彻底卸载软件呢？&lt;/p&gt;
+
+&lt;p&gt;具体来说可以运行如下命令：&lt;/p&gt;
+
+&lt;p&gt;删除软件及其配置文件&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;apt-get –purge remove package&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;删除没用的依赖包&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;apt-get autoremove package&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;此时dpkg的列表中有“rc”状态的软件包，可以执行如下命令做最后清理：&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;dpkg -l |grep ^rc|awk '{print $2}' |sudo xargs dpkg -P&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;如果不知道要删除软件的具体名称，可以使用&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;dpkg --get-selections | grep ‘软件相关名称’&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;原文链接：https://blog.csdn.net/get_set/article/details/51276609/&lt;/p&gt;
 </description>
         <pubDate>Mon, 17 May 2021 00:00:00 +0800</pubDate>
         <link>www.xiangtao.net.cn/2021/05/ubuntu2/</link>
@@ -1182,123 +1618,6 @@ plt.show()
         <guid isPermaLink="true">www.xiangtao.net.cn/2021/05/matplotchapter1/</guid>
         
         <category>Python</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>我的第一篇博客</title>
-        <description>&lt;p&gt;这是我的 &lt;a href=&quot;https://github.com/xiang-tao&quot;&gt;Github&lt;/a&gt;，欢迎你的Star.&lt;/p&gt;
-
-&lt;h1 id=&quot;h1-标题&quot;&gt;h1 标题&lt;/h1&gt;
-&lt;h2 id=&quot;h2-标题&quot;&gt;h2 标题&lt;/h2&gt;
-&lt;h3 id=&quot;h3-标题&quot;&gt;h3 标题&lt;/h3&gt;
-&lt;h4 id=&quot;h4-标题&quot;&gt;h4 标题&lt;/h4&gt;
-&lt;h5 id=&quot;h5-标题&quot;&gt;h5 标题&lt;/h5&gt;
-&lt;h6 id=&quot;h6-标题&quot;&gt;h6 标题&lt;/h6&gt;
-
-&lt;h2 id=&quot;水平线&quot;&gt;水平线&lt;/h2&gt;
-
-&lt;hr /&gt;
-
-&lt;hr /&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;文本样式&quot;&gt;文本样式&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;This is bold text&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;This is bold text&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;This is italic text&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;This is italic text&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;del&gt;Strikethrough&lt;/del&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;列表&quot;&gt;列表&lt;/h2&gt;
-
-&lt;p&gt;无序&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Create a list by starting a line with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;+&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-&lt;/code&gt;, or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Sub-lists are made by indenting 2 spaces:
-    &lt;ul&gt;
-      &lt;li&gt;Marker character change forces new list start:
-        &lt;ul&gt;
-          &lt;li&gt;Ac tristique libero volutpat at&lt;/li&gt;
-          &lt;li&gt;Facilisis in pretium nisl aliquet&lt;/li&gt;
-          &lt;li&gt;Nulla volutpat aliquam velit&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Very easy!&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;有序&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Lorem ipsum dolor sit amet&lt;/li&gt;
-  &lt;li&gt;Consectetur adipiscing elit&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Integer molestie lorem at massa&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;You can use sequential numbers…&lt;/li&gt;
-  &lt;li&gt;…or keep all the numbers as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1.&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Start numbering with offset:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;foo&lt;/li&gt;
-  &lt;li&gt;bar&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;复制按钮&quot;&gt;复制按钮&lt;/h2&gt;
-
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fealpy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;mesh&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;MeshFactory&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fealpy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;mesh&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;MeshFactory&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fealpy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;mesh&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;MeshFactory&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fealpy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;mesh&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;MeshFactory&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fealpy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;mesh&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;MeshFactory&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;代码&quot;&gt;代码&lt;/h2&gt;
-
-&lt;p&gt;Inline &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;code&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Indented code&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// Some comments
-line 1 of code
-line 2 of code
-line 3 of code
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Block code “fences”&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Sample text here...
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Syntax highlighting&lt;/p&gt;
-
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-</description>
-        <pubDate>Sun, 09 May 2021 00:00:00 +0800</pubDate>
-        <link>www.xiangtao.net.cn/2021/05/myfirst/</link>
-        <guid isPermaLink="true">www.xiangtao.net.cn/2021/05/myfirst/</guid>
-        
-        <category>markdown</category>
         
         
       </item>

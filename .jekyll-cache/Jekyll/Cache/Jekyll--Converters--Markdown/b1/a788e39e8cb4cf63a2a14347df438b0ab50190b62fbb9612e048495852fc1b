@@ -1,59 +1,39 @@
----
-layout: post
-title: 考虑对流效应和磁场的CMP模型及数值模拟论文笔记
-tags: mathematical
----
-
-
-
-<center>
+I"<center>
     <img style="border-radius: 0.3125em;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/picture/CMP.6wtduy66xrk0.png" width="60%">
-    <br>
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/picture/CMP.6wtduy66xrk0.png" width="60%" />
+    <br />
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
     padding: 2px;">CMP工作示意图</div>
 </center>
 
+<h2 id="具有对流效应的cmp润滑方程的推导">具有对流效应的CMP润滑方程的推导</h2>
 
-
-
-
-## 具有对流效应的CMP润滑方程的推导
-
-连续方程为：
-$$
-\begin{equation}
+<p>连续方程为：
+\(\begin{equation}
 \nabla\cdot\pmb{u} = 0
-\end{equation}
-$$
+\end{equation}\)</p>
 
-该方程等价于
+<p>该方程等价于</p>
 
-$$
-\begin{equation}
+\[\begin{equation}
 \dfrac{\partial u_1}{\partial x} 
 + \dfrac{\partial u_2}{\partial y} 
 + \dfrac{\partial u_3}{\partial z}=0
-\end{equation}
-$$
+\end{equation}\]
 
-运动方程为：
+<p>运动方程为：</p>
 
-$$
-\begin{equation}
+\[\begin{equation}
 \rho\dfrac{\partial \pmb{u}}{\partial t}
 + \rho\pmb{u}\cdot\nabla \pmb{u}
 = -\nabla p+ \eta\Delta \pmb{u} +\rho\pmb{F}
-\end{equation}
-$$
+\end{equation}\]
 
-当假设$$\pmb{F} = \pmb{0}$$时，该方程等价于
+<p>当假设\(\pmb{F} = \pmb{0}\)时，该方程等价于</p>
 
-$$
-\begin{equation}
+\[\begin{equation}
 \left \{
 \begin{aligned}
 \rho \left(\dfrac{\partial u_1}{\partial t}
@@ -79,62 +59,57 @@ $$
 +\dfrac{\partial^2 u_3}{\partial z^2}  \right)
 \end{aligned}
 \right.
-\end{equation}
-$$
+\end{equation}\]
 
-**假设条件**
+<p><strong>假设条件</strong></p>
 
-1. CMP过程中载荷完全由抛光液来承载，晶片由于抛光液的隔离完全与抛光垫分离，因为膜厚比较博，忽略质量力。
-2. 假设抛光液是牛顿性流体，在CMP过程中是稳态不可压的，流体的黏性系数是常数$$\eta$$。由于稳态所以$$\dfrac{\partial u_i}{\partial t} = 0$$。
-3. 满足无纲量润滑条件。即$$\dfrac{\partial^2 u_i}{\partial x^2} + \dfrac{\partial^2 u_i}{\partial y^2}$$比$$\dfrac{\partial^2 u_i}{\partial z^2}$$量级小，可以忽略。
-4. 在$$z$$轴方向总压力梯度为0，$$z$$轴方向的速度忽略不计。即$$u_3 = 0$$
+<ol>
+  <li>CMP过程中载荷完全由抛光液来承载，晶片由于抛光液的隔离完全与抛光垫分离，因为膜厚比较博，忽略质量力。</li>
+  <li>假设抛光液是牛顿性流体，在CMP过程中是稳态不可压的，流体的黏性系数是常数\(\eta\)。由于稳态所以\(\dfrac{\partial u_i}{\partial t} = 0\)。</li>
+  <li>满足无纲量润滑条件。即\(\dfrac{\partial^2 u_i}{\partial x^2} + \dfrac{\partial^2 u_i}{\partial y^2}\)比\(\dfrac{\partial^2 u_i}{\partial z^2}\)量级小，可以忽略。</li>
+  <li>在\(z\)轴方向总压力梯度为0，\(z\)轴方向的速度忽略不计。即\(u_3 = 0\)</li>
+</ol>
 
-所以连续方程简化为
+<p>所以连续方程简化为</p>
 
-$$
-\begin{equation}
+\[\begin{equation}
 \dfrac{\partial u_1}{\partial x} 
 + \dfrac{\partial u_2}{\partial y} =0
-\end{equation}
-$$
+\end{equation}\]
 
-运动方程简化为
+<p>运动方程简化为</p>
 
-$$
-\begin{equation}
+\[\begin{equation}
 \left \{
 \begin{aligned}
 \dfrac{\partial p}{\partial x}
 +\rho u_1 \dfrac{\partial u_1}{\partial x}
 +\rho u_2 \dfrac{\partial u_1}{\partial y}
-&= \eta \dfrac{\partial^2 u_1}{\partial z^2} \\
+&amp;= \eta \dfrac{\partial^2 u_1}{\partial z^2} \\
 \dfrac{\partial p}{\partial y}
 +\rho u_1 \dfrac{\partial u_2}{\partial x}
 +\rho u_2 \dfrac{\partial u_2}{\partial y}
-&= \eta \dfrac{\partial^2 u_2}{\partial z^2}
+&amp;= \eta \dfrac{\partial^2 u_2}{\partial z^2}
 \\
- \dfrac{\partial p}{\partial z} &= 0
+ \dfrac{\partial p}{\partial z} &amp;= 0
 \end{aligned}
 \right.
-\end{equation}
-$$
+\end{equation}\]
 
-上式的坐标系是直角坐标系，将其转化为柱坐标，则速度转换关系如下图
+<p>上式的坐标系是直角坐标系，将其转化为柱坐标，则速度转换关系如下图</p>
 
 <center>
     <img style="border-radius: 0.3125em;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/picture/CMPspeed.6ivt4x8iwxc0.png" width="50%">
-    <br>
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/picture/CMPspeed.6ivt4x8iwxc0.png" width="50%" />
+    <br />
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
     padding: 2px;">CMP速度关系式</div>
 </center>
-变换关系式为:
+<p>变换关系式为:</p>
 
-$$
-\begin{equation}
+\[\begin{equation}
 \left \{
 \begin{aligned}
 \dfrac{\partial x}{\partial r} = \cos\theta
@@ -145,12 +120,11 @@ $$
 = r\cdot \cos\theta
 \end{aligned}
 \right.
-\end{equation}
-$$
+\end{equation}\]
 
 <!--这里不太懂-->
-$$
-\begin{equation}
+
+\[\begin{equation}
 \left \{
 \begin{aligned}
 \dfrac{\partial r}{\partial x} = \cos\theta
@@ -161,6 +135,6 @@ $$
 = \dfrac{\cos\theta}{r} 
 \end{aligned}
 \right.
-\end{equation}
-$$
+\end{equation}\]
 
+:ET

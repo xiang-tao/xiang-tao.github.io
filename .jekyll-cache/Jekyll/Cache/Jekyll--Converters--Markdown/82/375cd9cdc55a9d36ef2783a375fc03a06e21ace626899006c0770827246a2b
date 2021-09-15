@@ -1,4 +1,4 @@
-I"�
+I"@
 <ul>
   <li><a href="#0-自动补全tab键">0. 自动补全：Tab键</a></li>
   <li><a href="#1-ls命令">1. ls命令</a></li>
@@ -35,5 +35,6 @@
   <li><a href="#18apt简介">18.apt简介</a></li>
   <li><a href="#19which命令">19.which命令</a></li>
   <li><a href="#20ubuntu更新相关命令">20.ubuntu更新相关命令</a></li>
+  <li><a href="#ubuntu如何彻底卸载一个软件">ubuntu如何彻底卸载一个软件</a></li>
 </ul>
 :ET

@@ -6,17 +6,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <title>markdown 语法入门</title>
-  <meta name="description" content="插入\(\LaTeX\)公式">
+  <title>考虑对流效应和磁场的CMP模型及数值模拟论文笔记</title>
+  <meta name="description" content="            CMP工作示意图">
   <meta name="author" content="leopardpan">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="markdown 语法入门">
-  <meta name="twitter:description" content="插入\(\LaTeX\)公式">
+  <meta name="twitter:title" content="考虑对流效应和磁场的CMP模型及数值模拟论文笔记">
+  <meta name="twitter:description" content="            CMP工作示意图">
   
   <meta property="og:type" content="article">
-  <meta property="og:title" content="markdown 语法入门">
-  <meta property="og:description" content="插入\(\LaTeX\)公式">
+  <meta property="og:title" content="考虑对流效应和磁场的CMP模型及数值模拟论文笔记">
+  <meta property="og:description" content="            CMP工作示意图">
   
   <link rel="icon" type="image/png" href="/images/favicon.png" />
   <link href="/images/favicon.png" rel="shortcut icon" type="image/png">
@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="/css/main.css">
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-  <link rel="canonical" href="www.xiangtao.net.cn/2021/08/markdown/">
+  <link rel="canonical" href="www.xiangtao.net.cn/2021/09/%E5%AF%B9%E6%B5%81%E6%95%88%E5%BA%94%E5%92%8C%E7%A3%81%E5%9C%BA%E7%9A%84CMP%E6%A8%A1%E5%9E%8B/">
   <link rel="alternate" type="application/rss+xml" title="向涛" href="www.xiangtao.net.cn/feed.xml">
   
   <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
@@ -189,10 +189,10 @@
 
 <article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
-    <h1 class="post-title">markdown 语法入门</h1>
+    <h1 class="post-title">考虑对流效应和磁场的CMP模型及数值模拟论文笔记</h1>
     <div class="post-meta">
       <img src="/images/calendar.png" width="20px"/> 
-      <time datetime="2021-08-31 00:00:00 +0800" itemprop="datePublished" class="post-meta__date date">2021-08-31</time>  
+      <time datetime="2021-09-14 00:00:00 +0800" itemprop="datePublished" class="post-meta__date date">2021-09-14</time>  
 
       <span id="busuanzi_container_page_pv"> | 阅读：<span id="busuanzi_value_page_pv"></span>次</span>
     </p>
@@ -202,164 +202,150 @@
   
     <h2 class="post-title">目录</h2>
     <ul>
-  <li><a href="#插入latex公式">插入(\LaTeX)公式</a></li>
-  <li><a href="#插入代码">插入代码</a></li>
-  <li><a href="#插入表格">插入表格</a></li>
-  <li><a href="#插入链接图片">插入链接图片</a></li>
-  <li><a href="#其他的基本功能">其他的基本功能</a></li>
-  <li><a href="#引用">引用</a></li>
-  <li><a href="#水平分割线">水平分割线</a></li>
-  <li><a href="#画流程图">画流程图</a></li>
+  <li><a href="#具有对流效应的cmp润滑方程的推导">具有对流效应的CMP润滑方程的推导</a></li>
 </ul>
 
   
   
   <section class="post">
-    <h2 id="插入latex公式">插入\(\LaTeX\)公式</h2>
+    <center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/picture/CMP.6wtduy66xrk0.png" width="60%" />
+    <br />
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">CMP工作示意图</div>
+</center>
 
-<ol>
-  <li>插入文字间的公式，为了网页端的需要，仍然使用$$转义，例如\(x\in Y\)。</li>
-  <li>插入行间的LaTeX公式，网页端显示目前我的配置只支持使用$$</li>
-</ol>
+<h2 id="具有对流效应的cmp润滑方程的推导">具有对流效应的CMP润滑方程的推导</h2>
+
+<p>连续方程为：
+\(\begin{equation}
+\nabla\cdot\pmb{u} = 0
+\end{equation}\)</p>
+
+<p>该方程等价于</p>
 
 \[\begin{equation}
-   \left \{
-   \begin{aligned}
-   &amp; \dfrac{\partial u}{\partial t}-k\dfrac{\partial^2 u}{\partial x^2}=0 \\
-   &amp; u(0,t)=0,~~u(1,t)=0,~~t\in [0,0.1] \\
-   &amp; u(x,0) = e^{-\dfrac{(x-0.25)^2}{0.01}}+0.1*sin(20\pi x), x\in (0,1)
-   \end{aligned}
-   \right.
-   \end{equation}\]
+\dfrac{\partial u_1}{\partial x} 
++ \dfrac{\partial u_2}{\partial y} 
++ \dfrac{\partial u_3}{\partial z}=0
+\end{equation}\]
 
-<h2 id="插入代码">插入代码</h2>
+<p>运动方程为：</p>
 
-<p>下面插入的是一段c++代码</p>
+\[\begin{equation}
+\rho\dfrac{\partial \pmb{u}}{\partial t}
++ \rho\pmb{u}\cdot\nabla \pmb{u}
+= -\nabla p+ \eta\Delta \pmb{u} +\rho\pmb{F}
+\end{equation}\]
 
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">test01</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="c1">//查找容器中是否有5这个元素</span>
-    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">it</span> <span class="o">=</span> <span class="n">find</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="mi">50</span><span class="p">);</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">it</span> <span class="o">==</span> <span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
-    <span class="p">{</span>
-        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"没有找到！"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">else</span>
-    <span class="p">{</span>
-        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"找到了！"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-<h2 id="插入表格">插入表格</h2>
+<p>当假设\(\pmb{F} = \pmb{0}\)时，该方程等价于</p>
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center">四川</th>
-      <th style="text-align: center">贵州</th>
-      <th style="text-align: center">云南</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: center">宜宾</td>
-      <td style="text-align: center">毕节</td>
-      <td style="text-align: center">昆明</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">成都</td>
-      <td style="text-align: center">贵阳</td>
-      <td style="text-align: center">丽江</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">\(x\in y\)</td>
-      <td style="text-align: center">\(y\in x\)</td>
-      <td style="text-align: center">\(N\)</td>
-    </tr>
-  </tbody>
-</table>
+\[\begin{equation}
+\left \{
+\begin{aligned}
+\rho \left(\dfrac{\partial u_1}{\partial t}
++u_1 \dfrac{\partial u_1}{\partial x}
++u_2 \dfrac{\partial u_1}{\partial y}
++u_3 \dfrac{\partial u_1}{\partial z}\right)
+= -\dfrac{\partial p}{\partial x} + \eta
+\left( \dfrac{\partial^2 u_1}{\partial x^2} + \dfrac{\partial^2 u_1}{\partial y^2}
++\dfrac{\partial^2 u_1}{\partial z^2}  \right) \\
+\rho \left(\dfrac{\partial u_2}{\partial t}
++u_1 \dfrac{\partial u_2}{\partial x}
++u_2 \dfrac{\partial u_2}{\partial y}
++u_3 \dfrac{\partial u_2}{\partial z}\right)
+= -\dfrac{\partial p}{\partial y} + \eta
+\left( \dfrac{\partial^2 u_2}{\partial x^2} + \dfrac{\partial^2 u_2}{\partial y^2}
++\dfrac{\partial^2 u_2}{\partial z^2}  \right)\\
+\rho \left(\dfrac{\partial u_3}{\partial t}
++u_1 \dfrac{\partial u_3}{\partial x}
++u_2 \dfrac{\partial u_3}{\partial y}
++u_3 \dfrac{\partial u_3}{\partial z}\right)
+= -\dfrac{\partial p}{\partial z} + \eta
+\left( \dfrac{\partial^2 u_3}{\partial x^2} + \dfrac{\partial^2 u_3}{\partial y^2}
++\dfrac{\partial^2 u_3}{\partial z^2}  \right)
+\end{aligned}
+\right.
+\end{equation}\]
 
-<h2 id="插入链接图片">插入链接图片</h2>
-<p><img src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/picture/20210509-3.5sgg78x5fyw0.png" alt="来自github链接图片" /></p>
-
-<h2 id="其他的基本功能">其他的基本功能</h2>
+<p><strong>假设条件</strong></p>
 
 <ol>
-  <li>高亮: ==美丽的姑娘==</li>
-  <li>上标与下标： 我^平方^，你~下标~</li>
-  <li>注释： <!--这是注释--></li>
-  <li>加粗： <strong>B</strong>B</li>
-  <li>斜体： <em>A</em>A</li>
-  <li>下划线：<u>我爱她轰轰烈烈</u></li>
-  <li>删除线: <del>等到时光破碎</del></li>
-  <li>超链接: <a href="https://github.com/xiang-tao">Github</a>.</li>
+  <li>CMP过程中载荷完全由抛光液来承载，晶片由于抛光液的隔离完全与抛光垫分离，因为膜厚比较博，忽略质量力。</li>
+  <li>假设抛光液是牛顿性流体，在CMP过程中是稳态不可压的，流体的黏性系数是常数\(\eta\)。由于稳态所以\(\dfrac{\partial u_i}{\partial t} = 0\)。</li>
+  <li>满足无纲量润滑条件。即\(\dfrac{\partial^2 u_i}{\partial x^2} + \dfrac{\partial^2 u_i}{\partial y^2}\)比\(\dfrac{\partial^2 u_i}{\partial z^2}\)量级小，可以忽略。</li>
+  <li>在\(z\)轴方向总压力梯度为0，\(z\)轴方向的速度忽略不计。即\(u_3 = 0\)</li>
 </ol>
 
-<h2 id="引用">引用</h2>
+<p>所以连续方程简化为</p>
 
-<blockquote>
-  <p>参考文献1：偏微分方程数值解</p>
+\[\begin{equation}
+\dfrac{\partial u_1}{\partial x} 
++ \dfrac{\partial u_2}{\partial y} =0
+\end{equation}\]
 
-  <blockquote>
-    <p>参考文献2</p>
-  </blockquote>
-</blockquote>
+<p>运动方程简化为</p>
 
-<h2 id="水平分割线">水平分割线</h2>
+\[\begin{equation}
+\left \{
+\begin{aligned}
+\dfrac{\partial p}{\partial x}
++\rho u_1 \dfrac{\partial u_1}{\partial x}
++\rho u_2 \dfrac{\partial u_1}{\partial y}
+&amp;= \eta \dfrac{\partial^2 u_1}{\partial z^2} \\
+\dfrac{\partial p}{\partial y}
++\rho u_1 \dfrac{\partial u_2}{\partial x}
++\rho u_2 \dfrac{\partial u_2}{\partial y}
+&amp;= \eta \dfrac{\partial^2 u_2}{\partial z^2}
+\\
+ \dfrac{\partial p}{\partial z} &amp;= 0
+\end{aligned}
+\right.
+\end{equation}\]
 
-<hr />
+<p>上式的坐标系是直角坐标系，将其转化为柱坐标，则速度转换关系如下图</p>
 
-<h2 id="画流程图">画流程图</h2>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/picture/CMPspeed.6ivt4x8iwxc0.png" width="50%" />
+    <br />
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">CMP速度关系式</div>
+</center>
+<p>变换关系式为:</p>
 
-<pre><code class="language-mermaid">graph LR
-A[方形] --&gt;B(圆角)
-    B --&gt; C{条件a}
-    C --&gt;|a=1| D[结果1]
-    C --&gt;|a=2| E[结果2]
-    F[横向流程图]
-</code></pre>
-<pre><code class="language-mermaid">%% 时序图例子,-&gt; 直线，--&gt;虚线，-&gt;&gt;实线箭头
-  sequenceDiagram
-    participant 张三
-    participant 李四
-    张三-&gt;王五: 王五你好吗？
-    loop 健康检查
-        王五-&gt;王五: 与疾病战斗
-    end
-    Note right of 王五: 合理 食物 &lt;br/&gt;看医生...
-    李四--&gt;&gt;张三: 很好!
-    王五-&gt;李四: 你怎么样?
-    李四--&gt;王五: 很好!
-</code></pre>
+\[\begin{equation}
+\left \{
+\begin{aligned}
+\dfrac{\partial x}{\partial r} = \cos\theta
+~~~ \dfrac{\partial x}{\partial \theta}
+= -r\cdot \sin\theta \\
+\dfrac{\partial y}{\partial r} = \cos\theta
+~~~ \dfrac{\partial y}{\partial \theta}
+= r\cdot \cos\theta
+\end{aligned}
+\right.
+\end{equation}\]
 
-<div class="mermaid">
-graph LR
-A[方形] --&gt;B(圆角)
-    B --&gt; C{条件a}
-    C --&gt;|a=1| D[结果1]
-    C --&gt;|a=2| E[结果2]
-    F[横向流程图]
-</div>
+<!--这里不太懂-->
+<p>\(\begin{equation}
+\left \{
+\begin{aligned}
+\dfrac{\partial r}{\partial x} = \cos\theta
+~~~ \dfrac{\partial \theta}{\partial x}
+= -\dfrac{\sin\theta}{r} \\
+\dfrac{\partial r}{\partial y} = \cos\theta
+~~~ \dfrac{\partial \theta}{\partial y}
+= \dfrac{\cos\theta}{r} 
+\end{aligned}
+\right.
+\end{equation}\)</p>
 
-<div class="mermaid">
-%% 时序图例子,-&gt; 直线，--&gt;虚线，-&gt;&gt;实线箭头
-  sequenceDiagram
-    participant 张三
-    participant 李四
-    张三-&gt;王五: 王五你好吗？
-    loop 健康检查
-        王五-&gt;王五: 与疾病战斗
-    end
-    Note right of 王五: 合理 食物 <br />看医生...
-    李四--&gt;&gt;张三: 很好!
-    王五-&gt;李四: 你怎么样?
-    李四--&gt;王五: 很好!
-</div>
 
   </section>
 
@@ -403,15 +389,10 @@ A[方形] --&gt;B(圆角)
        <ul class="pager">
         
         <li class="previous">
-            <a href="/2021/07/git/" data-toggle="tooltip" data-placement="top" title="本地仓库上传到github/gitlab命令及一些常见问题解决方案">上一篇：  <span>本地仓库上传到github/gitlab命令及一些常见问题解决方案</span>
+            <a href="/2021/09/%E5%87%BD%E6%95%B0%E6%8E%A2%E5%B9%BD/" data-toggle="tooltip" data-placement="top" title="第八章 函数探幽">上一篇：  <span>第八章 函数探幽</span>
             </a>
         </li>
         
-        
-        <li class="next">
-            <a href="/2021/09/gcc/" data-toggle="tooltip" data-placement="top" title="gcc 命令参数">下一篇：  <span>gcc 命令参数</span>
-            </a>
-        </li>
         
     </ul>
 </section>
