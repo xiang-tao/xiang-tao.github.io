@@ -5,8 +5,8 @@
     <description>Welcome to my personal website~</description>
     <link>www.xiangtao.net.cn/</link>
     <atom:link href="www.xiangtao.net.cn/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 15 Sep 2021 15:54:44 +0800</pubDate>
-    <lastBuildDate>Wed, 15 Sep 2021 15:54:44 +0800</lastBuildDate>
+    <pubDate>Wed, 15 Sep 2021 16:11:45 +0800</pubDate>
+    <lastBuildDate>Wed, 15 Sep 2021 16:11:45 +0800</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
     
       <item>
@@ -123,6 +123,16 @@
 &lt;/center&gt;
 
 &lt;p&gt;变换关系式为:&lt;/p&gt;
+
+\[\begin{equation}
+\left \{
+\begin{aligned}
+x=r\cos\theta \\
+y=r\sin\theta \\
+z=z
+\end{aligned}
+\right.
+\end{equation}\]
 
 \[\begin{equation}
 \left \{
