@@ -5,8 +5,8 @@
     <description>Welcome to my personal website~</description>
     <link>www.xiangtao.net.cn/</link>
     <atom:link href="www.xiangtao.net.cn/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 15 Sep 2021 16:11:45 +0800</pubDate>
-    <lastBuildDate>Wed, 15 Sep 2021 16:11:45 +0800</lastBuildDate>
+    <pubDate>Thu, 16 Sep 2021 16:20:39 +0800</pubDate>
+    <lastBuildDate>Thu, 16 Sep 2021 16:20:39 +0800</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
     
       <item>
@@ -80,7 +80,7 @@
 &lt;ol&gt;
   &lt;li&gt;CMP过程中载荷完全由抛光液来承载，晶片由于抛光液的隔离完全与抛光垫分离，因为膜厚比较博，忽略质量力。&lt;/li&gt;
   &lt;li&gt;假设抛光液是牛顿性流体，在CMP过程中是稳态不可压的，流体的黏性系数是常数\(\eta\)。由于稳态所以\(\dfrac{\partial u_i}{\partial t} = 0\)。&lt;/li&gt;
-  &lt;li&gt;满足无纲量润滑条件。即\(\dfrac{\partial^2 u_i}{\partial x^2} + \dfrac{\partial^2 u_i}{\partial y^2}\)比\(\dfrac{\partial^2 u_i}{\partial z^2}\)量级小，可以忽略。&lt;/li&gt;
+  &lt;li&gt;满足无量纲润滑条件。即\(\dfrac{\partial^2 u_i}{\partial x^2} + \dfrac{\partial^2 u_i}{\partial y^2}\)比\(\dfrac{\partial^2 u_i}{\partial z^2}\)量级小，可以忽略。&lt;/li&gt;
   &lt;li&gt;在\(z\)轴方向总压力梯度为0，\(z\)轴方向的速度忽略不计。即\(u_3 = 0\)&lt;/li&gt;
 &lt;/ol&gt;
 
@@ -140,7 +140,7 @@ z=z
 \dfrac{\partial x}{\partial r} = \cos\theta
 ~~~ \dfrac{\partial x}{\partial \theta}
 = -r\cdot \sin\theta \\
-\dfrac{\partial y}{\partial r} = \cos\theta
+\dfrac{\partial y}{\partial r} = \sin\theta
 ~~~ \dfrac{\partial y}{\partial \theta}
 = r\cdot \cos\theta
 \end{aligned}
@@ -155,7 +155,7 @@ z=z
 \dfrac{\partial r}{\partial x} = \cos\theta
 ~~~ \dfrac{\partial \theta}{\partial x}
 = -\dfrac{\sin\theta}{r} \\
-\dfrac{\partial r}{\partial y} = \cos\theta
+\dfrac{\partial r}{\partial y} = \sin\theta
 ~~~ \dfrac{\partial \theta}{\partial y}
 = \dfrac{\cos\theta}{r} 
 \end{aligned}
@@ -244,6 +244,7 @@ u_2 &amp;amp;= \omega\cdot\sin\theta+u\cdot\cos\theta
     color: #999;
     padding: 2px;&quot;&gt;&lt;/div&gt;
 &lt;/center&gt;
+
 &lt;p&gt;记晶片中心厚度为\(h_{piv}\)，晶片转角和倾角分别为\(\alpha~~\beta\)，则在(r,\(\theta\))处膜厚h满足&lt;/p&gt;
 
 &lt;center&gt;
@@ -255,6 +256,16 @@ u_2 &amp;amp;= \omega\cdot\sin\theta+u\cdot\cos\theta
     color: #999;
     padding: 2px;&quot;&gt;&lt;/div&gt;
 &lt;/center&gt;
+&lt;center&gt;
+    &lt;img style=&quot;border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);&quot; src=&quot;https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/CMP-picture/17.4oknbuv2ko00.png&quot; width=&quot;60%&quot; /&gt;
+    &lt;br /&gt;
+    &lt;div style=&quot;color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;&quot;&gt;转角倾角示意图&lt;/div&gt;
+&lt;/center&gt;
+
 &lt;p&gt;速度边界条件满足如下:&lt;/p&gt;
 
 &lt;center&gt;
@@ -269,6 +280,35 @@ u_2 &amp;amp;= \omega\cdot\sin\theta+u\cdot\cos\theta
 
 &lt;p&gt;其中\(\omega_{\omega}\)为晶片的转速，\(\omega_p\)为抛光垫的转速，d为抛光垫中心到晶片中心的距离。&lt;/p&gt;
 
+&lt;center&gt;
+    &lt;img style=&quot;border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);&quot; src=&quot;https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/CMP-picture/16.u4eel6m889s.png&quot; width=&quot;50%&quot; /&gt;
+    &lt;br /&gt;
+    &lt;div style=&quot;color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;&quot;&gt;速度边界关系图&lt;/div&gt;
+&lt;/center&gt;
+
+&lt;center&gt;
+    &lt;img style=&quot;border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);&quot; src=&quot;https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/CMP-picture/15.2ht2xt8cqvc0.png&quot; width=&quot;70%&quot; /&gt;
+    &lt;br /&gt;
+    &lt;div style=&quot;color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;&quot;&gt;无量纲百度解释&lt;/div&gt;
+&lt;/center&gt;
+
+&lt;center&gt;
+    &lt;img style=&quot;border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);&quot; src=&quot;https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/CMP-picture/14.6d3r6dbagac0.png&quot; width=&quot;70%&quot; /&gt;
+    &lt;br /&gt;
+    &lt;div style=&quot;color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;&quot;&gt;润滑条件百度解释&lt;/div&gt;
+&lt;/center&gt;
 </description>
         <pubDate>Tue, 14 Sep 2021 00:00:00 +0800</pubDate>
         <link>www.xiangtao.net.cn/2021/09/%E5%AF%B9%E6%B5%81%E6%95%88%E5%BA%94%E5%92%8C%E7%A3%81%E5%9C%BA%E7%9A%84CMP%E6%A8%A1%E5%9E%8B/</link>
