@@ -6,17 +6,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <title>考虑对流效应和磁场的CMP模型及数值模拟论文笔记</title>
-  <meta name="description" content="            CMP工作示意图">
+  <title>铁磁流体动力学第二章</title>
+  <meta name="description" content="2.1 铁磁畴结构理论">
   <meta name="author" content="leopardpan">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="考虑对流效应和磁场的CMP模型及数值模拟论文笔记">
-  <meta name="twitter:description" content="            CMP工作示意图">
+  <meta name="twitter:title" content="铁磁流体动力学第二章">
+  <meta name="twitter:description" content="2.1 铁磁畴结构理论">
   
   <meta property="og:type" content="article">
-  <meta property="og:title" content="考虑对流效应和磁场的CMP模型及数值模拟论文笔记">
-  <meta property="og:description" content="            CMP工作示意图">
+  <meta property="og:title" content="铁磁流体动力学第二章">
+  <meta property="og:description" content="2.1 铁磁畴结构理论">
   
   <link rel="icon" type="image/png" href="/images/favicon.png" />
   <link href="/images/favicon.png" rel="shortcut icon" type="image/png">
@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="/css/main.css">
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-  <link rel="canonical" href="www.xiangtao.net.cn/2021/09/%E5%AF%B9%E6%B5%81%E6%95%88%E5%BA%94%E5%92%8C%E7%A3%81%E5%9C%BA%E7%9A%84CMP%E6%A8%A1%E5%9E%8B/">
+  <link rel="canonical" href="www.xiangtao.net.cn/2021/09/%E9%93%81%E7%A3%81%E6%B5%81%E4%BD%93%E5%8A%A8%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%BA%8C%E7%AB%A0/">
   <link rel="alternate" type="application/rss+xml" title="向涛" href="www.xiangtao.net.cn/feed.xml">
   
   <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
@@ -189,10 +189,10 @@
 
 <article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
-    <h1 class="post-title">考虑对流效应和磁场的CMP模型及数值模拟论文笔记</h1>
+    <h1 class="post-title">铁磁流体动力学第二章</h1>
     <div class="post-meta">
       <img src="/images/calendar.png" width="20px"/> 
-      <time datetime="2021-09-14 00:00:00 +0800" itemprop="datePublished" class="post-meta__date date">2021-09-14</time>  
+      <time datetime="2021-09-18 00:00:00 +0800" itemprop="datePublished" class="post-meta__date date">2021-09-18</time>  
 
       <span id="busuanzi_container_page_pv"> | 阅读：<span id="busuanzi_value_page_pv"></span>次</span>
     </p>
@@ -202,310 +202,133 @@
   
     <h2 class="post-title">目录</h2>
     <ul>
-  <li><a href="#具有对流效应的cmp润滑方程的推导">具有对流效应的CMP润滑方程的推导</a></li>
+  <li><a href="#21-铁磁畴结构理论">2.1 铁磁畴结构理论</a>
+    <ul>
+      <li><a href="#211-铁磁矿">2.1.1 铁磁矿</a></li>
+      <li><a href="#212-铁磁畴结构理论">2.1.2 铁磁畴结构理论</a></li>
+    </ul>
+  </li>
+  <li><a href="#22-铁磁流体基本载液和表面活性剂特性">2.2 铁磁流体基本载液和表面活性剂特性</a></li>
+  <li><a href="#23-铁磁流体颗粒的基本结构及其稳定性">2.3 铁磁流体颗粒的基本结构及其稳定性</a>
+    <ul>
+      <li><a href="#231-克服重力场的稳定性问题">2.3.1 克服重力场的稳定性问题</a></li>
+      <li><a href="#232-避免凝聚的稳定性问题">2.3.2 避免凝聚的稳定性问题</a></li>
+    </ul>
+  </li>
+  <li><a href="#24-铁磁流体的基本物理参数">2.4 铁磁流体的基本物理参数</a>
+    <ul>
+      <li><a href="#241-铁磁流体的粘度">2.4.1 铁磁流体的粘度</a></li>
+      <li><a href="#242-铁磁流体的磁化强度">2.4.2 铁磁流体的磁化强度</a></li>
+    </ul>
+  </li>
+  <li><a href="#25-热磁不稳定性">2.5 热磁不稳定性</a></li>
+  <li><a href="#26-铁磁颗粒的体积分数">2.6 铁磁颗粒的体积分数</a></li>
 </ul>
 
   
   
   <section class="post">
-    <center>
-    <img style="border-radius: 0.3125em;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/picture/CMP.6wtduy66xrk0.png" width="60%" />
-    <br />
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">CMP工作示意图</div>
-</center>
+    <h2 id="21-铁磁畴结构理论">2.1 铁磁畴结构理论</h2>
 
-<h2 id="具有对流效应的cmp润滑方程的推导">具有对流效应的CMP润滑方程的推导</h2>
+<h3 id="211-铁磁矿">2.1.1 铁磁矿</h3>
 
-<p>连续方程为：</p>
+<p>铁磁流体由铁磁颗粒、表面活性剂和载体溶液三要素组成，铁磁颗粒通常来源于含铁的混合物，铁磁颗粒分散于载体溶液中，表面活性剂吸附于铁磁颗粒表面制成<strong>胶态磁性材料</strong>。</p>
 
-\[\begin{equation}
-\nabla\cdot\pmb{u} = 0
-\end{equation}\]
+<p>铁磁流体的矫顽力分为磁感矫顽力和内禀矫顽力。</p>
 
-<p>该方程等价于</p>
+<p><strong>磁感矫顽力</strong>：磁体在反向充磁时，使磁感应强度降为零所需要反向磁场的值称为磁感矫顽力。</p>
 
-\[\begin{equation}
-\dfrac{\partial u_1}{\partial x} 
-+ \dfrac{\partial u_2}{\partial y} 
-+ \dfrac{\partial u_3}{\partial z}=0
-\end{equation}\]
+<p><strong>内禀矫顽力</strong>：使磁化强度将为零所需要施加的反向磁场强度称为铁磁流体的内禀矫顽力。</p>
 
-<p>运动方程为：</p>
-
-\[\begin{equation}
-\rho\dfrac{\partial \pmb{u}}{\partial t}
-+ \rho\pmb{u}\cdot\nabla \pmb{u}
-= -\nabla p+ \eta\Delta \pmb{u} +\rho\pmb{F}
-\end{equation}\]
-
-<p>当假设\(\pmb{F} = \pmb{0}\)时，该方程等价于</p>
-
-\[\begin{equation}
-\left \{
-\begin{aligned}
-\rho \left(\dfrac{\partial u_1}{\partial t}
-+u_1 \dfrac{\partial u_1}{\partial x}
-+u_2 \dfrac{\partial u_1}{\partial y}
-+u_3 \dfrac{\partial u_1}{\partial z}\right)
-= -\dfrac{\partial p}{\partial x} + \eta
-\left( \dfrac{\partial^2 u_1}{\partial x^2} + \dfrac{\partial^2 u_1}{\partial y^2}
-+\dfrac{\partial^2 u_1}{\partial z^2}  \right) \\
-\rho \left(\dfrac{\partial u_2}{\partial t}
-+u_1 \dfrac{\partial u_2}{\partial x}
-+u_2 \dfrac{\partial u_2}{\partial y}
-+u_3 \dfrac{\partial u_2}{\partial z}\right)
-= -\dfrac{\partial p}{\partial y} + \eta
-\left( \dfrac{\partial^2 u_2}{\partial x^2} + \dfrac{\partial^2 u_2}{\partial y^2}
-+\dfrac{\partial^2 u_2}{\partial z^2}  \right)\\
-\rho \left(\dfrac{\partial u_3}{\partial t}
-+u_1 \dfrac{\partial u_3}{\partial x}
-+u_2 \dfrac{\partial u_3}{\partial y}
-+u_3 \dfrac{\partial u_3}{\partial z}\right)
-= -\dfrac{\partial p}{\partial z} + \eta
-\left( \dfrac{\partial^2 u_3}{\partial x^2} + \dfrac{\partial^2 u_3}{\partial y^2}
-+\dfrac{\partial^2 u_3}{\partial z^2}  \right)
-\end{aligned}
-\right.
-\end{equation}\]
-
-<p><strong>假设条件</strong></p>
+<p>物质磁性分类：</p>
 
 <ol>
-  <li>CMP过程中载荷完全由抛光液来承载，晶片由于抛光液的隔离完全与抛光垫分离，因为膜厚比较博，忽略质量力。</li>
-  <li>假设抛光液是牛顿性流体，在CMP过程中是稳态不可压的，流体的黏性系数是常数\(\eta\)。由于稳态所以\(\dfrac{\partial u_i}{\partial t} = 0\)。</li>
-  <li>满足无量纲润滑条件。即\(\dfrac{\partial^2 u_i}{\partial x^2} + \dfrac{\partial^2 u_i}{\partial y^2}\)比\(\dfrac{\partial^2 u_i}{\partial z^2}\)量级小，可以忽略。</li>
-  <li>在\(z\)轴方向总压力梯度为0，\(z\)轴方向的速度忽略不计。即\(u_3 = 0\)</li>
+  <li>抗磁性：指一种弱磁性。</li>
+  <li>顺磁性：是指材料对磁场很弱的磁性。</li>
+  <li>超顺磁性：是指铁磁物质的颗粒小于临界尺寸时所具有的单畴结构。</li>
+  <li>亚铁磁性：是在无外加磁场的情况下，磁畴内相邻原子间电子交换作用或其他相互作用，使他们的磁矩在克服热运动的影响后，处于部分抵消的有序排列状态，以至于还有一个和磁矩的现象。</li>
+  <li>反铁磁性。</li>
 </ol>
 
-<p>所以连续方程简化为</p>
+<h3 id="212-铁磁畴结构理论">2.1.2 铁磁畴结构理论</h3>
 
-\[\begin{equation}
-\dfrac{\partial u_1}{\partial x} 
-+ \dfrac{\partial u_2}{\partial y} =0
-\end{equation}\]
+<p><strong>磁畴</strong>：在无外磁场的情况下，他们的自旋磁矩能在一个个微小区域内“自发地”整齐排列起来而形成自发磁化小区域称为磁畴</p>
 
-<p>运动方程简化为</p>
+<p><strong>磁畴壁</strong>：各个磁畴之间的交界面称为磁畴壁。</p>
 
-\[\begin{equation}
-\left \{
-\begin{aligned}
-\dfrac{\partial p}{\partial x}
-+\rho u_1 \dfrac{\partial u_1}{\partial x}
-+\rho u_2 \dfrac{\partial u_1}{\partial y}
-&amp;= \eta \dfrac{\partial^2 u_1}{\partial z^2} \\
-\dfrac{\partial p}{\partial y}
-+\rho u_1 \dfrac{\partial u_2}{\partial x}
-+\rho u_2 \dfrac{\partial u_2}{\partial y}
-&amp;= \eta \dfrac{\partial^2 u_2}{\partial z^2}
-\\
- \dfrac{\partial p}{\partial z} &amp;= 0
-\end{aligned}
-\right.
-\end{equation}\]
+<p><strong>饱和磁化</strong>：当外磁场强度增加到一定程度时，所有磁畴中的磁矩的磁化方向全部与外磁场的方向完全一致，此时磁体就达到了磁饱和状态，即磁饱和化。</p>
 
-<p>上式的坐标系是直角坐标系，将其转化为柱坐标，则速度转换关系如下图</p>
+<p><strong>残余磁感应强度</strong>：当达到磁饱和化后，即使磁场减小到零，磁矩也不会回到零，残留下一些磁化效应，这种残留磁化值称为残余磁感应强度。</p>
 
-<center>
-    <img style="border-radius: 0.3125em;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/picture/CMPspeed.6ivt4x8iwxc0.png" width="50%" />
-    <br />
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">CMP速度关系式</div>
-</center>
+<h2 id="22-铁磁流体基本载液和表面活性剂特性">2.2 铁磁流体基本载液和表面活性剂特性</h2>
 
-<p>变换关系式为:</p>
+<p><strong>基载液基本特性</strong>：低蒸发率、低粘度和高化学稳定性，以及耐高温和抗辐射特性等。</p>
 
-\[\begin{equation}
-\left \{
-\begin{aligned}
-x=r\cos\theta \\
-y=r\sin\theta \\
-z=z
-\end{aligned}
-\right.
-\end{equation}\]
+<p><strong>表面活性剂</strong>：表面活性剂主要用来防止磁性颗粒的氧化，削弱静磁吸引力，克服范德瓦尔斯力的颗粒凝聚。</p>
 
-\[\begin{equation}
-\left \{
-\begin{aligned}
-\dfrac{\partial x}{\partial r} = \cos\theta
-~~~ \dfrac{\partial x}{\partial \theta}
-= -r\cdot \sin\theta \\
-\dfrac{\partial y}{\partial r} = \sin\theta
-~~~ \dfrac{\partial y}{\partial \theta}
-= r\cdot \cos\theta
-\end{aligned}
-\right.
-\end{equation}\]
+<h2 id="23-铁磁流体颗粒的基本结构及其稳定性">2.3 铁磁流体颗粒的基本结构及其稳定性</h2>
 
-<!--可参考数学分向量值函数求导相关运算-->
+<h3 id="231-克服重力场的稳定性问题">2.3.1 克服重力场的稳定性问题</h3>
 
-\[\begin{equation}
-\left \{
-\begin{aligned}
-\dfrac{\partial r}{\partial x} = \cos\theta
-~~~ \dfrac{\partial \theta}{\partial x}
-= -\dfrac{\sin\theta}{r} \\
-\dfrac{\partial r}{\partial y} = \sin\theta
-~~~ \dfrac{\partial \theta}{\partial y}
-= \dfrac{\cos\theta}{r} 
-\end{aligned}
-\right.
-\end{equation}\]
+<p>重力和磁力相对影响描述如下比值：</p>
 
-<p>速度关系式</p>
+\[\frac{重力势能}{磁能} = \frac{\Delta\rho g L}{u_0MH}\]
 
-\[\begin{equation}
-\left \{
-\begin{aligned}
-u_1 &amp;= \omega\cdot\cos\theta-u\cdot\sin\theta \\
-u_2 &amp;= \omega\cdot\sin\theta+u\cdot\cos\theta 
-\end{aligned}
-\right.
-\end{equation}\]
+<p>当对上述参数取典型附加值时候，比值大约为0.047。因此重力对这些磁性流体的下沉作用比磁力要小很多。</p>
 
-<p>于是可得(5)与(6)式的柱坐标形式如下:</p>
+<h3 id="232-避免凝聚的稳定性问题">2.3.2 避免凝聚的稳定性问题</h3>
 
-<center>
-    <img style="border-radius: 0.3125em;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/picture/4.3ptd88rgsdq0.png" width="50%" />
-    <br />
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">(10)</div>
-</center>
+<p>典型胶状的铁磁流体包含颗粒量级为每立方米\(10^{23}\)，而且颗粒之间频繁碰撞。因此如果颗粒粘连在一起，会迅速凝聚起来，为了保证一对直径为d的铁磁颗粒保持分离，需要足够大的能量。通过实验和理论计算表明，保持铁磁颗粒的最大直径，能明显保证悬浮液的降沉稳定性。</p>
 
-<p>p只与x,y相关，即p=p(r,\(\theta\))，记</p>
+<h2 id="24-铁磁流体的基本物理参数">2.4 铁磁流体的基本物理参数</h2>
 
-<center>
-    <img style="border-radius: 0.3125em;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/picture/5.7k69mslimvs0.png" width="50%" />
-    <br />
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">(11)</div>
-</center>
+<h3 id="241-铁磁流体的粘度">2.4.1 铁磁流体的粘度</h3>
 
-<p>对(10)的中间两项在[0,z]上进行两次积分可得</p>
+<p><strong>Einstein公式</strong>：</p>
 
-<center>
-    <img style="border-radius: 0.3125em;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/picture/6.411uvg8embc0.png" width="50%" />
-    <br />
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">(12)</div>
-</center>
+\[\eta_0=\eta_c\left\{  1+\frac{5}{2}\widetilde{\phi}  \right\}\]
 
-<p>对一阶对z的偏导数进行泰勒展式:</p>
+<p>\(\eta_c\)表示在没有磁场条件下的悬浮液的动力学粘度，
+\(\widetilde{\phi}\)表示铁磁颗粒体积浓度为0.06.</p>
 
-<center>
-    <img style="border-radius: 0.3125em;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/picture/7.3ahyvvwxxvw0.png" width="50%" />
-    <br />
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">(13)</div>
-</center>
+<p><strong>Vand公式</strong>：</p>
 
-<p>将(10)中间两项代入(13)，(13)代入(12)，然后再将(12)代入到(10)的第一个公式中，则有</p>
+\[\eta_0=\eta_c exp\frac{2.5\widetilde{\phi}+2.7\widetilde{\phi}^2}{1-0.609\widetilde{\phi}}\]
 
-<center>
-    <img style="border-radius: 0.3125em;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/picture/8.3lxudsmnch40.png" width="50%" />
-    <br />
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">(14)</div>
-</center>
+<p><strong>改进的Vand公式</strong>：
+\(\eta_0=\frac{\eta_c}{1-2.5\widetilde{\phi}+\alpha\widetilde{\phi}^2}\)</p>
 
-<p>将(14)沿z轴[0,h]积分，积分过程中采用中矩形公式近似，于是得到了CMP润滑方程</p>
+<p>通过计算可得\(\alpha = 1.55\)，于是得到刚性堆砌条件下<strong>铁磁流体的粘度公式</strong>：</p>
 
-<center>
-    <img style="border-radius: 0.3125em;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/picture/10.978yo8qdzv4.png" width="50%" />
-    <br />
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;"></div>
-</center>
+\[\eta_0=\frac{\eta_c}{1-2.5\widetilde{\phi}+1.55\widetilde{\phi}^2}\]
 
-<p>记晶片中心厚度为\(h_{piv}\)，晶片转角和倾角分别为\(\alpha~~\beta\)，则在(r,\(\theta\))处膜厚h满足</p>
+<h3 id="242-铁磁流体的磁化强度">2.4.2 铁磁流体的磁化强度</h3>
 
-<center>
-    <img style="border-radius: 0.3125em;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/picture/11.6o1ewjpwjh00.png" width="50%" />
-    <br />
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;"></div>
-</center>
-<center>
-    <img style="border-radius: 0.3125em;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/CMP-picture/17.4oknbuv2ko00.png" width="60%" />
-    <br />
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">转角倾角示意图</div>
-</center>
+<p>磁化强度：磁化强度是描述磁介质磁化状态的物理矢量，通常用M表示，其定义为介质微小体元\(\Delta V\)内的全部磁矩矢量和与\(\Delta V\)之比，即</p>
 
-<p>速度边界条件满足如下:</p>
+\[M = \frac{\sum m_i}{\Delta V}\]
 
-<center>
-    <img style="border-radius: 0.3125em;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/picture/12.5nc0z2tduzo0.png" width="50%" />
-    <br />
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;"></div>
-</center>
+<p>设外磁场的强度为H，磁感应强度为B，\(u_0 = 4\pi \times 10^{-7}\)为真空磁导率，磁化率为\(\chi\)，顺磁质\(\chi\)为正，抗磁质\(\chi\)为负，且他们满足如下关系：</p>
 
-<p>其中\(\omega_{\omega}\)为晶片的转速，\(\omega_p\)为抛光垫的转速，d为抛光垫中心到晶片中心的距离。</p>
+\[B=\chi H = \frac{\chi}{(1+\chi)u_0}B\]
 
-<center>
-    <img style="border-radius: 0.3125em;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/CMP-picture/16.u4eel6m889s.png" width="50%" />
-    <br />
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">速度边界关系图</div>
-</center>
+<h2 id="25-热磁不稳定性">2.5 热磁不稳定性</h2>
 
-<center>
-    <img style="border-radius: 0.3125em;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/CMP-picture/15.2ht2xt8cqvc0.png" width="70%" />
-    <br />
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">无量纲百度解释</div>
-</center>
+<p>不稳定问题产生的有趣现象还包括不稳定性使磁流体中一个薄层出现迷宫一样的图案，加强磁场后还可能出现更多图案，考虑温度对磁场的额依赖，一些热对流不稳定性被提出来，这些现象在数学上被看成是一些临界现象，或是某种分界点。进而形成一些流场的新的超临界平衡状态。在磁场的粘性粘性条件下，<strong>还会发生热磁对流现象，称为热磁不稳定性</strong>。经过实验观察发现，铁磁流体具有一些独特的热力学性质，在<strong>交变磁场下磁流体可将磁能转化为热能</strong>。</p>
 
-<center>
-    <img style="border-radius: 0.3125em;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/CMP-picture/14.6d3r6dbagac0.png" width="70%" />
-    <br />
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">润滑条件百度解释</div>
-</center>
+<h2 id="26-铁磁颗粒的体积分数">2.6 铁磁颗粒的体积分数</h2>
+
+<p>铁磁流体的体积分数和密度关系式为</p>
+
+\[\rho = \rho_s\phi_s+\rho_a(\phi_c-\phi_a)+\rho_c(1-\phi_c)\]
+
+<p>上式中\(\phi_s~\phi_a~\phi_c\)分别表示铁磁颗粒、表面活性剂和载体溶液的体积分数，当\(\phi_a = \phi_c\)时，可以简写为</p>
+
+\[\rho = \rho_s\phi_s+\rho_c(1-\phi_c)\]
+
+<p>由此仅通过测量磁性液体的密度就可以根据组分来确定铁磁颗粒的体积分数</p>
+
+\[\chi_s = (\rho-\rho_c)/(\rho_s-\rho_c)\]
 
   </section>
 
@@ -549,13 +372,13 @@ u_2 &amp;= \omega\cdot\sin\theta+u\cdot\cos\theta
        <ul class="pager">
         
         <li class="previous">
-            <a href="/2021/09/%E5%87%BD%E6%95%B0%E6%8E%A2%E5%B9%BD/" data-toggle="tooltip" data-placement="top" title="第八章 函数探幽">上一篇：  <span>第八章 函数探幽</span>
+            <a href="/2021/09/%E9%93%81%E7%A3%81%E6%B5%81%E4%BD%93%E5%8A%A8%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%B8%80%E7%AB%A0/" data-toggle="tooltip" data-placement="top" title="铁磁流体动力学第一章">上一篇：  <span>铁磁流体动力学第一章</span>
             </a>
         </li>
         
         
         <li class="next">
-            <a href="/2021/09/%E9%93%81%E7%A3%81%E6%B5%81%E4%BD%93%E5%8A%A8%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%B8%80%E7%AB%A0/" data-toggle="tooltip" data-placement="top" title="铁磁流体动力学第一章">下一篇：  <span>铁磁流体动力学第一章</span>
+            <a href="/2021/09/animation/" data-toggle="tooltip" data-placement="top" title="animation-pictue">下一篇：  <span>animation-pictue</span>
             </a>
         </li>
         

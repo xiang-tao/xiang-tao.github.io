@@ -6,17 +6,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <title>考虑对流效应和磁场的CMP模型及数值模拟论文笔记</title>
-  <meta name="description" content="            CMP工作示意图">
+  <title>铁磁流体动力学第一章</title>
+  <meta name="description" content="1.1 麦克斯韦电磁学理论">
   <meta name="author" content="leopardpan">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="考虑对流效应和磁场的CMP模型及数值模拟论文笔记">
-  <meta name="twitter:description" content="            CMP工作示意图">
+  <meta name="twitter:title" content="铁磁流体动力学第一章">
+  <meta name="twitter:description" content="1.1 麦克斯韦电磁学理论">
   
   <meta property="og:type" content="article">
-  <meta property="og:title" content="考虑对流效应和磁场的CMP模型及数值模拟论文笔记">
-  <meta property="og:description" content="            CMP工作示意图">
+  <meta property="og:title" content="铁磁流体动力学第一章">
+  <meta property="og:description" content="1.1 麦克斯韦电磁学理论">
   
   <link rel="icon" type="image/png" href="/images/favicon.png" />
   <link href="/images/favicon.png" rel="shortcut icon" type="image/png">
@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="/css/main.css">
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-  <link rel="canonical" href="www.xiangtao.net.cn/2021/09/%E5%AF%B9%E6%B5%81%E6%95%88%E5%BA%94%E5%92%8C%E7%A3%81%E5%9C%BA%E7%9A%84CMP%E6%A8%A1%E5%9E%8B/">
+  <link rel="canonical" href="www.xiangtao.net.cn/2021/09/%E9%93%81%E7%A3%81%E6%B5%81%E4%BD%93%E5%8A%A8%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%B8%80%E7%AB%A0/">
   <link rel="alternate" type="application/rss+xml" title="向涛" href="www.xiangtao.net.cn/feed.xml">
   
   <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
@@ -189,10 +189,10 @@
 
 <article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
-    <h1 class="post-title">考虑对流效应和磁场的CMP模型及数值模拟论文笔记</h1>
+    <h1 class="post-title">铁磁流体动力学第一章</h1>
     <div class="post-meta">
       <img src="/images/calendar.png" width="20px"/> 
-      <time datetime="2021-09-14 00:00:00 +0800" itemprop="datePublished" class="post-meta__date date">2021-09-14</time>  
+      <time datetime="2021-09-18 00:00:00 +0800" itemprop="datePublished" class="post-meta__date date">2021-09-18</time>  
 
       <span id="busuanzi_container_page_pv"> | 阅读：<span id="busuanzi_value_page_pv"></span>次</span>
     </p>
@@ -202,310 +202,83 @@
   
     <h2 class="post-title">目录</h2>
     <ul>
-  <li><a href="#具有对流效应的cmp润滑方程的推导">具有对流效应的CMP润滑方程的推导</a></li>
+  <li><a href="#11-麦克斯韦电磁学理论">1.1 麦克斯韦电磁学理论</a></li>
+  <li><a href="#12-铁磁流体动力学基本内容">1.2 铁磁流体动力学基本内容</a></li>
+  <li><a href="#13-铁磁流体动力学的发展现状">1.3 铁磁流体动力学的发展现状</a></li>
+  <li><a href="#14-铁磁流体动力学的应用">1.4 铁磁流体动力学的应用</a></li>
 </ul>
 
   
   
   <section class="post">
-    <center>
-    <img style="border-radius: 0.3125em;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/picture/CMP.6wtduy66xrk0.png" width="60%" />
-    <br />
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">CMP工作示意图</div>
-</center>
+    <h2 id="11-麦克斯韦电磁学理论">1.1 麦克斯韦电磁学理论</h2>
 
-<h2 id="具有对流效应的cmp润滑方程的推导">具有对流效应的CMP润滑方程的推导</h2>
+<p><strong>麦克斯韦</strong>简短的四元方程组(看起来简短，但却非常复杂)，就可以准确的描绘出电磁场的特性及相互作用关系，这样<strong>麦克斯韦</strong>将混乱纷纭的现象统一了起来。<strong>麦克斯韦</strong>方程组优点在于它的通用性，在任何情况下都能够使用，所有的电磁理论都可以由麦克斯韦方程推导出来，许多以前未能解决的问题也能从中寻求答案。<strong>麦克斯韦</strong>还预言了光也是一种电磁波，同时麦克斯韦方程还表明了可见光并不是唯一的电磁辐射，后来<strong>赫兹</strong>从理论上验证了麦克斯韦预言的不可见光波，几年后<strong>马可尼</strong>发现这些不可见的光波可用于无线电通信，无线电随之问世。直到今天我们也在用不可见光进行通信。X射线、\(\gamma\)射线，红外线，紫外线这些都是电磁波辐射的其他一些例子，都可以用麦克斯韦方程进行研究。</p>
 
-<p>连续方程为：</p>
+<h2 id="12-铁磁流体动力学基本内容">1.2 铁磁流体动力学基本内容</h2>
 
-\[\begin{equation}
-\nabla\cdot\pmb{u} = 0
-\end{equation}\]
-
-<p>该方程等价于</p>
-
-\[\begin{equation}
-\dfrac{\partial u_1}{\partial x} 
-+ \dfrac{\partial u_2}{\partial y} 
-+ \dfrac{\partial u_3}{\partial z}=0
-\end{equation}\]
-
-<p>运动方程为：</p>
-
-\[\begin{equation}
-\rho\dfrac{\partial \pmb{u}}{\partial t}
-+ \rho\pmb{u}\cdot\nabla \pmb{u}
-= -\nabla p+ \eta\Delta \pmb{u} +\rho\pmb{F}
-\end{equation}\]
-
-<p>当假设\(\pmb{F} = \pmb{0}\)时，该方程等价于</p>
-
-\[\begin{equation}
-\left \{
-\begin{aligned}
-\rho \left(\dfrac{\partial u_1}{\partial t}
-+u_1 \dfrac{\partial u_1}{\partial x}
-+u_2 \dfrac{\partial u_1}{\partial y}
-+u_3 \dfrac{\partial u_1}{\partial z}\right)
-= -\dfrac{\partial p}{\partial x} + \eta
-\left( \dfrac{\partial^2 u_1}{\partial x^2} + \dfrac{\partial^2 u_1}{\partial y^2}
-+\dfrac{\partial^2 u_1}{\partial z^2}  \right) \\
-\rho \left(\dfrac{\partial u_2}{\partial t}
-+u_1 \dfrac{\partial u_2}{\partial x}
-+u_2 \dfrac{\partial u_2}{\partial y}
-+u_3 \dfrac{\partial u_2}{\partial z}\right)
-= -\dfrac{\partial p}{\partial y} + \eta
-\left( \dfrac{\partial^2 u_2}{\partial x^2} + \dfrac{\partial^2 u_2}{\partial y^2}
-+\dfrac{\partial^2 u_2}{\partial z^2}  \right)\\
-\rho \left(\dfrac{\partial u_3}{\partial t}
-+u_1 \dfrac{\partial u_3}{\partial x}
-+u_2 \dfrac{\partial u_3}{\partial y}
-+u_3 \dfrac{\partial u_3}{\partial z}\right)
-= -\dfrac{\partial p}{\partial z} + \eta
-\left( \dfrac{\partial^2 u_3}{\partial x^2} + \dfrac{\partial^2 u_3}{\partial y^2}
-+\dfrac{\partial^2 u_3}{\partial z^2}  \right)
-\end{aligned}
-\right.
-\end{equation}\]
-
-<p><strong>假设条件</strong></p>
+<p><strong>主要的三类特殊流体</strong></p>
 
 <ol>
-  <li>CMP过程中载荷完全由抛光液来承载，晶片由于抛光液的隔离完全与抛光垫分离，因为膜厚比较博，忽略质量力。</li>
-  <li>假设抛光液是牛顿性流体，在CMP过程中是稳态不可压的，流体的黏性系数是常数\(\eta\)。由于稳态所以\(\dfrac{\partial u_i}{\partial t} = 0\)。</li>
-  <li>满足无量纲润滑条件。即\(\dfrac{\partial^2 u_i}{\partial x^2} + \dfrac{\partial^2 u_i}{\partial y^2}\)比\(\dfrac{\partial^2 u_i}{\partial z^2}\)量级小，可以忽略。</li>
-  <li>在\(z\)轴方向总压力梯度为0，\(z\)轴方向的速度忽略不计。即\(u_3 = 0\)</li>
+  <li>电动流体动力学(<strong>FHD</strong>)：主要考虑电场对流体的作用，一般不考虑磁场作用。</li>
+  <li>磁流体动力学(<strong>MHD</strong>)：同时考虑电场和磁场的综合作用。</li>
+  <li>铁磁流体动力学(<strong>FHD</strong>)：主要考虑磁场对流体的动力学作用。</li>
 </ol>
 
-<p>所以连续方程简化为</p>
+<p>当电场和磁场同时存在，运动的电荷会受到电场力和洛伦磁力，则运动点电荷受力为电场力和洛伦磁力之和</p>
 
-\[\begin{equation}
-\dfrac{\partial u_1}{\partial x} 
-+ \dfrac{\partial u_2}{\partial y} =0
-\end{equation}\]
+\[\pmb{F} = q(\pmb{E}+\pmb{v}\times\pmb{B})\]
 
-<p>运动方程简化为</p>
+<p>其中\(\pmb{F}\)是伦伦磁力，q是带电粒子的电荷量，\(\pmb{E}\)是电场强度，\(\pmb{v}\)是带电粒子的速度，\(\pmb{B}\)是磁感应强度。</p>
 
-\[\begin{equation}
-\left \{
-\begin{aligned}
-\dfrac{\partial p}{\partial x}
-+\rho u_1 \dfrac{\partial u_1}{\partial x}
-+\rho u_2 \dfrac{\partial u_1}{\partial y}
-&amp;= \eta \dfrac{\partial^2 u_1}{\partial z^2} \\
-\dfrac{\partial p}{\partial y}
-+\rho u_1 \dfrac{\partial u_2}{\partial x}
-+\rho u_2 \dfrac{\partial u_2}{\partial y}
-&amp;= \eta \dfrac{\partial^2 u_2}{\partial z^2}
-\\
- \dfrac{\partial p}{\partial z} &amp;= 0
-\end{aligned}
-\right.
-\end{equation}\]
+<p><strong>洛伦磁力的方向</strong></p>
 
-<p>上式的坐标系是直角坐标系，将其转化为柱坐标，则速度转换关系如下图</p>
+<p>1.用左手定则来判断：让磁感线穿过手心，四指指向正电荷运动的方向(或负电荷运动方向的反方向)，大拇指指向就是洛伦兹力的方向。</p>
 
-<center>
-    <img style="border-radius: 0.3125em;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/picture/CMPspeed.6ivt4x8iwxc0.png" width="50%" />
-    <br />
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">CMP速度关系式</div>
-</center>
+<p>2.无论v与B是否垂直，洛伦兹力总是同时垂直于电荷运动方向与磁场方向。</p>
 
-<p>变换关系式为:</p>
+<p><strong>洛伦磁力的特点</strong></p>
 
-\[\begin{equation}
-\left \{
-\begin{aligned}
-x=r\cos\theta \\
-y=r\sin\theta \\
-z=z
-\end{aligned}
-\right.
-\end{equation}\]
+<p>洛伦兹力的方向总与粒子运动的方向垂直，洛伦兹力只改变速度的方向，不改变速度的大小，故洛伦兹力永远不会对v有积分，即洛伦兹力永不做功。</p>
 
-\[\begin{equation}
-\left \{
-\begin{aligned}
-\dfrac{\partial x}{\partial r} = \cos\theta
-~~~ \dfrac{\partial x}{\partial \theta}
-= -r\cdot \sin\theta \\
-\dfrac{\partial y}{\partial r} = \sin\theta
-~~~ \dfrac{\partial y}{\partial \theta}
-= r\cdot \cos\theta
-\end{aligned}
-\right.
-\end{equation}\]
+<p><strong>洛伦磁力和安培力关系</strong></p>
 
-<!--可参考数学分向量值函数求导相关运算-->
+<p>安培力是洛伦兹力的宏观表现，洛伦兹力是安培力的微观实质。</p>
 
-\[\begin{equation}
-\left \{
-\begin{aligned}
-\dfrac{\partial r}{\partial x} = \cos\theta
-~~~ \dfrac{\partial \theta}{\partial x}
-= -\dfrac{\sin\theta}{r} \\
-\dfrac{\partial r}{\partial y} = \sin\theta
-~~~ \dfrac{\partial \theta}{\partial y}
-= \dfrac{\cos\theta}{r} 
-\end{aligned}
-\right.
-\end{equation}\]
+<p><strong>铁磁流体的组成</strong></p>
 
-<p>速度关系式</p>
+<p>铁磁颗粒、表面活性剂、载体溶液三要素构成。</p>
 
-\[\begin{equation}
-\left \{
-\begin{aligned}
-u_1 &amp;= \omega\cdot\cos\theta-u\cdot\sin\theta \\
-u_2 &amp;= \omega\cdot\sin\theta+u\cdot\cos\theta 
-\end{aligned}
-\right.
-\end{equation}\]
+<p><strong>铁磁流体的分类</strong></p>
 
-<p>于是可得(5)与(6)式的柱坐标形式如下:</p>
+<ol>
+  <li>根据所含铁磁颗粒的不同，可分为铁氧体系、金属系和氮化铁系。</li>
+  <li>根据基液的不同可分为水基、油基、醚基和酯基。</li>
+</ol>
 
-<center>
-    <img style="border-radius: 0.3125em;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/picture/4.3ptd88rgsdq0.png" width="50%" />
-    <br />
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">(10)</div>
-</center>
+<p><strong>铁磁流体的特点</strong></p>
 
-<p>p只与x,y相关，即p=p(r,\(\theta\))，记</p>
+<ol>
+  <li>铁磁流体和外界磁场的响应性。</li>
+  <li>铁磁流体的磁化强度感应性。</li>
+  <li>铁磁流体的磁粘滞现象。</li>
+  <li>超声波和光在铁磁流体中表现出较大的能量耗散和各向异性。</li>
+</ol>
 
-<center>
-    <img style="border-radius: 0.3125em;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/picture/5.7k69mslimvs0.png" width="50%" />
-    <br />
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">(11)</div>
-</center>
+<h2 id="13-铁磁流体动力学的发展现状">1.3 铁磁流体动力学的发展现状</h2>
+<p>1963年美国的Papell获得了第一个铁磁流体制备专利，并于1965年在美国国家航天局(NASA)航天产品的密封中被成功应用，自此引发了对这种新型材料的研究开发和应用，并不断取得进展。后来铁磁流体力学的理论研究迅速发展，特别是美国和前苏联在该领域取得了许多重要成就。</p>
 
-<p>对(10)的中间两项在[0,z]上进行两次积分可得</p>
+<h2 id="14-铁磁流体动力学的应用">1.4 铁磁流体动力学的应用</h2>
 
-<center>
-    <img style="border-radius: 0.3125em;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/picture/6.411uvg8embc0.png" width="50%" />
-    <br />
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">(12)</div>
-</center>
+<p>铁磁流体的应用现已扩展到机械、电子、能源、化工、冶金、船舶、航天、医疗等诸多领域，在密封、冷却、润滑、发动机、阻尼震动、快速印刷等方面有着新的应用。</p>
 
-<p>对一阶对z的偏导数进行泰勒展式:</p>
+<p><strong>问题</strong></p>
 
-<center>
-    <img style="border-radius: 0.3125em;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/picture/7.3ahyvvwxxvw0.png" width="50%" />
-    <br />
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">(13)</div>
-</center>
-
-<p>将(10)中间两项代入(13)，(13)代入(12)，然后再将(12)代入到(10)的第一个公式中，则有</p>
-
-<center>
-    <img style="border-radius: 0.3125em;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/picture/8.3lxudsmnch40.png" width="50%" />
-    <br />
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">(14)</div>
-</center>
-
-<p>将(14)沿z轴[0,h]积分，积分过程中采用中矩形公式近似，于是得到了CMP润滑方程</p>
-
-<center>
-    <img style="border-radius: 0.3125em;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/picture/10.978yo8qdzv4.png" width="50%" />
-    <br />
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;"></div>
-</center>
-
-<p>记晶片中心厚度为\(h_{piv}\)，晶片转角和倾角分别为\(\alpha~~\beta\)，则在(r,\(\theta\))处膜厚h满足</p>
-
-<center>
-    <img style="border-radius: 0.3125em;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/picture/11.6o1ewjpwjh00.png" width="50%" />
-    <br />
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;"></div>
-</center>
-<center>
-    <img style="border-radius: 0.3125em;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/CMP-picture/17.4oknbuv2ko00.png" width="60%" />
-    <br />
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">转角倾角示意图</div>
-</center>
-
-<p>速度边界条件满足如下:</p>
-
-<center>
-    <img style="border-radius: 0.3125em;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/picture/12.5nc0z2tduzo0.png" width="50%" />
-    <br />
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;"></div>
-</center>
-
-<p>其中\(\omega_{\omega}\)为晶片的转速，\(\omega_p\)为抛光垫的转速，d为抛光垫中心到晶片中心的距离。</p>
-
-<center>
-    <img style="border-radius: 0.3125em;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/CMP-picture/16.u4eel6m889s.png" width="50%" />
-    <br />
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">速度边界关系图</div>
-</center>
-
-<center>
-    <img style="border-radius: 0.3125em;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/CMP-picture/15.2ht2xt8cqvc0.png" width="70%" />
-    <br />
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">无量纲百度解释</div>
-</center>
-
-<center>
-    <img style="border-radius: 0.3125em;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/CMP-picture/14.6d3r6dbagac0.png" width="70%" />
-    <br />
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">润滑条件百度解释</div>
-</center>
+<ol>
+  <li>铁磁流体颗粒表面的活性剂是人工弄上去的吗?</li>
+  <li>文中的洛伦磁力公式中F应该是电荷所受的电场力和洛伦磁力之和，为什么两个力之和还叫洛伦磁力呢?</li>
+  <li>铁磁流体的特点不太理解。</li>
+</ol>
 
   </section>
 
@@ -549,13 +322,13 @@ u_2 &amp;= \omega\cdot\sin\theta+u\cdot\cos\theta
        <ul class="pager">
         
         <li class="previous">
-            <a href="/2021/09/%E5%87%BD%E6%95%B0%E6%8E%A2%E5%B9%BD/" data-toggle="tooltip" data-placement="top" title="第八章 函数探幽">上一篇：  <span>第八章 函数探幽</span>
+            <a href="/2021/09/%E5%AF%B9%E6%B5%81%E6%95%88%E5%BA%94%E5%92%8C%E7%A3%81%E5%9C%BA%E7%9A%84CMP%E6%A8%A1%E5%9E%8B/" data-toggle="tooltip" data-placement="top" title="考虑对流效应和磁场的CMP模型及数值模拟论文笔记">上一篇：  <span>考虑对流效应和磁场的CMP模型及数值模拟论文笔记</span>
             </a>
         </li>
         
         
         <li class="next">
-            <a href="/2021/09/%E9%93%81%E7%A3%81%E6%B5%81%E4%BD%93%E5%8A%A8%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%B8%80%E7%AB%A0/" data-toggle="tooltip" data-placement="top" title="铁磁流体动力学第一章">下一篇：  <span>铁磁流体动力学第一章</span>
+            <a href="/2021/09/%E9%93%81%E7%A3%81%E6%B5%81%E4%BD%93%E5%8A%A8%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%BA%8C%E7%AB%A0/" data-toggle="tooltip" data-placement="top" title="铁磁流体动力学第二章">下一篇：  <span>铁磁流体动力学第二章</span>
             </a>
         </li>
         

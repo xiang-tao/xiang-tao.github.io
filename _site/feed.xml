@@ -5,9 +5,223 @@
     <description>Welcome to my personal website~</description>
     <link>www.xiangtao.net.cn/</link>
     <atom:link href="www.xiangtao.net.cn/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 16 Sep 2021 16:20:39 +0800</pubDate>
-    <lastBuildDate>Thu, 16 Sep 2021 16:20:39 +0800</lastBuildDate>
+    <pubDate>Mon, 27 Sep 2021 12:57:28 +0800</pubDate>
+    <lastBuildDate>Mon, 27 Sep 2021 12:57:28 +0800</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>animation-pictue</title>
+        <description>&lt;center&gt;
+    &lt;img style=&quot;border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);&quot; src=&quot;https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/animation/many_lines_animation.25vz49udwnuo.gif&quot; width=&quot;60%&quot; /&gt;
+    &lt;br /&gt;
+    &lt;div style=&quot;color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;&quot;&gt;多曲线动态图1&lt;/div&gt;
+&lt;/center&gt;
+</description>
+        <pubDate>Wed, 22 Sep 2021 00:00:00 +0800</pubDate>
+        <link>www.xiangtao.net.cn/2021/09/animation/</link>
+        <guid isPermaLink="true">www.xiangtao.net.cn/2021/09/animation/</guid>
+        
+        <category>animaiton</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>铁磁流体动力学第二章</title>
+        <description>&lt;h2 id=&quot;21-铁磁畴结构理论&quot;&gt;2.1 铁磁畴结构理论&lt;/h2&gt;
+
+&lt;h3 id=&quot;211-铁磁矿&quot;&gt;2.1.1 铁磁矿&lt;/h3&gt;
+
+&lt;p&gt;铁磁流体由铁磁颗粒、表面活性剂和载体溶液三要素组成，铁磁颗粒通常来源于含铁的混合物，铁磁颗粒分散于载体溶液中，表面活性剂吸附于铁磁颗粒表面制成&lt;strong&gt;胶态磁性材料&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;铁磁流体的矫顽力分为磁感矫顽力和内禀矫顽力。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;磁感矫顽力&lt;/strong&gt;：磁体在反向充磁时，使磁感应强度降为零所需要反向磁场的值称为磁感矫顽力。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;内禀矫顽力&lt;/strong&gt;：使磁化强度将为零所需要施加的反向磁场强度称为铁磁流体的内禀矫顽力。&lt;/p&gt;
+
+&lt;p&gt;物质磁性分类：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;抗磁性：指一种弱磁性。&lt;/li&gt;
+  &lt;li&gt;顺磁性：是指材料对磁场很弱的磁性。&lt;/li&gt;
+  &lt;li&gt;超顺磁性：是指铁磁物质的颗粒小于临界尺寸时所具有的单畴结构。&lt;/li&gt;
+  &lt;li&gt;亚铁磁性：是在无外加磁场的情况下，磁畴内相邻原子间电子交换作用或其他相互作用，使他们的磁矩在克服热运动的影响后，处于部分抵消的有序排列状态，以至于还有一个和磁矩的现象。&lt;/li&gt;
+  &lt;li&gt;反铁磁性。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;212-铁磁畴结构理论&quot;&gt;2.1.2 铁磁畴结构理论&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;磁畴&lt;/strong&gt;：在无外磁场的情况下，他们的自旋磁矩能在一个个微小区域内“自发地”整齐排列起来而形成自发磁化小区域称为磁畴&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;磁畴壁&lt;/strong&gt;：各个磁畴之间的交界面称为磁畴壁。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;饱和磁化&lt;/strong&gt;：当外磁场强度增加到一定程度时，所有磁畴中的磁矩的磁化方向全部与外磁场的方向完全一致，此时磁体就达到了磁饱和状态，即磁饱和化。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;残余磁感应强度&lt;/strong&gt;：当达到磁饱和化后，即使磁场减小到零，磁矩也不会回到零，残留下一些磁化效应，这种残留磁化值称为残余磁感应强度。&lt;/p&gt;
+
+&lt;h2 id=&quot;22-铁磁流体基本载液和表面活性剂特性&quot;&gt;2.2 铁磁流体基本载液和表面活性剂特性&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;基载液基本特性&lt;/strong&gt;：低蒸发率、低粘度和高化学稳定性，以及耐高温和抗辐射特性等。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;表面活性剂&lt;/strong&gt;：表面活性剂主要用来防止磁性颗粒的氧化，削弱静磁吸引力，克服范德瓦尔斯力的颗粒凝聚。&lt;/p&gt;
+
+&lt;h2 id=&quot;23-铁磁流体颗粒的基本结构及其稳定性&quot;&gt;2.3 铁磁流体颗粒的基本结构及其稳定性&lt;/h2&gt;
+
+&lt;h3 id=&quot;231-克服重力场的稳定性问题&quot;&gt;2.3.1 克服重力场的稳定性问题&lt;/h3&gt;
+
+&lt;p&gt;重力和磁力相对影响描述如下比值：&lt;/p&gt;
+
+\[\frac{重力势能}{磁能} = \frac{\Delta\rho g L}{u_0MH}\]
+
+&lt;p&gt;当对上述参数取典型附加值时候，比值大约为0.047。因此重力对这些磁性流体的下沉作用比磁力要小很多。&lt;/p&gt;
+
+&lt;h3 id=&quot;232-避免凝聚的稳定性问题&quot;&gt;2.3.2 避免凝聚的稳定性问题&lt;/h3&gt;
+
+&lt;p&gt;典型胶状的铁磁流体包含颗粒量级为每立方米\(10^{23}\)，而且颗粒之间频繁碰撞。因此如果颗粒粘连在一起，会迅速凝聚起来，为了保证一对直径为d的铁磁颗粒保持分离，需要足够大的能量。通过实验和理论计算表明，保持铁磁颗粒的最大直径，能明显保证悬浮液的降沉稳定性。&lt;/p&gt;
+
+&lt;h2 id=&quot;24-铁磁流体的基本物理参数&quot;&gt;2.4 铁磁流体的基本物理参数&lt;/h2&gt;
+
+&lt;h3 id=&quot;241-铁磁流体的粘度&quot;&gt;2.4.1 铁磁流体的粘度&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Einstein公式&lt;/strong&gt;：&lt;/p&gt;
+
+\[\eta_0=\eta_c\left\{  1+\frac{5}{2}\widetilde{\phi}  \right\}\]
+
+&lt;p&gt;\(\eta_c\)表示在没有磁场条件下的悬浮液的动力学粘度，
+\(\widetilde{\phi}\)表示铁磁颗粒体积浓度为0.06.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Vand公式&lt;/strong&gt;：&lt;/p&gt;
+
+\[\eta_0=\eta_c exp\frac{2.5\widetilde{\phi}+2.7\widetilde{\phi}^2}{1-0.609\widetilde{\phi}}\]
+
+&lt;p&gt;&lt;strong&gt;改进的Vand公式&lt;/strong&gt;：
+\(\eta_0=\frac{\eta_c}{1-2.5\widetilde{\phi}+\alpha\widetilde{\phi}^2}\)&lt;/p&gt;
+
+&lt;p&gt;通过计算可得\(\alpha = 1.55\)，于是得到刚性堆砌条件下&lt;strong&gt;铁磁流体的粘度公式&lt;/strong&gt;：&lt;/p&gt;
+
+\[\eta_0=\frac{\eta_c}{1-2.5\widetilde{\phi}+1.55\widetilde{\phi}^2}\]
+
+&lt;h3 id=&quot;242-铁磁流体的磁化强度&quot;&gt;2.4.2 铁磁流体的磁化强度&lt;/h3&gt;
+
+&lt;p&gt;磁化强度：磁化强度是描述磁介质磁化状态的物理矢量，通常用M表示，其定义为介质微小体元\(\Delta V\)内的全部磁矩矢量和与\(\Delta V\)之比，即&lt;/p&gt;
+
+\[M = \frac{\sum m_i}{\Delta V}\]
+
+&lt;p&gt;设外磁场的强度为H，磁感应强度为B，\(u_0 = 4\pi \times 10^{-7}\)为真空磁导率，磁化率为\(\chi\)，顺磁质\(\chi\)为正，抗磁质\(\chi\)为负，且他们满足如下关系：&lt;/p&gt;
+
+\[B=\chi H = \frac{\chi}{(1+\chi)u_0}B\]
+
+&lt;h2 id=&quot;25-热磁不稳定性&quot;&gt;2.5 热磁不稳定性&lt;/h2&gt;
+
+&lt;p&gt;不稳定问题产生的有趣现象还包括不稳定性使磁流体中一个薄层出现迷宫一样的图案，加强磁场后还可能出现更多图案，考虑温度对磁场的额依赖，一些热对流不稳定性被提出来，这些现象在数学上被看成是一些临界现象，或是某种分界点。进而形成一些流场的新的超临界平衡状态。在磁场的粘性粘性条件下，&lt;strong&gt;还会发生热磁对流现象，称为热磁不稳定性&lt;/strong&gt;。经过实验观察发现，铁磁流体具有一些独特的热力学性质，在&lt;strong&gt;交变磁场下磁流体可将磁能转化为热能&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;h2 id=&quot;26-铁磁颗粒的体积分数&quot;&gt;2.6 铁磁颗粒的体积分数&lt;/h2&gt;
+
+&lt;p&gt;铁磁流体的体积分数和密度关系式为&lt;/p&gt;
+
+\[\rho = \rho_s\phi_s+\rho_a(\phi_c-\phi_a)+\rho_c(1-\phi_c)\]
+
+&lt;p&gt;上式中\(\phi_s~\phi_a~\phi_c\)分别表示铁磁颗粒、表面活性剂和载体溶液的体积分数，当\(\phi_a = \phi_c\)时，可以简写为&lt;/p&gt;
+
+\[\rho = \rho_s\phi_s+\rho_c(1-\phi_c)\]
+
+&lt;p&gt;由此仅通过测量磁性液体的密度就可以根据组分来确定铁磁颗粒的体积分数&lt;/p&gt;
+
+\[\chi_s = (\rho-\rho_c)/(\rho_s-\rho_c)\]
+</description>
+        <pubDate>Sat, 18 Sep 2021 00:00:00 +0800</pubDate>
+        <link>www.xiangtao.net.cn/2021/09/%E9%93%81%E7%A3%81%E6%B5%81%E4%BD%93%E5%8A%A8%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%BA%8C%E7%AB%A0/</link>
+        <guid isPermaLink="true">www.xiangtao.net.cn/2021/09/%E9%93%81%E7%A3%81%E6%B5%81%E4%BD%93%E5%8A%A8%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%BA%8C%E7%AB%A0/</guid>
+        
+        <category>Ferrohydrodynamics</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>铁磁流体动力学第一章</title>
+        <description>&lt;h2 id=&quot;11-麦克斯韦电磁学理论&quot;&gt;1.1 麦克斯韦电磁学理论&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;麦克斯韦&lt;/strong&gt;简短的四元方程组(看起来简短，但却非常复杂)，就可以准确的描绘出电磁场的特性及相互作用关系，这样&lt;strong&gt;麦克斯韦&lt;/strong&gt;将混乱纷纭的现象统一了起来。&lt;strong&gt;麦克斯韦&lt;/strong&gt;方程组优点在于它的通用性，在任何情况下都能够使用，所有的电磁理论都可以由麦克斯韦方程推导出来，许多以前未能解决的问题也能从中寻求答案。&lt;strong&gt;麦克斯韦&lt;/strong&gt;还预言了光也是一种电磁波，同时麦克斯韦方程还表明了可见光并不是唯一的电磁辐射，后来&lt;strong&gt;赫兹&lt;/strong&gt;从理论上验证了麦克斯韦预言的不可见光波，几年后&lt;strong&gt;马可尼&lt;/strong&gt;发现这些不可见的光波可用于无线电通信，无线电随之问世。直到今天我们也在用不可见光进行通信。X射线、\(\gamma\)射线，红外线，紫外线这些都是电磁波辐射的其他一些例子，都可以用麦克斯韦方程进行研究。&lt;/p&gt;
+
+&lt;h2 id=&quot;12-铁磁流体动力学基本内容&quot;&gt;1.2 铁磁流体动力学基本内容&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;主要的三类特殊流体&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;电动流体动力学(&lt;strong&gt;FHD&lt;/strong&gt;)：主要考虑电场对流体的作用，一般不考虑磁场作用。&lt;/li&gt;
+  &lt;li&gt;磁流体动力学(&lt;strong&gt;MHD&lt;/strong&gt;)：同时考虑电场和磁场的综合作用。&lt;/li&gt;
+  &lt;li&gt;铁磁流体动力学(&lt;strong&gt;FHD&lt;/strong&gt;)：主要考虑磁场对流体的动力学作用。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;当电场和磁场同时存在，运动的电荷会受到电场力和洛伦磁力，则运动点电荷受力为电场力和洛伦磁力之和&lt;/p&gt;
+
+\[\pmb{F} = q(\pmb{E}+\pmb{v}\times\pmb{B})\]
+
+&lt;p&gt;其中\(\pmb{F}\)是伦伦磁力，q是带电粒子的电荷量，\(\pmb{E}\)是电场强度，\(\pmb{v}\)是带电粒子的速度，\(\pmb{B}\)是磁感应强度。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;洛伦磁力的方向&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;1.用左手定则来判断：让磁感线穿过手心，四指指向正电荷运动的方向(或负电荷运动方向的反方向)，大拇指指向就是洛伦兹力的方向。&lt;/p&gt;
+
+&lt;p&gt;2.无论v与B是否垂直，洛伦兹力总是同时垂直于电荷运动方向与磁场方向。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;洛伦磁力的特点&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;洛伦兹力的方向总与粒子运动的方向垂直，洛伦兹力只改变速度的方向，不改变速度的大小，故洛伦兹力永远不会对v有积分，即洛伦兹力永不做功。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;洛伦磁力和安培力关系&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;安培力是洛伦兹力的宏观表现，洛伦兹力是安培力的微观实质。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;铁磁流体的组成&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;铁磁颗粒、表面活性剂、载体溶液三要素构成。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;铁磁流体的分类&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;根据所含铁磁颗粒的不同，可分为铁氧体系、金属系和氮化铁系。&lt;/li&gt;
+  &lt;li&gt;根据基液的不同可分为水基、油基、醚基和酯基。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;铁磁流体的特点&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;铁磁流体和外界磁场的响应性。&lt;/li&gt;
+  &lt;li&gt;铁磁流体的磁化强度感应性。&lt;/li&gt;
+  &lt;li&gt;铁磁流体的磁粘滞现象。&lt;/li&gt;
+  &lt;li&gt;超声波和光在铁磁流体中表现出较大的能量耗散和各向异性。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;13-铁磁流体动力学的发展现状&quot;&gt;1.3 铁磁流体动力学的发展现状&lt;/h2&gt;
+&lt;p&gt;1963年美国的Papell获得了第一个铁磁流体制备专利，并于1965年在美国国家航天局(NASA)航天产品的密封中被成功应用，自此引发了对这种新型材料的研究开发和应用，并不断取得进展。后来铁磁流体力学的理论研究迅速发展，特别是美国和前苏联在该领域取得了许多重要成就。&lt;/p&gt;
+
+&lt;h2 id=&quot;14-铁磁流体动力学的应用&quot;&gt;1.4 铁磁流体动力学的应用&lt;/h2&gt;
+
+&lt;p&gt;铁磁流体的应用现已扩展到机械、电子、能源、化工、冶金、船舶、航天、医疗等诸多领域，在密封、冷却、润滑、发动机、阻尼震动、快速印刷等方面有着新的应用。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;问题&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;铁磁流体颗粒表面的活性剂是人工弄上去的吗?&lt;/li&gt;
+  &lt;li&gt;文中的洛伦磁力公式中F应该是电荷所受的电场力和洛伦磁力之和，为什么两个力之和还叫洛伦磁力呢?&lt;/li&gt;
+  &lt;li&gt;铁磁流体的特点不太理解。&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Sat, 18 Sep 2021 00:00:00 +0800</pubDate>
+        <link>www.xiangtao.net.cn/2021/09/%E9%93%81%E7%A3%81%E6%B5%81%E4%BD%93%E5%8A%A8%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%B8%80%E7%AB%A0/</link>
+        <guid isPermaLink="true">www.xiangtao.net.cn/2021/09/%E9%93%81%E7%A3%81%E6%B5%81%E4%BD%93%E5%8A%A8%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%B8%80%E7%AB%A0/</guid>
+        
+        <category>Ferrohydrodynamics</category>
+        
+        
+      </item>
     
       <item>
         <title>考虑对流效应和磁场的CMP模型及数值模拟论文笔记</title>
@@ -147,7 +361,7 @@ z=z
 \right.
 \end{equation}\]
 
-&lt;!--这里不太懂--&gt;
+&lt;!--可参考数学分向量值函数求导相关运算--&gt;
 
 \[\begin{equation}
 \left \{
@@ -314,7 +528,7 @@ u_2 &amp;amp;= \omega\cdot\sin\theta+u\cdot\cos\theta
         <link>www.xiangtao.net.cn/2021/09/%E5%AF%B9%E6%B5%81%E6%95%88%E5%BA%94%E5%92%8C%E7%A3%81%E5%9C%BA%E7%9A%84CMP%E6%A8%A1%E5%9E%8B/</link>
         <guid isPermaLink="true">www.xiangtao.net.cn/2021/09/%E5%AF%B9%E6%B5%81%E6%95%88%E5%BA%94%E5%92%8C%E7%A3%81%E5%9C%BA%E7%9A%84CMP%E6%A8%A1%E5%9E%8B/</guid>
         
-        <category>mathematical</category>
+        <category>PaperNotes</category>
         
         
       </item>
@@ -1212,572 +1426,6 @@ space 空格，进入搜索状态
         <guid isPermaLink="true">www.xiangtao.net.cn/2021/05/vim/</guid>
         
         <category>linux</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>ubuntu下基于linux的一些常用终端命令</title>
-        <description>&lt;h1 id=&quot;0-自动补全tab键&quot;&gt;0. 自动补全：Tab键&lt;/h1&gt;
-
-&lt;p&gt;如果有歧义，则再按一下Tab键盘就有多种选择。&lt;/p&gt;
-
-&lt;h1 id=&quot;1-ls命令&quot;&gt;1. ls命令&lt;/h1&gt;
-
-&lt;p&gt;-a:显示文件下所有文件包括隐藏文件，即：ls -a&lt;/p&gt;
-
-&lt;p&gt;-l:以列表的形式展现文件信息，包含了多种信息&lt;/p&gt;
-
-&lt;p&gt;-h:结合-l使用，将文件信息中的文件大小显示为kb,即：ls -lh&lt;/p&gt;
-
-&lt;p&gt;与通配符的连用：*表示任意多个字符，?表示一个字符&lt;/p&gt;
-
-&lt;p&gt;[]用法：ls [abc]cc.txt,显显示abc中任意一个与cc.txt结合的文件名字，即a或b或c，或者用[a-f]或[1-4]等。&lt;/p&gt;
-
-&lt;h1 id=&quot;2cd命令&quot;&gt;2.cd命令&lt;/h1&gt;
-
-&lt;p&gt;切换至主目录：cd 或 cd ~;(~表示用户主目录)&lt;/p&gt;
-
-&lt;p&gt;切换至根目录：cd /&lt;/p&gt;
-
-&lt;p&gt;cd - 表示刚使用过的两个目录之间来回切换。&lt;/p&gt;
-
-&lt;p&gt;cd .. 返回上一级目录，cd . 当前目录&lt;/p&gt;
-
-&lt;h1 id=&quot;3相对路径和绝对路径&quot;&gt;3.相对路径和绝对路径&lt;/h1&gt;
-
-&lt;p&gt;相对路径：是在当前目录下进行，例如: cd ./文件名 或者 cd ../文件名 或 cd ../../文件名&lt;/p&gt;
-
-&lt;p&gt;绝对路径：一般是以 / 或 ~ 开始，表示从根目录开始或者从主目录开始然后一级一级的往下进行，例如：cd /文件名/文件名  cd ~/文件名/文件名  等。&lt;/p&gt;
-
-&lt;h1 id=&quot;4touch命令&quot;&gt;4.touch命令&lt;/h1&gt;
-
-&lt;p&gt;touch 文件名：如果文件存在则修改文件的创建时间，如果文件不存在则创建该文件。&lt;/p&gt;
-
-&lt;p&gt;touch 文件名1 文件名2：可以同时创建多个文档。&lt;/p&gt;
-
-&lt;p&gt;touch 路径名/文件名：在对应的路径名下创建文件名。&lt;/p&gt;
-
-&lt;h1 id=&quot;5mkdir命令&quot;&gt;5.mkdir命令&lt;/h1&gt;
-
-&lt;p&gt;mkdir 文件名：创建一个目录&lt;/p&gt;
-
-&lt;p&gt;mddir 文件名1 文件名2： 创建多个目录。&lt;/p&gt;
-
-&lt;p&gt;mkdir -p 文件名：创建嵌套的多个级目录 例如：mkdir -p a/b/c&lt;/p&gt;
-
-&lt;p&gt;mkdir 路径名/目录名：在对应的目录路径下创建目录&lt;/p&gt;
-
-&lt;h1 id=&quot;6rm命令注意该命令删除文件或者目录时候不可恢复&quot;&gt;6.rm命令（注意该命令删除文件或者目录时候不可恢复&lt;/h1&gt;
-
-&lt;p&gt;rm 文档名：删除文档&lt;/p&gt;
-
-&lt;p&gt;rm 文档名1 文档名2：删除多个文档&lt;/p&gt;
-
-&lt;p&gt;rm -r 目录名：删除目录要加上-r&lt;/p&gt;
-
-&lt;p&gt;rm -rf 目录名：加上 -f 无需提示，直接强行删除目录&lt;/p&gt;
-
-&lt;p&gt;值得注意的是rm命令也可以和通配符结合使用，即* ? []等，见ls命令的描述。&lt;/p&gt;
-
-&lt;h1 id=&quot;7tree命令&quot;&gt;7.tree命令&lt;/h1&gt;
-
-&lt;p&gt;tree:显示当前目录下的目录分支结构&lt;/p&gt;
-
-&lt;p&gt;tree 路径名:显示路径名下的文件目录分支结构&lt;/p&gt;
-
-&lt;p&gt;tree -d:只显示目录，不显示文件&lt;/p&gt;
-
-&lt;h1 id=&quot;8cp命令&quot;&gt;8.cp命令&lt;/h1&gt;
-
-&lt;p&gt;cp 某文件路径/文件名 ./新的文件名：将某个路径下的文件复制到 ./ 下，即当前路径下。&lt;/p&gt;
-
-&lt;p&gt;cp 某文件路径/文件名 .：表示将某路径下的文件复制到当前文件夹下名字不变。&lt;/p&gt;
-
-&lt;p&gt;cp -i 某文件路径/文件名 ./新的文件名: -i 命令将会给出相关提示信息，例如相同文件是否覆盖等。&lt;/p&gt;
-
-&lt;p&gt;cp -r 目录名 目录名：复制目录加上 -r。（会将复制目录文件夹下的所有文件一并复制过去）&lt;/p&gt;
-
-&lt;p&gt;cp -r 目录名/{file1,file2,…} 目录名：可复制一个目录下的多个文档。&lt;/p&gt;
-
-&lt;h1 id=&quot;9mv命令&quot;&gt;9.mv命令&lt;/h1&gt;
-
-&lt;p&gt;mv 源文件 目标文件：移动文件夹或者目录/文件夹或目录重命名（相当于剪切）&lt;/p&gt;
-
-&lt;p&gt;mv命令的重命名：mv 源文件名 新的文件名，注意新文件名如果有相同的文件名与之一致会直接覆盖，不会提示，这样有危险，因此：&lt;/p&gt;
-
-&lt;p&gt;mv -i :加上 -i 就有提示信息了。&lt;/p&gt;
-
-&lt;h1 id=&quot;10cat和more命令&quot;&gt;10.cat和more命令&lt;/h1&gt;
-
-&lt;p&gt;cat 文件名：显示文件内容（一次性完整显示文档内容，当文本内容较少时候用cat，较多的内容文档用more来显示最好）&lt;/p&gt;
-
-&lt;p&gt;cat -b 文件名：加入 -b 后会显示数据的行号(不包括空格所在的行)。&lt;/p&gt;
-
-&lt;p&gt;cat -n 文件名：加入 -n 后会包括空格在内的所有数据行号都会显示。&lt;/p&gt;
-
-&lt;p&gt;more 文件名：显示文件内容（会分部分显示，显示百分比内容即分屏显示，需要按 空格 显示手册下一屏，enter滚动下一行，b回滚一屏，f前滚一屏，q退出）&lt;/p&gt;
-
-&lt;h1 id=&quot;11grep命令&quot;&gt;11.grep命令&lt;/h1&gt;
-
-&lt;p&gt;grep 搜索内容（比如：numpy） 文件夹名：终端就会将文档中有关numpy的行展示出来，并将numpy高亮显示出来。&lt;/p&gt;
-
-&lt;p&gt;grep -n 搜索内容（比如：numpy） 文件名：加入 -n 后会显示所在的行号。&lt;/p&gt;
-
-&lt;p&gt;grep -v 搜索内容（比如：numpy） 文件名：加入 -v 后显示不包含numpy所在的行中的内容。&lt;/p&gt;
-
-&lt;p&gt;grep -vn 搜索内容（比如：numpy） 文件名：与 -v 相比，加入 -vn后呢会显示行号，即显示不包含numpy所在行内容，同时显示行号。&lt;/p&gt;
-
-&lt;p&gt;grep -i 搜索内容（比如：numpy） 文件名：加入 -i 后会忽略大小写，比如搜索的是numpy，那么NUmpY也会显示高亮。&lt;/p&gt;
-
-&lt;p&gt;注意：如果搜索的内容有空格，需要加入引号，将搜索内容引号包裹起来，例如：&lt;/p&gt;
-
-&lt;p&gt;grep -vn “hello numpy” 文件名。&lt;/p&gt;
-
-&lt;p&gt;模式查找：行首查找（即只查找行首的内容）&lt;/p&gt;
-
-&lt;p&gt;grep ^numpy 文件名：加入 ^ 符号即可至搜索行首的numpy并高亮。&lt;/p&gt;
-
-&lt;p&gt;同理行尾查找，在后面加上 $ 符号即可，例如：&lt;/p&gt;
-
-&lt;p&gt;grep numpy$ 文件名：在numpy后面加上 $ 符号。&lt;/p&gt;
-
-&lt;p&gt;注意：行首行尾查找也可与 -i -v -n 等命令结合使用。&lt;/p&gt;
-
-&lt;h1 id=&quot;12echo命令&quot;&gt;12.echo命令&lt;/h1&gt;
-
-&lt;p&gt;echo 任意的内容：例如：echo hello会显示hello,  echo hello world则会显示hello world,该命令的用处主要是与重定向结合使用。&lt;/p&gt;
-
-&lt;h1 id=&quot;13重定向-and&quot;&gt;13.重定向&amp;gt; and »&lt;/h1&gt;
-
-&lt;p&gt;linux允许将命令执行结果重定向到一个文件&lt;/p&gt;
-
-&lt;p&gt;将本应显示在终端上的内容 输出/追加 到指定的文件夹中，其中：&lt;/p&gt;
-
-&lt;p&gt;&amp;gt;:表示输出，会覆盖文件原有的内容&lt;/p&gt;
-
-&lt;p&gt;&amp;gt;&amp;gt;:表示追加，会将内容追加到已有文件的末尾，例如：&lt;/p&gt;
-
-&lt;p&gt;echo hello python &amp;gt; a:会将hello写入到文件a中，（如果没有a这个文件，则会新建一个文件a）&lt;/p&gt;
-
-&lt;p&gt;再比如：ls -lh会以列表形式显示相关信息，这时候用：&lt;/p&gt;
-
-&lt;p&gt;ls -lh &amp;gt; a:就会将ls -lh显示的信息写入到文件a中。但是这个时候会把hello world内容覆盖掉，如果不要覆盖，那就用 » 符号即可：ls -lh » a&lt;/p&gt;
-
-&lt;p&gt;还有很多结合使用命令的内容，例如(此处以文件a 为名)：&lt;/p&gt;
-
-&lt;p&gt;tree » a , ls » a ,等&lt;/p&gt;
-
-&lt;h1 id=&quot;14管道&quot;&gt;14.管道|&lt;/h1&gt;
-
-&lt;p&gt;命令 | 命令：例如：&lt;/p&gt;
-
-&lt;p&gt;ls -lah | more  or ls -lah | grep hello等，左边的命令将输出的信息传递给右边的命令进行操作，具体使用很广泛可以自行百度。&lt;/p&gt;
-
-&lt;h1 id=&quot;5关机重启命令shutdown&quot;&gt;5.关机重启命令shutdown&lt;/h1&gt;
-
-&lt;p&gt;shutdown : 一分钟后关机，可以在一分钟内使用 shutdown -c取消关机&lt;/p&gt;
-
-&lt;p&gt;shutdown -r now:加入 -r 怎是重启，now马上重启&lt;/p&gt;
-
-&lt;p&gt;shutdown 20:30  :  将在晚上八点半关机 或 shutdown -h 20:30&lt;/p&gt;
-
-&lt;p&gt;shutdown +10 : 将在10分钟后关机 或 shutdown -h +10&lt;/p&gt;
-
-&lt;p&gt;shutdown -h now : 立即关机 或 shutdown now&lt;/p&gt;
-
-&lt;h1 id=&quot;16chmod命令&quot;&gt;16.chmod命令&lt;/h1&gt;
-
-&lt;p&gt;chmod +/-rwx 文件名/目录名：其中 + 表示怎家权限，- 表示减少权限，r w x分别表示可读 可写 可执行权限。&lt;/p&gt;
-
-&lt;p&gt;可通过ls -l显示的信息查看相关文件的权限，具体请看b站上视频讲解或者百度。&lt;/p&gt;
-
-&lt;p&gt;可执行权限可通过 ./文件名 执行，例如c++编译后的a.out文件等。同时一般的文件夹都要有可执行的权限，否则利用cd ls等命令无法进入文件或者查看文件信息等。&lt;/p&gt;
-
-&lt;h2 id=&quot;重要的内容&quot;&gt;重要的内容&lt;/h2&gt;
-
-&lt;p&gt;相关权限的值：r  :  4     w : 2   x  :  1，那么7=1+2+4表示可执行可读可写，6=4+2表示可读可写等。&lt;/p&gt;
-
-&lt;p&gt;chmod -R 777 文件名/目录名：加入 -R 是将文件夹下所有递归的文件权限一并修改，而777表示本身用户，组用户，其他用户的权限均为7,即拥有可读可写可执行权限（但是通过鼠标执行时候我自己的电脑把我当作了其他用户）。&lt;/p&gt;
-
-&lt;h1 id=&quot;17压缩解压相关命令rar-tar-zip-targz&quot;&gt;17.压缩解压相关命令rar tar zip tar.gz&lt;/h1&gt;
-
-&lt;h2 id=&quot;打包和解包&quot;&gt;打包和解包&lt;/h2&gt;
-
-&lt;p&gt;打包文件：tar -cvf 打包的文件名.tar 被打包的文件(或者是 路径名/被打包的文件)&lt;/p&gt;
-
-&lt;p&gt;例如：tar -cvf py.tar 1.py 2.py 3.py:即将折三个文件打包在py.tar中。&lt;/p&gt;
-
-&lt;p&gt;注意：此处的打包不等于压缩。&lt;/p&gt;
-
-&lt;p&gt;解包文件：tar -xvf 打包文件名.tar&lt;/p&gt;
-
-&lt;h2 id=&quot;参数说明&quot;&gt;参数说明：&lt;/h2&gt;
-
-&lt;p&gt;c : 生成档案文件，创建打包文件&lt;/p&gt;
-
-&lt;p&gt;x : 解开档案文件&lt;/p&gt;
-
-&lt;p&gt;v : 列出解压或者压缩时候的详细过程&lt;/p&gt;
-
-&lt;p&gt;f : 指定档案文件名称，f后面一定是.tar文件，所以必须放在选项最后。&lt;/p&gt;
-
-&lt;p&gt;注意f必须放在选项最后&lt;/p&gt;
-
-&lt;h2 id=&quot;压缩和解压gzip&quot;&gt;压缩和解压gzip&lt;/h2&gt;
-
-&lt;p&gt;压缩文件： tar -zcvf 打包文件.tar.gz 被压缩的文件（或某路径下的被压缩文件）&lt;/p&gt;
-
-&lt;p&gt;例如：tar -zcvf py.tar.gz *.py&lt;/p&gt;
-
-&lt;p&gt;解压文件：tar -zxvf 打包的文件.tar.gz&lt;/p&gt;
-
-&lt;p&gt;解压到指定的目录：tar -zxvf 打包的文件.tar.gz -C 目标路径&lt;/p&gt;
-
-&lt;p&gt;注意 -C 后面的目标路径必须存在，还有就是此处的是大写C.&lt;/p&gt;
-
-&lt;p&gt;此处多了 -z 是tar命令直接调用了gzip命令&lt;/p&gt;
-
-&lt;h2 id=&quot;linux下的另为一种压缩格式bzip2&quot;&gt;linux下的另为一种压缩格式bzip2:&lt;/h2&gt;
-
-&lt;p&gt;与gzip几乎一样，只是在命令上和后缀名上有一点变化：&lt;/p&gt;
-
-&lt;p&gt;例如压缩文件：tar -jcvf py.tar.bz2 *.py&lt;/p&gt;
-
-&lt;p&gt;解压文件：tar -jxvf 打包的文件.tar.bz2&lt;/p&gt;
-
-&lt;p&gt;除此之外，关于解压.zip与.rar文件的命令是unzip与unrar:&lt;/p&gt;
-
-&lt;h2 id=&quot;关于zip&quot;&gt;关于zip:&lt;/h2&gt;
-
-&lt;p&gt;-o选项，不询问用户，直接覆盖源文件&lt;/p&gt;
-
-&lt;p&gt;-d选项，用户可以指定一个解压到指定目录&lt;/p&gt;
-
-&lt;p&gt;例如：unzip 解压文件名&lt;/p&gt;
-
-&lt;p&gt;unzip -d 解压路径 解压文件名&lt;/p&gt;
-
-&lt;p&gt;unzip -o -d 解压路径 解压文件名&lt;/p&gt;
-
-&lt;p&gt;用命令压缩文件如：zip -r test.zip 01.py 02.py&lt;/p&gt;
-
-&lt;p&gt;再比如： zip -r test1.zip aa将目录aa压缩名为test1.zip&lt;/p&gt;
-
-&lt;p&gt;-r是递归压缩，即内部文件一并压缩&lt;/p&gt;
-
-&lt;h2 id=&quot;关于rar&quot;&gt;关于rar:&lt;/h2&gt;
-
-&lt;p&gt;压缩文件：rar a -r bb.rar *py，将后缀含有py的文件压缩到bb.rar中。&lt;/p&gt;
-
-&lt;p&gt;解压文件：unrar x 文件名&lt;/p&gt;
-
-&lt;p&gt;a:添加到压缩文件&lt;/p&gt;
-
-&lt;p&gt;-r 递归处理&lt;/p&gt;
-
-&lt;p&gt;x 以绝对路径解压文件&lt;/p&gt;
-
-&lt;p&gt;说明：rar一般是windows常用的压缩，zip则是mac常用的压缩，linux常用的是tar.gz,但是遗憾的是该后缀似乎在另外的系统上难以解压，但是zip是三个系统都支持的格式，因此一般用zip.还有就是关于一些压缩文件来自于windows时候是乱码，可以通过一定的编码格式解决，但是解压命令unar是一款很厉害的linux的解压神器，后缀名为rar,zip等windows的压缩文件都能够正确解压，还会自动封装到一个文件夹中，且不会乱码，用法是：unar 压缩文件名&lt;/p&gt;
-
-&lt;h2 id=&quot;linux下最强解压unar命令&quot;&gt;linux下最强解压：unar命令&lt;/h2&gt;
-&lt;p&gt;unar + 文件名&lt;/p&gt;
-
-&lt;p&gt;可以解压来自linux windows mac三个系统下的压缩文件，不会乱码.&lt;/p&gt;
-
-&lt;p&gt;除此之外，unzip -O cp936 + 文件名也可以解压一些乱码文件，解压后不会乱码，这个和unar命令之间可以相互合作使用，有时候他们是互补的（因为我遇到过用unzip -O cp936解压仍然是乱码，但是用unar解压就正常了，也同时遇到过unar解压仍是乱码，但是用cp396解压正常，因此优先选择用unar，后面可以再试试其他方法），unzip -O GBK，unzip -O GB18030或者用unar　-e GBK 也是可行的，都可以说明字体编码问题．此外lsar + 文件名可以看到解压文件内部内容，也可以用lsar -e GBK+文件名查看内容．unar -p 123456 test.zip可以指定解压密码（123456）.unar test.zip -o /home/dir/  指定解压路径.&lt;/p&gt;
-
-&lt;h1 id=&quot;18apt简介&quot;&gt;18.apt简介&lt;/h1&gt;
-
-&lt;p&gt;安装软件：sudo apt install 软件名&lt;/p&gt;
-
-&lt;p&gt;卸载软件：sudo apt remove 软件名&lt;/p&gt;
-
-&lt;p&gt;更新软件：sudo apt upgrade&lt;/p&gt;
-
-&lt;h1 id=&quot;19which命令&quot;&gt;19.which命令&lt;/h1&gt;
-
-&lt;p&gt;which 软件名　　例如：which python3  可查到python3的安装路径&lt;/p&gt;
-
-&lt;h1 id=&quot;20ubuntu更新相关命令&quot;&gt;20.ubuntu更新相关命令&lt;/h1&gt;
-
-&lt;p&gt;更新软件源&lt;/p&gt;
-
-&lt;p&gt;apt-get update&lt;/p&gt;
-
-&lt;p&gt;更新升级所有软件&lt;/p&gt;
-
-&lt;p&gt;apt-get upgrade&lt;/p&gt;
-
-&lt;p&gt;更新某个软件&lt;/p&gt;
-
-&lt;p&gt;apt-get upgrade 名&lt;/p&gt;
-
-&lt;p&gt;列出可更新的软件&lt;/p&gt;
-
-&lt;p&gt;apt list --upgradable&lt;/p&gt;
-
-&lt;p&gt;升级系统版本(Ubuntu的升级)&lt;/p&gt;
-
-&lt;p&gt;apt-get dist-upgrade&lt;/p&gt;
-
-&lt;p&gt;安装一个软件包&lt;/p&gt;
-
-&lt;p&gt;apt-get install package_name&lt;/p&gt;
-
-&lt;p&gt;删除一个软件包&lt;/p&gt;
-
-&lt;p&gt;apt-get remove package&lt;/p&gt;
-
-&lt;p&gt;列举其他apt-get 命令&lt;/p&gt;
-
-&lt;p&gt;apt-get help&lt;/p&gt;
-
-&lt;p&gt;一般来说。更新完成之后会有一些不需要的旧组件需要清除。此时使用&lt;/p&gt;
-
-&lt;p&gt;sudo apt autoremove即可完成清理。&lt;/p&gt;
-
-&lt;h1 id=&quot;ubuntu如何彻底卸载一个软件&quot;&gt;ubuntu如何彻底卸载一个软件&lt;/h1&gt;
-
-&lt;p&gt;apt-get的卸载相关的命令有remove/purge/autoremove/clean/autoclean等。具体来说：&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;apt-get purge / apt-get –purge remove&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;删除已安装包（不保留配置文件)。&lt;/p&gt;
-
-&lt;p&gt;如软件包a，依赖软件包b，则执行该命令会删除a，而且不保留配置文件&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;apt-get autoremove&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;删除为了满足依赖而安装的，但现在不再需要的软件包（包括已安装包），保留配置文件。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;apt-get remove&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;删除已安装的软件包（保留配置文件），不会删除依赖软件包，且保留配置文件。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;apt-get autoclean&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;APT的底层包是dpkg, 而dpkg 安装Package时, 会将 *.deb 放在 /var/cache/apt/archives/中，apt-get autoclean 只会删除 /var/cache/apt/archives/ 已经过期的deb。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;apt-get clean&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;使用 apt-get clean 会将 /var/cache/apt/archives/ 的 所有 deb 删掉，可以理解为 rm /var/cache/apt/archives/*.deb。&lt;/p&gt;
-
-&lt;p&gt;那么如何彻底卸载软件呢？&lt;/p&gt;
-
-&lt;p&gt;具体来说可以运行如下命令：&lt;/p&gt;
-
-&lt;p&gt;删除软件及其配置文件&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;apt-get –purge remove package&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;删除没用的依赖包&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;apt-get autoremove package&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;此时dpkg的列表中有“rc”状态的软件包，可以执行如下命令做最后清理：&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;dpkg -l |grep ^rc|awk '{print $2}' |sudo xargs dpkg -P&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;如果不知道要删除软件的具体名称，可以使用&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;dpkg --get-selections | grep ‘软件相关名称’&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;原文链接：https://blog.csdn.net/get_set/article/details/51276609/&lt;/p&gt;
-</description>
-        <pubDate>Mon, 17 May 2021 00:00:00 +0800</pubDate>
-        <link>www.xiangtao.net.cn/2021/05/ubuntu2/</link>
-        <guid isPermaLink="true">www.xiangtao.net.cn/2021/05/ubuntu2/</guid>
-        
-        <category>linux</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>ubuntu下一些常用工具的安装</title>
-        <description>&lt;h1 id=&quot;ubuntu中谷歌浏览器的安装&quot;&gt;ubuntu中谷歌浏览器的安装&lt;/h1&gt;
-&lt;h2 id=&quot;第一步下载谷歌浏览器&quot;&gt;第一步：下载谷歌浏览器&lt;/h2&gt;
-&lt;p&gt;直接下载谷歌：&lt;a href=&quot;https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb&quot;&gt;下载链接linux版本&lt;/a&gt;
-        间接下载谷歌：&lt;a href=&quot;https://www.google.cn/chrome/thank-you.html?installdataindex=empty&amp;amp;statcb=0&amp;amp;defaultbrowser=0&quot;&gt;googel&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;第二步在下载谷歌安装包所在的文件中打开终端&quot;&gt;第二步：在下载谷歌安装包所在的文件中打开终端&lt;/h2&gt;
-&lt;h2 id=&quot;第三步依次执行如下命令即可&quot;&gt;第三步依次执行如下命令即可：&lt;/h2&gt;
-&lt;p&gt;sudo apt install libappindicator1 libindicator7          //这是安装谷歌之前需要安装的两个包，libappindicator1 libindicator7&lt;/p&gt;
-
-&lt;p&gt;sudo dpkg -i google-chrome-stable_current_amd64.deb      //使用sudo dpkg -i + deb文件名字安装&lt;/p&gt;
-
-&lt;p&gt;或许所有的deb文件都可以在ubantu中进行这样方式的安装，比如ubuntu下linux版本的qq，下载后缀名为deb的qq安装包然后用dpkg或者gdebi命令进行安装即可&lt;/p&gt;
-
-&lt;p&gt;sudo apt -f install（常用）或者sudo apt-get -f install    //安装过程可能会提示一些错误，比如依赖关系等，因此需要执行此命令，可以解决相关错误&lt;/p&gt;
-
-&lt;p&gt;脚下留心：dpkg安装包和apt安装命令一致，一般来说在ubuntu中dpkg对deb文件进行安装很不错，但是或多或少会出现安装依赖错误及一些难以预测的问题，而gdebi则是dpkg的升级版，可以直接解决相关的依赖问题，而不用再用sudo apt -f install命令进行操作，详细见wps的安装过程用到了gdebi.(安装gdepi：sudo apt install gdebi)&lt;/p&gt;
-
-&lt;h1 id=&quot;ubuntu中搜狗输入法的安装&quot;&gt;ubuntu中搜狗输入法的安装&lt;/h1&gt;
-&lt;h2 id=&quot;第一步下载搜狗输入法&quot;&gt;第一步：下载搜狗输入法&lt;/h2&gt;
-&lt;p&gt;网站：&lt;a href=&quot;https://pinyin.sogou.com/linux/&quot;&gt;下载链接&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;第二步修改语言栏设置为fcitx然后关闭&quot;&gt;第二步：修改语言栏设置为fcitx,然后关闭&lt;/h2&gt;
-&lt;h2 id=&quot;第三步在所在文件中打开终端&quot;&gt;第三步：在所在文件中打开终端&lt;/h2&gt;
-&lt;h2 id=&quot;第四步一次执行如下命令&quot;&gt;第四步：一次执行如下命令&lt;/h2&gt;
-&lt;p&gt;sudo dpkg -i + 搜狗文件名
-sudo apt -f install&lt;/p&gt;
-&lt;h2 id=&quot;第五步重启ubuntu即可&quot;&gt;第五步：重启ubuntu即可&lt;/h2&gt;
-&lt;p&gt;脚下留心：如果发现ubuntu语言栏还没有fcitx，则需要先进行如下操作
-1.打开Ubuntu terminal，输入以下命令，添加下载源到系统软件下载源
-sudo add-apt-repository ppa:fcitx-team/nightly
-2.使用以下命令更新系统列表最新软件信息
-sudo apt-get update
-3.使用以下命令安装fcitx
-sudo apt-get install fcitx
-4.使用以下命令安装fcitx配置管理工具
-sudo apt-get install fcitx-config-gtk
-5.使用以下命令安装fcitx-table-all软件包
-sudo apt-get install fcitx-table-all
-6.重启Ubuntu系统。然后打开System Settings下的Language Support（即打开语言栏设置）&lt;/p&gt;
-
-&lt;h1 id=&quot;ubuntu中wps的安装&quot;&gt;ubuntu中wps的安装&lt;/h1&gt;
-&lt;p&gt;其实可以安装微软的office，但是考虑到安装方法不是很熟悉还有就是在ubuntu下不知道如何免费激活，因此安装wps也是不错的选择&lt;/p&gt;
-&lt;h2 id=&quot;第一步下载wps&quot;&gt;第一步：下载wps&lt;/h2&gt;
-&lt;p&gt;官方网址：&lt;a href=&quot;https://www.wps.cn/product/wpslinux#&quot;&gt;下载链接&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;第二步执行命令-sudo-gdebi-wps文件名&quot;&gt;第二步：执行命令 sudo gdebi wps文件名&lt;/h2&gt;
-&lt;h2 id=&quot;第三步完成安装&quot;&gt;第三步：完成安装&lt;/h2&gt;
-
-&lt;h1 id=&quot;解决ubuntu中优盘不能够读取的问题步骤&quot;&gt;解决ubuntu中优盘不能够读取的问题步骤&lt;/h1&gt;
-&lt;p&gt;首先可以参考网址：&lt;a href=&quot;https://blog.csdn.net/langb2014/article/details/50165425&quot;&gt;参考链接１&lt;/a&gt;与 &lt;a href=&quot;https://blog.csdn.net/u010426270/article/details/52420231&quot;&gt;参考链接２&lt;/a&gt;
-或者你可以采纳以下操作步骤：&lt;/p&gt;
-&lt;h2 id=&quot;第一步&quot;&gt;第一步&lt;/h2&gt;
-&lt;p&gt;执行：sudo fdisk -l  //目的在于查看分区挂载情况&lt;/p&gt;
-&lt;h2 id=&quot;第二步用ntfsfix命令&quot;&gt;第二步用ntfsfix命令&lt;/h2&gt;
-&lt;p&gt;进行挂载区的修复：sudo ntfsfix /dev/sda8（例如修复/dev/sda8，具体看自己的）&lt;/p&gt;
-
-&lt;p&gt;脚下留心：若提示找不到ntfsfix命令，则需要安装ntfsfix，执行：sudo apt-get install ntfs-3g即可&lt;/p&gt;
-
-&lt;h2 id=&quot;第三步&quot;&gt;第三步&lt;/h2&gt;
-&lt;p&gt;弹出优盘再次插入电脑即可读取了&lt;/p&gt;
-
-&lt;h1 id=&quot;如何解决谷歌浏览器翻墙后访问网页有时候网页图片不能显示问题&quot;&gt;如何解决谷歌浏览器翻墙后访问网页有时候网页图片不能显示问题？&lt;/h1&gt;
-&lt;p&gt;最可靠且最好的方法：直接访问&lt;a href=&quot;https://githubusercontent.com.ipaddress.com/raw.githubusercontent.com&quot;&gt;链接&lt;/a&gt;，显示美国官方github的最新ip，更新到hosts文件夹中即可．
-现在已ubuntu系统为例子，解决在github网站中README.md描述文档中png图片无法显示且无法下载问题，解决步骤如下：&lt;/p&gt;
-&lt;h2 id=&quot;第一步-1&quot;&gt;第一步&lt;/h2&gt;
-&lt;p&gt;分析原因应该是访问国外网址ip的原因，因此需要修改/etc/hosts文件，尝试配置hosts文件，直接指向github的服务器。用ipaddress查一下raw.githubusercontent.com 的ip，可以参考ip:199.232.68.133 raw.githubusercontent.com和199.232.68.133 githubusercontent.com&lt;/p&gt;
-&lt;h2 id=&quot;第二步&quot;&gt;第二步&lt;/h2&gt;
-&lt;p&gt;那么如果进入hosts文件才有修改的权利呢，我们需要以root身份打开hosts文件，在etc文件下：输入vim hosts或者其他文件下则需要加入相应路径将199.232.68.133 raw.githubusercontent.com和199.232.68.133 githubusercontent.com
-注意：上面的两个ip我发现在2021年2月初已经无法使用，即无法加载github里面的图片，下面是更新的ip
-151.101.64.133 raw.githubusercontent.com
-151.101.0.133 raw.githubusercontent.com&lt;/p&gt;
-&lt;h2 id=&quot;第三步-1&quot;&gt;第三步&lt;/h2&gt;
-&lt;p&gt;两个ip都加入到hosts文件中，然后保存退出，刷新网页图片就可以显示了
-具体情况可以参考这两个网址：&lt;a href=&quot;https://blog.csdn.net/qq_41709370/article/details/106282229?utm_medium=distribute.pc_relevant_t0.none-task-blog-OPENSEARCH-1.not_use_machine_learn_pai&amp;amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-OPENSEARCH-1.not_use_machine_learn_pai&quot;&gt;网址１&lt;/a&gt;和&lt;a href=&quot;https://www.cnblogs.com/henryhappier/archive/2013/02/21/2920493.html&quot;&gt;网址２&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;k-vim安装后打开文件显示按enter键继续解决方案&quot;&gt;k-vim安装后打开文件显示按enter键继续解决方案：&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.codeprj.com/blog/9298f01.html&quot;&gt;参考链接&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;ubuntu下解压文件&quot;&gt;ubuntu下解压文件&lt;/h1&gt;
-&lt;p&gt;解压zip文件：unzip + 文件名。若是windows下的zip中文文件解压可能有乱码，此时要用unzip -O CP936 + 文件名&lt;/p&gt;
-
-&lt;p&gt;万能解压：unar，可以解决mac，windows下的各类压缩文件，且不乱码&lt;/p&gt;
-</description>
-        <pubDate>Mon, 17 May 2021 00:00:00 +0800</pubDate>
-        <link>www.xiangtao.net.cn/2021/05/ubuntu1/</link>
-        <guid isPermaLink="true">www.xiangtao.net.cn/2021/05/ubuntu1/</guid>
-        
-        <category>linux</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Python-Matplotlib-Chapter1</title>
-        <description>&lt;h1 id=&quot;11&quot;&gt;1.1&lt;/h1&gt;
-&lt;h2 id=&quot;figure11&quot;&gt;Figure1.1&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/picture/chapter_1_1.2rderkjbfps0.png&quot; alt=&quot;chapter_1_1&quot; /&gt;&lt;/p&gt;
-
-&lt;details&gt;
-  &lt;summary&gt;View Code&lt;/summary&gt;
-  &lt;pre&gt;&lt;code&gt; 
-import matplotlib.pyplot as plt
-import numpy as np
-from matplotlib import cm as cm
-
-# define data
-x = np.linspace(0.5, 3.5, 100)
-y = np.sin(x)
-y1 = np.random.randn(100)
-
-# scatter figure
-plt.scatter(x, y1, c='0.25', label='scatter figure')
-
-# plot figure
-plt.plot(x, y, ls='--', lw=2, label='plot figure')
-
-# some clean up
-# 去掉上边框和有边框
-for spine in plt.gca().spines.keys():
-    if spine == 'top' or spine == 'right':
-        plt.gca().spines[spine].set_color('none')
-
-# x轴的刻度在下边框
-plt.gca().xaxis.set_ticks_position('bottom')
-
-# y轴的刻度在左边框
-plt.gca().yaxis.set_ticks_position('left')
-
-# 设置x轴、y轴范围
-plt.xlim(0.0, 4.0)
-plt.ylim(-3.0, 3.0)
-
-# 设置x轴、y轴标签
-plt.xlabel('x_axis')
-plt.ylabel('y_axis')
-
-# 绘制x、y轴网格
-plt.grid(True, ls=':', color='r')
-
-# 绘制水平参考线
-plt.axhline(y=0.0, c='r', ls='--', lw=2)
-
-# 绘制垂直参考区域
-plt.axvspan(xmin=1.0, xmax=2.0, facecolor='y', alpha=0.5)
-
-# 绘制注解
-plt.annotate('maximum', xy=(np.pi / 2, 1.0), xytext=((np.pi / 2) + 0.15, 1.5),
-             weight='bold', color='r', arrowprops=dict(arrowstyle='-&amp;gt;',
-                                                       connectionstyle='arc3', color='r'))
-
-# 绘制注解
-plt.annotate('spines', xy=(0.75, -3), xytext=(0.35, -2.25),
-             weight='bold', color='r', arrowprops=dict(arrowstyle='-&amp;gt;',
-                                                       connectionstyle='arc3', color='r'))
-
-# 绘制注解
-plt.annotate('', xy=(0, -2.78), xytext=(0.4, -2.32),
-             weight='bold', color='r', arrowprops=dict(arrowstyle='-&amp;gt;',
-                                                       connectionstyle='arc3', color='r'))
-
-# 绘制注解
-plt.annotate('', xy=(3.5, -2.98), xytext=(3.6, -2.7),
-             weight='bold', color='r', arrowprops=dict(arrowstyle='-&amp;gt;',
-                                                       connectionstyle='arc3', color='r'))
-
-# 绘制文本
-plt.text(3.6, -2.70, &quot;'|' is tickline&quot;, weight='bold', color='b')
-plt.text(3.6, -2.95, &quot;3.5 is tickline&quot;, weight='bold', color='b')
-
-plt.title(&quot;structure of matplotlib&quot;)
-
-plt.legend(loc='upper right')
-
-plt.show() 
-  &lt;/code&gt;&lt;/pre&gt;
-&lt;/details&gt;
-
-</description>
-        <pubDate>Sat, 15 May 2021 00:00:00 +0800</pubDate>
-        <link>www.xiangtao.net.cn/2021/05/matplotchapter1/</link>
-        <guid isPermaLink="true">www.xiangtao.net.cn/2021/05/matplotchapter1/</guid>
-        
-        <category>Python</category>
         
         
       </item>
