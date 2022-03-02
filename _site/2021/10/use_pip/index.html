@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>关于pip与Python</title>
+  <meta name="description" content="出现1980错误：在当前文件下打开终端运行find . -type f -exec touch {} +">
+  <meta name="author" content="leopardpan">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="关于pip与Python">
+  <meta name="twitter:description" content="出现1980错误：在当前文件下打开终端运行find . -type f -exec touch {} +">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="关于pip与Python">
+  <meta property="og:description" content="出现1980错误：在当前文件下打开终端运行find . -type f -exec touch {} +">
+  
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
+  <link href="/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="http://localhost:4000/2021/10/use_pip/">
+  <link rel="alternate" type="application/rss+xml" title="向涛" href="http://localhost:4000/feed.xml">
+  
+  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
+
+<!-- 站点统计 -->
+  <script 
+  async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>  
+
+<!-- 百度统计 -->
+  
+  <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?2021d6d9cbde9a628234bfd2aa9ffdfd";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+  </script>
+  
+
+<!-- google 统计 -->
+  
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-9005224472374751",
+    enable_page_level_ads: true
+  });
+</script>
+
+<!-- 在网页端显示LaTeX公式，但是只支持$$格式 -->
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+
+<!-- Using Mermaid in Jekyll -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
+
+
+</head>
+
+
+  <body>
+
+    <span class="mobile btn-mobile-menu">        
+      <div class="nav_container">
+         <nav class="nav-menu-item" style = "float:right">
+            <i class="nav-menu-item">
+              <a href="/#blog" title="" class="blog-button">  博客主页
+              </a>
+            </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/archive" title="archive" class="btn-mobile-menu__icon">
+                      所有文章
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/tags" title="tags" class="btn-mobile-menu__icon">
+                      标签
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/support" title="support" class="btn-mobile-menu__icon">
+                      技术支持
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/about" title="about" class="btn-mobile-menu__icon">
+                      关于我
+                  </a>
+                </i>
+            
+          </nav>
+      </div>
+    </span>
+    
+    <header class="panel-cover panel-cover--collapsed" style="background-image: url('/images/background-cover.jpg')">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+        <!-- 头像效果-start -->
+        <div class="ih-item circle effect right_to_left">            
+            <a href="/#blog" title="前往 向涛 的主页" class="blog-button">
+                <div class="img"><img src="/images/avatar.jpg" alt="img"></div>
+                <div class="info">
+                    <div class="info-back">
+                        <h2> 
+                            
+                                研究生
+                            
+                        </h2>
+                        <p>
+                           
+                                数学
+                            
+                        </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- 头像效果-end -->
+        <h1 class="panel-cover__title panel-title"><a href="/#blog" title="link to homepage for 向涛" class="blog-button">向涛</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">个人网站</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">Welcome to my personal website~</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+        
+        
+
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客主页</a></li>
+                
+                  <li class="navigation__item"><a href="/archive" title="archive">所有文章</a></li>
+                
+                  <li class="navigation__item"><a href="/tags" title="tags">标签</a></li>
+                
+                  <li class="navigation__item"><a href="/support" title="support">技术支持</a></li>
+                
+                  <li class="navigation__item"><a href="/about" title="about">关于我</a></li>
+                
+              </ul>
+            </nav>
+          </div>          
+        </div>
+
+
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="panel-cover--overlay cover-clear"></div>
+    
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <head>
+  <link rel="stylesheet" href="/css/post.css">
+</head>
+
+<article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title">关于pip与Python</h1>
+    <div class="post-meta">
+      <img src="/images/calendar.png" width="20px"/> 
+      <time datetime="2021-10-06 00:00:00 +0800" itemprop="datePublished" class="post-meta__date date">2021-10-06</time>  
+
+      <span id="busuanzi_container_page_pv"> | 阅读：<span id="busuanzi_value_page_pv"></span>次</span>
+    </p>
+    </div>
+  </header>
+
+  
+    <h2 class="post-title">目录</h2>
+    
+
+  
+  
+  <section class="post">
+    <p>出现1980错误：在当前文件下打开终端运行find . -type f -exec touch {} +</p>
+
+<p>要获取pip安装包的可用版本、当前安装版本和最新版本号可以使用命令：<strong>pip index versions 包名</strong>，但是请注意这是pip版本在21.2以上的才有这个命令，并且命令可能是临时的，后面随时可能会发生更改和删除。</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>也可以使用pip先安装yolk3k，然后使用yolk3k来查看某包的最新版本，即<strong>sudo pip3 install yolk3k</strong>，接着使用命令<strong>yolk -V 包名</strong>查看最新版本，除此之外**pip3 list</td>
+      <td>grep frogpy<strong>，</strong>pip3 freeze</td>
+      <td>grep frogpy<strong>，以及</strong>pip3 show 包名**，可以查看当前版本信息，具体可以自行百度(注意list和freeze区别在于freeze只会显示自己安装的包，不含系统自带的，而list包含了系统自带的包，在虚拟环境中可以看出他们的作用)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>相关细节：注意文件结构，setup.py的写法，需要安装的配置环境，文件init.py的写法，那些需要加from .import 文件名等内容，相关的命令如下：</p>
+
+<ol>
+  <li>sudo python3 setup.py install 安装解压后的文件，也可以直接使用pip install 压缩包名，反正记住安装方式是多样的。</li>
+  <li>也可以直接在frogpy目录下运行sudo python3 setup.py install，值得注意的是上面的这些安装方法包括下面使用pip安装pypi网站里的包，安装后的内容是python导入包的一些默认路径，但是可能一些设置的原因导致默认的路径有几个，例如我的就有什么lib/local/…下的，也有lib/python3/…下的，更甚至在我的home文件下的一个隐藏文件中.local中也有，但是可以通过设置来改变他们默认的安装路径，也可以在安装时候加入安装的路径，具体操作可以百度。使用pip install . 不出意外也可以安装成功。</li>
+  <li>其次还需要说明的是，也可以使用sudo python3 setup.py develop进行安装，与sudo python3 setup.py install 的区别在于install安装在与pip安装的目录可能一致，并且在python导入包的一些默认路径中，例如lib/local等，但是使用develop就相当于把当前的frogpy当成了导入包的默认路径了，因此路径就在frogpy，好处在于你以后在里面的更新可以直接使用，具体说法是：1.在安装某个库或包时，发现可以python setup.py install 和python setup.py develop两种方式来安装，这两种方法有什么不同？一直困扰着我，下面我们就来讨论下这个简单的问题 2.python setup.py install：主要是安装典型第三方包，这种包比较稳定，不再需要你去编辑、修改或是调试。3.python setup.py develop:当你安装一个包后，这个包需要你不断修改，这样你就不得不重新安装，这时就采用这种安装方法。</li>
+  <li>最后是无论是使用install develop或者pip安装后都可以通过sudo pip3 uninstall frogpy进行卸载，注意有时候使用pip直接安装后，再使用pip卸载时候说没有这个包，但是包确实又存在，那说明这个默认路径下pip无法读取，为什么会安装在这个路径，可能是一些设置造成的，但是跟上面一样可以修改默认路径，如果pip uninstall无法卸载就只有通过__file__来获取路径后到该路径下删除相应的文件夹即可，还可能会有很多其他情况，我目前还没有遇到不过都可以通过谷歌或者百度上进行搜索解答疑问。</li>
+  <li>python3 setup.py sdist 生成上传的.tar.gz文件，当然后缀名可以自行设置，操作自行百度或者b站视频</li>
+  <li>python3 setup.pt bdist_wheel 生成山传的.whl格式文件，还有其他的一些文件格式以及特定系统的安装文件，具体可以百度和看b站相关视频</li>
+  <li>twine upload dist/文件名 将文件格式上传到pypi网站上，更新版本时候注意版本号的更改，在setup.py中，否则会报错</li>
+  <li>使用pip3 install 包名(frogpy)进行安装(在mac或者Windows下也应该是这样).</li>
+  <li>最后一点是上传时候需要输入用户名和密码，如果申请了令牌，这用户名是__token__，密码是令牌，在ubuntu下可以在home目录的用户目录下建立一个隐藏文件，取名为.pypirc，输入如下内容：</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[distutils]
+index-servers = pypi
+ 
+[pypi]
+//注意username中申请了令牌写如下的token，否则写自己pypi网站申请的用户名
+username:__token__
+password:申请了令牌需要输入令牌，否则请输入密码
+</code></pre></div></div>
+
+
+  </section>
+
+</article>
+
+<section>
+
+           
+            </div>
+            <script type="text/javascript">
+            function dashangToggle(){
+              $(".hide_box-play").fadeToggle();
+              $(".shang_box-play").fadeToggle();
+            }
+            </script>
+
+            <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';"></div>
+
+            <style type="text/css">
+              .content-play{width:80%;margin-top: 20px;margin-bottom: 10px;height:40px;}
+              .hide_box-play{z-index:999;filter:alpha(opacity=50);background:#666;opacity: 0.5;-moz-opacity: 0.5;left:0;top:0;height:99%;width:100%;position:fixed;display:none;}
+              .shang_box-play{width:540px;height:540px;padding:10px;background-color:#fff;border-radius:10px;position:fixed;z-index:1000;left:50%;top:50%;margin-left:-280px;margin-top:-280px;border:1px dotted #dedede;display:none;}
+              .shang_box-play img{border:none;border-width:0;}
+              .dashang{display:block;width:100px;margin:5px auto;height:25px;line-height:25px;padding:10px;background-color:#E74851;color:#fff;text-align:center;text-decoration:none;border-radius:10px;font-weight:bold;font-size:16px;transition: all 0.3s;}
+              .dashang:hover{opacity:0.8;padding:15px;font-size:18px;}
+              .shang_close-play{float:right;display:inline-block;
+                margin-right: 10px;margin-top: 20px;
+              }
+              .shang_logo{display:block;text-align:center;margin:20px auto;}
+              .shang_tit-play{width: 100%;height: 75px;text-align: center;line-height: 66px;color: #a3a3a3;font-size: 16px;background: url('/images/payimg/cy-reward-title-bg.jpg');font-family: 'Microsoft YaHei';margin-top: 7px;margin-right:2px;}
+              .shang_tit-play p{color:#a3a3a3;text-align:center;font-size:16px;}
+              .shang_payimg{width:140px;padding:10px;padding-left: 80px; /*border:6px solid #EA5F00;**/margin:0 auto;border-radius:3px;height:140px;display:inline-block;}
+              .shang_payimg img{display:inline-block;margin-right:10px;float:left;text-align:center;width:140px;height:140px; }
+              .pay_explain{text-align:center;margin:10px auto;font-size:12px;color:#545454;}
+              .shang_payselect{text-align:center;margin:0 auto;margin-top:40px;cursor:pointer;height:60px;width:500px;margin-left:110px;}
+              .shang_payselect .pay_item{display:inline-block;margin-right:140px;float:left;}
+              .shang_info-play{clear:both;}
+              .shang_info-play p,.shang_info-play a{color:#C3C3C3;text-align:center;font-size:12px;text-decoration:none;line-height:2em;}
+            </style>
+
+       <ul class="pager">
+        
+        <li class="previous">
+            <a href="/2021/09/animation/" data-toggle="tooltip" data-placement="top" title="animation-pictue">上一篇：  <span>animation-pictue</span>
+            </a>
+        </li>
+        
+        
+        <li class="next">
+            <a href="/2021/10/CMP%E6%A8%A1%E5%9E%8B%E6%96%B9%E7%A8%8B%E7%9A%84%E5%B7%AE%E5%88%86%E6%A0%BC%E5%BC%8F%E6%8E%A8%E5%AF%BC/" data-toggle="tooltip" data-placement="top" title="磁流效应CMP润滑方程差分格式推导">下一篇：  <span>磁流效应CMP润滑方程差分格式推导</span>
+            </a>
+        </li>
+        
+    </ul>
+</section>
+
+<section class="post-comments">
+
+
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTcxNs82Mjgz">
+      <script type="text/javascript">
+         (function(d, s) {
+             var j, e = d.getElementsByTagName(s)[0];
+
+             if (typeof LivereTower === 'function') { return; }
+             j = d.createElement(s);
+             j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+             j.async = true;
+             e.parentNode.insertBefore(j, e);
+         })(document, 'script');
+      </script>
+      <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+      </div>
+
+
+
+</section>
+
+
+            <section class="footer">
+    <footer>
+        <div class = "footer_div">  
+        <nav class="cover-navigation navigation--social">
+          <ul class="navigation">
+
+          
+          <!-- Github -->
+          <li class="navigation__item_social">
+            <a href="https://github.com/xiang-tao" title="@xiang-tao 的 Github" target="_blank">
+              <div class="footer-social-icon" style="background:url(/images/github.png);"></div>
+            </a>
+          </li>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+
+          
+          <!-- Email -->
+          <li class="navigation__item_social">
+            <a href="mailto:1689415053@qq.com" title="Contact me">
+              <div class="footer-social-icon" style="background:url(/images/email.png);"></div>
+            </a>
+          </li>
+          
+          
+          <!-- RSS -->
+          <li class="navigation__item_social">
+            <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+              <div class="footer-social-icon" style="background:url(/images/rss.png);"></div>
+              <span class="label">RSS</span>
+            </a>
+          </li>
+
+          </ul>
+        </nav>
+
+        </div>
+
+        <div class = "footer_div">  
+           <p class="copyright text-muted">
+            Copyright &copy; 向涛 2022 Theme by <a href="https://leopardpan.cn/">leopardpan</a> |
+            <iframe
+                style="margin-left: 2px; margin-bottom:-5px;"
+                frameborder="0" scrolling="0" width="91px" height="20px"
+                src="https://ghbtns.com/github-btn.html?user=leopardpan&repo=leopardpan.github.io&type=star&count=true" >
+            </iframe>
+            </p>
+        	<div align="right">
+    			<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+          <!-- 访问统计 -->
+          <span id="busuanzi_container_site_pv">
+            本站总访问量
+            <span id="busuanzi_value_site_pv"></span>次
+          </span>
+
+        </div>
+        <div>
+    </footer>
+</section>
+
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+<script type="text/javascript" src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+  </body>
+
+</html>

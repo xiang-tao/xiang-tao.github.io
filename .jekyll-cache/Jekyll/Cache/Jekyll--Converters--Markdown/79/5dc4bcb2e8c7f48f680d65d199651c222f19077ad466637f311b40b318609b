@@ -1,0 +1,38 @@
+I"<p>出现1980错误：在当前文件下打开终端运行find . -type f -exec touch {} +</p>
+
+<p>要获取pip安装包的可用版本、当前安装版本和最新版本号可以使用命令：<strong>pip index versions 包名</strong>，但是请注意这是pip版本在21.2以上的才有这个命令，并且命令可能是临时的，后面随时可能会发生更改和删除。</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>也可以使用pip先安装yolk3k，然后使用yolk3k来查看某包的最新版本，即<strong>sudo pip3 install yolk3k</strong>，接着使用命令<strong>yolk -V 包名</strong>查看最新版本，除此之外**pip3 list</td>
+      <td>grep frogpy<strong>，</strong>pip3 freeze</td>
+      <td>grep frogpy<strong>，以及</strong>pip3 show 包名**，可以查看当前版本信息，具体可以自行百度(注意list和freeze区别在于freeze只会显示自己安装的包，不含系统自带的，而list包含了系统自带的包，在虚拟环境中可以看出他们的作用)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>相关细节：注意文件结构，setup.py的写法，需要安装的配置环境，文件init.py的写法，那些需要加from .import 文件名等内容，相关的命令如下：</p>
+
+<ol>
+  <li>sudo python3 setup.py install 安装解压后的文件，也可以直接使用pip install 压缩包名，反正记住安装方式是多样的。</li>
+  <li>也可以直接在frogpy目录下运行sudo python3 setup.py install，值得注意的是上面的这些安装方法包括下面使用pip安装pypi网站里的包，安装后的内容是python导入包的一些默认路径，但是可能一些设置的原因导致默认的路径有几个，例如我的就有什么lib/local/…下的，也有lib/python3/…下的，更甚至在我的home文件下的一个隐藏文件中.local中也有，但是可以通过设置来改变他们默认的安装路径，也可以在安装时候加入安装的路径，具体操作可以百度。使用pip install . 不出意外也可以安装成功。</li>
+  <li>其次还需要说明的是，也可以使用sudo python3 setup.py develop进行安装，与sudo python3 setup.py install 的区别在于install安装在与pip安装的目录可能一致，并且在python导入包的一些默认路径中，例如lib/local等，但是使用develop就相当于把当前的frogpy当成了导入包的默认路径了，因此路径就在frogpy，好处在于你以后在里面的更新可以直接使用，具体说法是：1.在安装某个库或包时，发现可以python setup.py install 和python setup.py develop两种方式来安装，这两种方法有什么不同？一直困扰着我，下面我们就来讨论下这个简单的问题 2.python setup.py install：主要是安装典型第三方包，这种包比较稳定，不再需要你去编辑、修改或是调试。3.python setup.py develop:当你安装一个包后，这个包需要你不断修改，这样你就不得不重新安装，这时就采用这种安装方法。</li>
+  <li>最后是无论是使用install develop或者pip安装后都可以通过sudo pip3 uninstall frogpy进行卸载，注意有时候使用pip直接安装后，再使用pip卸载时候说没有这个包，但是包确实又存在，那说明这个默认路径下pip无法读取，为什么会安装在这个路径，可能是一些设置造成的，但是跟上面一样可以修改默认路径，如果pip uninstall无法卸载就只有通过__file__来获取路径后到该路径下删除相应的文件夹即可，还可能会有很多其他情况，我目前还没有遇到不过都可以通过谷歌或者百度上进行搜索解答疑问。</li>
+  <li>python3 setup.py sdist 生成上传的.tar.gz文件，当然后缀名可以自行设置，操作自行百度或者b站视频</li>
+  <li>python3 setup.pt bdist_wheel 生成山传的.whl格式文件，还有其他的一些文件格式以及特定系统的安装文件，具体可以百度和看b站相关视频</li>
+  <li>twine upload dist/文件名 将文件格式上传到pypi网站上，更新版本时候注意版本号的更改，在setup.py中，否则会报错</li>
+  <li>使用pip3 install 包名(frogpy)进行安装(在mac或者Windows下也应该是这样).</li>
+  <li>最后一点是上传时候需要输入用户名和密码，如果申请了令牌，这用户名是__token__，密码是令牌，在ubuntu下可以在home目录的用户目录下建立一个隐藏文件，取名为.pypirc，输入如下内容：</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[distutils]
+index-servers = pypi
+ 
+[pypi]
+//注意username中申请了令牌写如下的token，否则写自己pypi网站申请的用户名
+username:__token__
+password:申请了令牌需要输入令牌，否则请输入密码
+</code></pre></div></div>
+
+:ET

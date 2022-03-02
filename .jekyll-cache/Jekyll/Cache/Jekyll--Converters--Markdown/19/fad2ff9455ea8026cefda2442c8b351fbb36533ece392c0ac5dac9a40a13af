@@ -1,0 +1,61 @@
+I"�<h2 id="python虚拟环境注意事项">python虚拟环境注意事项</h2>
+
+<ol>
+  <li>新建一个文件夹用于存储虚拟环境的内容，例如 mkdir venv</li>
+  <li>创建一个虚拟环境包，例如 python3 -m venv tutorial-env(包名)</li>
+  <li>激活环境</li>
+</ol>
+
+<ul>
+  <li>Windows：tutorial-env\Scripts\activate.bat</li>
+  <li>Linux or Mac：source tutorial-env/bin/activate</li>
+</ul>
+
+<ol>
+  <li>测试是否成功：例如使用which pip，得到的路径与虚拟环境匹配则成功，如果还是全局路径，则需要删除整个文件夹，新建一个文件，在从2部开始，然后激活环境后使用chmod -R 755 包名，再进行测试应该就可以了。</li>
+  <li>在虚拟环境下运行python代码将采用虚拟环境提供的包，在同时使用pip安装和卸载以及升级等操作也是对虚拟环境下的包进行操作，不会影响全局路径下的包，好处在于和全局路径可以享用不同版本的包，同时对于某些不常用的包在虚拟路径下是不会对全局路劲下的包产生额外污染。</li>
+  <li>如何退出虚拟环境:运行deactivate(注意Windows需要到指定路径下运行)</li>
+  <li>Pycharm中如何使用虚拟环境：自行百度或者b站有视频，很简单。</li>
+  <li>上述的方式在使用过程中，当需要不同虚拟环境进行切换会带来麻烦，因此可以使用pip安装一个包，包名是virtualenvwrapper，安装方式：</li>
+</ol>
+
+<ul>
+  <li>Windows：pip install virtualenvwrapper-win</li>
+  <li>ubuntu: pip install virtualenvwrapper</li>
+</ul>
+
+<p>还需要配置或者进行激活，然后使用相关的命令会很方便。详细信息可以百度或者谷歌。</p>
+
+<ol>
+  <li>如何将虚拟环境打包给其他人使用：pip freeze<code class="language-plaintext highlighter-rouge">将生成一个类似的已安装包列表，但输出使用预期的格式。一个常见的约定是将此列表放在一个文件中：</code>pip install requirements.txt，具体的做法类似如下操作：</li>
+</ol>
+
+<ul>
+  <li>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="n">tutorial</span><span class="o">-</span><span class="n">env</span><span class="p">)</span> <span class="err">$</span> <span class="n">pip</span> <span class="n">freeze</span> <span class="o">&gt;</span> <span class="n">requirements</span><span class="p">.</span><span class="n">txt</span>
+<span class="p">(</span><span class="n">tutorial</span><span class="o">-</span><span class="n">env</span><span class="p">)</span> <span class="err">$</span> <span class="n">cat</span> <span class="n">requirements</span><span class="p">.</span><span class="n">txt</span>
+<span class="n">novas</span><span class="o">==</span><span class="mf">3.1</span><span class="p">.</span><span class="mf">1.3</span>
+<span class="n">numpy</span><span class="o">==</span><span class="mf">1.9</span><span class="p">.</span><span class="mi">2</span>
+<span class="n">requests</span><span class="o">==</span><span class="mf">2.7</span><span class="p">.</span><span class="mi">0</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>chmod -R 755</p>
+
+<p>将txt文件和包一并发送给用户，然后用户操作大致是：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="n">tutorial</span><span class="o">-</span><span class="n">env</span><span class="p">)</span> <span class="err">$</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="p">.</span><span class="n">txt</span>
+<span class="n">Collecting</span> <span class="n">novas</span><span class="o">==</span><span class="mf">3.1</span><span class="p">.</span><span class="mf">1.3</span> <span class="p">(</span><span class="k">from</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="p">.</span><span class="n">txt</span> <span class="p">(</span><span class="n">line</span> <span class="mi">1</span><span class="p">))</span>
+  <span class="p">...</span>
+<span class="n">Collecting</span> <span class="n">numpy</span><span class="o">==</span><span class="mf">1.9</span><span class="p">.</span><span class="mi">2</span> <span class="p">(</span><span class="k">from</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="p">.</span><span class="n">txt</span> <span class="p">(</span><span class="n">line</span> <span class="mi">2</span><span class="p">))</span>
+  <span class="p">...</span>
+<span class="n">Collecting</span> <span class="n">requests</span><span class="o">==</span><span class="mf">2.7</span><span class="p">.</span><span class="mi">0</span> <span class="p">(</span><span class="k">from</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="p">.</span><span class="n">txt</span> <span class="p">(</span><span class="n">line</span> <span class="mi">3</span><span class="p">))</span>
+  <span class="p">...</span>
+<span class="n">Installing</span> <span class="n">collected</span> <span class="n">packages</span><span class="p">:</span> <span class="n">novas</span><span class="p">,</span> <span class="n">numpy</span><span class="p">,</span> <span class="n">requests</span>
+  <span class="n">Running</span> <span class="n">setup</span><span class="p">.</span><span class="n">py</span> <span class="n">install</span> <span class="k">for</span> <span class="n">novas</span>
+<span class="n">Successfully</span> <span class="n">installed</span> <span class="n">novas</span><span class="o">-</span><span class="mf">3.1</span><span class="p">.</span><span class="mf">1.3</span> <span class="n">numpy</span><span class="o">-</span><span class="mf">1.9</span><span class="p">.</span><span class="mi">2</span> <span class="n">requests</span><span class="o">-</span><span class="mf">2.7</span><span class="p">.</span><span class="mi">0</span>
+</code></pre></div></div>
+
+<p>官方参考网址：https://docs.python.org/3/tutorial/venv.html</p>
+:ET

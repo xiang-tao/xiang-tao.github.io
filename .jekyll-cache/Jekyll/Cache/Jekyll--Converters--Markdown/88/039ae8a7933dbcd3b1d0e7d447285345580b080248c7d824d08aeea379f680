@@ -1,0 +1,101 @@
+I"�<p>需要求解方程模型如下所示：</p>
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/CMP-picture/18.3zroeovshqi0.png" width="60%" />
+    <br />
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">磁流效应的润滑方程</div>
+</center>
+<p><strong>先对方程的左边进行中心差分离散</strong>，在点(\(r_i,\theta_j\))处展开，模板点包括了(\(r_i,\theta_{j-1}\))，(\(r_i,\theta_j\))，(\(r_i,\theta_{j+1}\))，(\(r_{i-1},\theta_j\))，(\(r_{i+1},\theta_j\))</p>
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/CMP-picture/IMG_20211008_131547.46z88xpnfro0.jpg" width="60%" />
+    <br />
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">差分格式推导</div>
+</center>
+<p>其中hr表示表示r方向的分割步长，h\(\theta\) 表示$\theta$ 方向的步长，h表示在不同点处的膜厚，因此它与(r,\(\theta\))相关，其表达式如下：</p>
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/CMP-picture/22.37rp9s43vim0.png" width="60%" />
+    <br />
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">膜厚h表达式</div>
+</center>
+<p><strong>对于右边项的处理：</strong></p>
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/CMP-picture/IMG_20211008_134038.1fa7s5dffb6o.jpg" width="60%" />
+    <br />
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">右端项分析</div>
+</center>
+
+<p>上面的一些函数表达式如下：</p>
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/CMP-picture/19.6bfvzwqk5xg0.png" width="60%" />
+    <br />
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">(1)</div>
+</center>
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/CMP-picture/20.3xkwn7maha40.png" width="60%" />
+    <br />
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">(2)</div>
+</center>
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/picture/12.5nc0z2tduzo0.png" width="60%" />
+    <br />
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">(3)</div>
+</center>
+
+<p>根据(3)式可以代入函数f1与f2求导后便可以得到关于(\(r,\theta\))的表达式，因此在点(\(r_i,\theta_j\))处的函数值可以表示为\(f1_{ij}\)与\(f2_{ij}\)，同理根据(2)是可以得到函数f4与f5的表达式，最后关于函数f5中磁场强度H是给定的已知值，这样右端项\(f_{ij}\)在离散点上的值就都能够计算出来了。</p>
+
+<p><strong>总结：</strong></p>
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/CMP-picture/IMG_20211008_141323.7iqdkoxjosc0.jpg" width="60%" />
+    <br />
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">差分格式结果</div>
+</center>
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://cdn.jsdelivr.net/gh/xiang-tao/image-hosting@master/CMP-picture/21.3k2apt1h7g00.png" width="60%" />
+    <br />
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">剖分示意图</div>
+</center>
+:ET
