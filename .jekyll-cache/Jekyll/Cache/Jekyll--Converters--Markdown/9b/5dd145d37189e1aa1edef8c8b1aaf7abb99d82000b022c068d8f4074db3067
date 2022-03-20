@@ -1,9 +1,0 @@
-I"<h2 id="1基本的细节知识">1.基本的细节知识</h2>
-
-<ol>
-  <li>
-    <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">float</span> <span class="n">f1</span> <span class="o">=</span> <span class="mf">3.14</span><span class="n">f</span> <span class="c1">//这里3.14f加f的原因是由于c++中的小数默认是double,由于这里使用的是float接受，因此不加f内部会进行强制转换，加了f不用转换</span>
-</code></pre></div>    </div>
-  </li>
-</ol>
-:ET

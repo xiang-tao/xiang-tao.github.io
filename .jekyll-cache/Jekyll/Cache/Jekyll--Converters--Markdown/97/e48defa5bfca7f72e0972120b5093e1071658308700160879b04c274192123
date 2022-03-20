@@ -1,4 +1,4 @@
-I"�3<h2 id="c内联函数">c++内联函数</h2>
+I"�3<h2 id="c内联函数">c++内联函数</h2>
 
 <h2 id="引用变量">引用变量</h2>
 
@@ -106,12 +106,12 @@
 <span class="kt">double</span> <span class="n">c7</span> <span class="o">=</span> <span class="n">refcube</span><span class="p">(</span><span class="n">side</span> <span class="o">+</span> <span class="mf">10.0</span><span class="p">);</span><span class="c1">//ra是临时变量,side+10.0尽管是double，但不是左值表达式</span>
 </code></pre></div>    </div>
 
-    <p>上面的15 16行也可以说是他们没哟名称，从而会产生一个临时变量，产生临时变量的本质是，例如</p>
+    <p>上面的15 16行也可以说是他们没有名称，从而会产生一个临时变量，产生临时变量的本质是，例如</p>
 
     <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">double</span> <span class="n">a</span> <span class="o">=</span> <span class="mf">2.0</span><span class="p">;</span>
 <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 <span class="kt">int</span> <span class="o">&amp;</span><span class="n">c</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span><span class="c1">//ok,c是b的引用,地址一致</span>
-<span class="kt">int</span> <span class="o">&amp;</span><span class="n">d</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span><span class="c1">//ok,但会产生临时变量，导致d的地址是临时变量的地址，与a的地址不一样</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">d</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span><span class="c1">//ok,但会产生临时变量，导致d的地址是临时变量的地址，与a的地址不一样</span>
 <span class="cm">/*
 产生临时变量:
 int &amp;d =a;
